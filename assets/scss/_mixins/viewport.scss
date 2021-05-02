@@ -1,0 +1,118 @@
+@import "add-by-property";
+
+/// Adds font-size by given value
+/// @param {Number} $value sets the font-size value preferred in rem.
+@mixin add-font-size($value) {
+  @include add-by-property($value, font-size);
+  @content;
+}
+
+/// adds margin by value and direction
+/// @param {List} $value sets the value for the margin.
+/// @param {List | string} $direction sets property for the direction the margin should be added to.
+/// the direction can be a List or a single direction.
+@mixin add-margin($value, $direction: null) {
+  @include add-by-property($value, margin, $direction);
+}
+
+/// adds padding by value and direction
+/// @param {List} $value sets the value for the margin.
+/// @param {List | string} $direction sets property for the direction the padding should be added to.
+/// the direction can be a List or a single direction.
+@mixin add-padding($value, $direction: null) {
+  @include add-by-property($value, padding, $direction);
+}
+
+/* XSmall */
+@mixin xsmall-up {
+  @media #{$xsmall-up} {
+    @content;
+  }
+}
+
+@mixin xsmall-only {
+  @media #{xsmall-only} {
+    @content;
+  }
+}
+
+/* Small */
+/* -------------------------------- */
+@mixin small-up {
+  @media #{$small-up} {
+    @content;
+  }
+}
+
+@mixin small-only {
+  @media #{small-only} {
+    @content;
+  }
+}
+
+@mixin small-down {
+  @media #{$small-down} {
+    @content;
+  }
+}
+
+/* Medium */
+/* -------------------------------- */
+@mixin medium-up {
+  @media #{$medium-up} {
+    @content;
+  }
+}
+
+@mixin medium-only {
+  @media #{medium-only} {
+    @content;
+  }
+}
+
+@mixin medium-down {
+  @media #{$medium-down} {
+    @content;
+  }
+}
+
+/* Large */
+/* -------------------------------- */
+@mixin large-up {
+  @media #{$large-up} {
+    @content;
+  }
+}
+
+@mixin large-only {
+  @media #{large-only} {
+    @content;
+  }
+}
+
+@mixin large-down {
+  @media #{$large-down} {
+    @content;
+  }
+}
+
+/* XLarge */
+/* -------------------------------- */
+@mixin xlarge-only {
+  @media #{xlarge-only} {
+    @content;
+  }
+}
+
+@mixin xlarge-down {
+  @media #{$xlarge-down} {
+    @content;
+  }
+}
+
+/* Portrait */
+@mixin tablet-portrait {
+  @media #{$medium-only} and #{$portrait} {
+    @content;
+  }
+}

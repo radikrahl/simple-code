@@ -1,0 +1,98 @@
+/** BODY vars */
+$font-size-body-lg: 1rem;
+$font-size-body-md: 1rem;
+$font-size-body-sm: 1rem;
+
+$font-size-body: (
+  lg: $font-size-body-lg,
+  md: $font-size-body-md,
+  sm: $font-size-body-sm,
+);
+
+/** H1 vars */
+$font-size-h1-lg: 3rem;
+$font-size-h1-md: 2.5rem;
+$font-size-h1-sm: 2rem;
+$font-size-h1: (
+  lg: $font-size-h1-lg,
+  md: $font-size-h1-md,
+  sm: $font-size-h1-sm,
+);
+
+$line-height-h1-lg: 1.05;
+$line-height-h1-md: 1.125;
+$line-height-h1-sm: 1.25;
+$line-height-h1: (
+  lg: $line-height-h1-lg,
+  md: $line-height-h1-md,
+  sm: $line-height-h1-sm,
+);
+
+/** H2 vars */
+$font-size-h2-lg: 2.4rem;
+$font-size-h2-md: 2.1rem;
+$font-size-h2-sm: 1.625rem;
+$font-size-h2: (
+  lg: $font-size-h2-lg,
+  md: $font-size-h2-md,
+  sm: $font-size-h2-sm,
+);
+
+$line-height-h2-lg: 1.25;
+$line-height-h2-md: 1.25;
+$line-height-h2-sm: 1.5384615;
+$line-height-h2: (
+  lg: $line-height-h2-lg,
+  md: $line-height-h2-md,
+  sm: $line-height-h2-sm,
+);
+
+/** H3 vars */
+$font-size-h3-lg: 2.1rem;
+$font-size-h3-md: 1.8rem;
+$font-size-h3-sm: 1.375rem;
+
+$font-size-h3: (
+  lg: $font-size-h3-lg,
+  md: $font-size-h3-md,
+  sm: $font-size-h3-sm,
+);
+
+$line-height-h3-lg: 1.25;
+$line-height-h3-md: 1.25;
+$line-height-h3-sm: 1.13636364;
+$line-height-h3: (
+  lg: $line-height-h3-lg,
+  md: $line-height-h3-md,
+  sm: $line-height-h3-sm,
+);
+
+/** H4 vars */
+$font-size-h4-lg: 1.125rem;
+$font-size-h4-md: 1.125rem;
+$font-size-h4-sm: 1.125rem;
+
+$font-size-h4: (
+  lg: $font-size-h4-lg,
+  md: $font-size-h4-md,
+  sm: $font-size-h4-sm,
+);
+
+$line-height-h4-lg: 1.222222222;
+$line-height-h4-md: 1.222222222;
+$line-height-h4-sm: 1.111111111;
+$line-height-h4: (
+  lg: $line-height-h4-lg,
+  md: $line-height-h4-md,
+  sm: $line-height-h4-sm,
+);
+
+$font-size-p-lg: 1.375rem;
+$font-size-p-md: 1.375rem;
+$font-size-p-sm: 1.375rem;
+
+$font-size-p: (
+  lg: $font-size-p-lg,
+  md: $font-size-p-md,
+  sm: $font-size-p-sm,
+);

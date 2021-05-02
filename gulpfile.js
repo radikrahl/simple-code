@@ -14,6 +14,10 @@ var colorFunction = require('postcss-color-mod-function');
 var cssnano = require('cssnano');
 var easyimport = require('postcss-easy-import');
 
+// sass utils
+var sass = require('gulp-sass');
+sass.compiler = require('node-sass');
+
 function serve(done) {
     livereload.listen();
     done();
@@ -51,6 +55,23 @@ function css(done) {
     ], handleError(done));
 }
 
+function scss(done) {
+    var processors = [
+        easyimport,
+        colorFunction(),
+        autoprefixer(),
+        cssnano()
+    ];
+
+    pump([
+        src('assets/scss/*.scss', {sourcemaps: true}),
+        sass().on('error', sass.logError),
+        postcss(processors),
+        dest('assets/built/', {sourcemaps: '.'}),
+        livereload()
+    ], handleError(done))
+}
+
 function js(done) {
     pump([
         src('assets/js/*.js', {sourcemaps: true}),
@@ -77,9 +98,10 @@ function zipper(done) {
 }
 
 const cssWatcher = () => watch('assets/css/**', css);
+const scssWatcher = () => watch('assets/scss/**', scss);
 const hbsWatcher = () => watch(['*.hbs', '**/**/*.hbs', '!node_modules/**/*.hbs'], hbs);
-const watcher = parallel(cssWatcher, hbsWatcher);
-const build = series(css, js);
+const watcher = parallel(scssWatcher, cssWatcher, hbsWatcher);
+const build = series(scss, css, js);
 const dev = series(build, serve, watcher);
 
 exports.build = build;
