@@ -1,0 +1,33 @@
+.gh-canvas {
+    display: grid;
+    grid-template-columns:
+        [full-start]
+        minmax(4vw, auto)
+        [wide-start]
+        minmax(auto, 240px)
+        [main-start]
+        // why capital 'M'?
+        // https://css-tricks.com/when-sass-and-new-css-features-collide/#the-solution
+        Min(1240px, calc(100% - 8vw))
+        [main-end]
+        minmax(auto, 240px)
+        [wide-end]
+        minmax(4vw, auto)
+        [full-end];
+
+     > * {
+        grid-column: main-start / main-end;
+    }
+}
+
+.kg-width {
+    &-wide {
+        grid-column: wide-start / wide-end;
+    }
+    &-full {
+        grid-column: full-start / full-end;
+        img {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,117 @@
+.gh-main {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.gh-page {
+    padding: 0 4vmin;
+}
+
+.gh-article {
+    padding: 8vmin 0;
+}
+
+.gh-postfeed {
+    padding: 8vmin 0;
+}
+
+.gh-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gh-page {
+    &-head {
+        margin: 0 auto;
+        padding: 8vmin 0 4vmin;
+        text-align: center;
+        > p {
+            max-width: 720px;
+            margin: 0.3em auto 0;
+            padding: 0 6vmin;
+            font-size: 1.3em;
+            line-height: 1.4em;
+            opacity: 0.5;
+            @include medium-down() {
+                font-size: 1.6rem;
+            }
+        }
+    }
+
+    &-image {
+        margin: 4vmin 0 0 0;
+    }
+}
+
+.gh-content > * + * {
+    margin-top: 4vmin;
+}
+
+.gh-content [id]:not(:first-child) {
+    margin: 1.5em 0 0;
+}
+
+.gh-content > [id] + * {
+    margin-top: 1.5rem;
+}
+
+.gh-content [id] + .kg-card,
+.gh-content blockquote + .kg-card {
+    margin-top: 6vmin;
+}
+
+.gh-canvas > blockquote,
+.gh-canvas > ol,
+.gh-canvas > ul,
+.gh-canvas > dl,
+.gh-canvas > p {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 1.6em;
+}
+
+.gh-content > ul,
+.gh-content > ol,
+.gh-content > dl {
+    padding-left: 1.9em;
+}
+
+.gh-content hr {
+    margin-top: 6vmin;
+}
+
+.gh-content hr + * {
+    margin-top: 6vmin !important;
+}
+
+.gh-content blockquote {
+    position: relative;
+    font-style: italic;
+}
+
+.gh-content blockquote::before {
+    content: "";
+    position: absolute;
+    left: -1.5em;
+    top: 0;
+    bottom: 0;
+    width: 0.3rem;
+    background: var(--color-primary);
+}
+
+@media (max-width: 650px) {
+    .gh-canvas blockquote,
+    .gh-canvas ol,
+    .gh-canvas ul,
+    .gh-canvas dl,
+    .gh-canvas p {
+        font-size: 1.8rem;
+    }
+
+    .gh-content blockquote::before {
+        left: -4vmin;
+    }
+}

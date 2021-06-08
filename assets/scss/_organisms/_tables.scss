@@ -1,0 +1,38 @@
+/* Tables
+/* ---------------------------------------------------------- */
+.gh-content {
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th {
+        padding: 0.5em 0.8em;
+        text-align: left;
+        font-size: .75em;
+        text-transform: uppercase;
+    }
+
+    td {
+        padding: 0.4em 0.7em;
+    }
+
+    tbody {
+        tr:nth-child(2n + 1) {
+            background-color: rgba(0,0,0,0.1);
+            padding: 1px;
+        }
+
+        tr:nth-child(2n + 2) td:last-child {
+            box-shadow:
+            inset 1px 0 rgba(0,0,0,0.1),
+            inset -1px 0 rgba(0,0,0,0.1);
+        }
+        tr:nth-child(2n + 2) td {
+            box-shadow: inset 1px 0 rgba(0,0,0,0.1);
+        }
+        tr:last-child {
+            border-bottom: 1px solid rgba(0,0,0,.1);
+        }
+    }
+}

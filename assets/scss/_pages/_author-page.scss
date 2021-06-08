@@ -1,0 +1,39 @@
+.gh-author {
+    &-image {
+        height: 12vmin;
+        width: 12vmin;
+        margin: 0 auto 1.5em;
+        border-radius: 100%;
+        overflow: hidden;
+        object-fit: cover;
+    }
+
+    &-meta {
+        margin: 2vmin 0 0 0;
+        font-size: 1.2em;
+        @include medium-down() {
+            font-size: 1.6rem;
+        }
+    }
+
+    &-links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        a {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            margin: 0 0.75vmin;
+            + a:before {
+                display: block;
+                content: "";
+                margin: 0 1.25vmin 0 0;
+                height: 1em;
+                width: 1px;
+                background: rgba(0,0,0,0.3);
+                transform: rotate(20deg);
+            }
+        }
+    }
+}

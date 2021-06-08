@@ -60,7 +60,7 @@ function scss(done) {
         easyimport,
         colorFunction(),
         autoprefixer(),
-        cssnano()
+        cssnano(),
     ];
 
     pump([

@@ -1,11 +1,12 @@
-/* settings */
+/* globals */
 /* ------------------------------- */
 @import "_settings/settings";
+@import "_globals/globals";
 
-/* mixins */
+/* mixins and functions */
 @import "_mixins/mixins";
 
-/* atoms */
+/* atomic design */
 @import "_atoms/atoms";
 @import "_molecules/molecules";
 @import "_organisms/organisms";
