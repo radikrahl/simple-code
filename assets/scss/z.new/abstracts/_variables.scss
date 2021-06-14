@@ -1,0 +1,115 @@
+/*------------------------------------*\
+    #LAYOUT
+\*------------------------------------*/
+
+/**
+ * Max Width
+ */
+ $l-max-width: 80rem !default;
+ $l-max-width-narrow: 45rem !default;
+ $l-linelength-width: 36rem !default;
+ 
+ 
+ 
+ 
+ 
+ /*------------------------------------*\
+     #SPACING
+ \*------------------------------------*/
+ 
+ /**
+  * Spacing and offsets
+  * 1) Used to space grids and body padding
+  */
+ 
+ $spacing: 1rem;
+ $spacing-small: round(0.5 * $spacing);
+ $spacing-large: round(2 * $spacing);
+ 
+ 
+ 
+ 
+ 
+ /*------------------------------------*\
+     #BORDERS
+ \*------------------------------------*/
+ 
+ /**
+  * Border
+  */
+  $border-thickness: 1px;
+ 
+ /**
+  * Border radius
+  */
+ $border-radius: 4px;
+ 
+ 
+ 
+ 
+ 
+ /*------------------------------------*\
+     #ANIMATION
+ \*------------------------------------*/
+ 
+ /**
+  * Transition Speed
+  */
+ $anim-fade-quick: 0.15s;
+ $anim-fade-long: 0.5s;
+ 
+ /**
+  * Transition Ease
+  */
+ $anim-ease: ease-out;
+ 
+ 
+ 
+ 
+ 
+ /*------------------------------------*\
+     #BREAKPOINTS
+ \*------------------------------------*/
+ 
+ /**
+  * Breakpoints used in media queries
+  * 1) These are not the only breakpoints used, but they provide a few defaults
+  */
+ $bp-small: 28em;
+ $bp-small-2: 35em;
+ $bp-med: 47em;
+ $bp-large: 60em;
+ $bp-xl: 70em;
+
+ // Media widths
+$xsmall: 30em; // 480px
+$small: 45em; // 720px
+$medium: 75em; // 1200px
+$large: 90em; // 1440px
+$xlarge: 120em; // 1920px
+
+// Media Queries
+$screen: "only screen" !default;
+
+$landscape: "#{$screen} and (orientation: landscape)" !default;
+$portrait: "(orientation: portrait)" !default;
+
+$xsmall-up: $screen !default;
+$xsmall-only: "#{$screen} and (max-width: #{xsmall}" !default;
+
+$small-up: "#{$screen} and (min-width: #{$xsmall})" !default;
+$small-only: "#{$screen} and (min-width:#{xsmall}) and (max-width: #{$small})" !default;
+$small-down: "#{$screen} and (max-width: #{$small})" !default;
+
+
+$medium-up: "#{$screen} and (min-width: #{$small})" !default;
+$medium-only: "#{$screen} and (min-width: #{$small}) and (max-width: #{$medium})" !default;
+$medium-down: "#{$screen} and (max-width: #{$medium})" !default;
+
+$large-up: "#{$screen} and (min-width: #{$medium})" !default;
+$large-only: "#{$screen} and (min-width: #{$medium}) and (max-width: #{$large})" !default;
+$large-down: "#{$screen} and (max-width: #{$large})" !default;
+
+$xlarge-up: "#{$screen} and (min-width: min-width: #{$large})" !default;
+$xlarge-only: "#{$screen} and (min-width: min-width: #{$large}) and (max-width: #{$xlarge})" !default;
+$xlarge-down: "#{$screen} and (max-width: #{$medium})" !default;

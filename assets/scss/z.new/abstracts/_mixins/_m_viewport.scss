@@ -1,0 +1,95 @@
+
+/* XSmall */
+@mixin xsmall-up {
+    @media #{$xsmall-up} {
+      @content;
+    }
+  }
+  
+  @mixin xsmall-only {
+    @media #{xsmall-only} {
+      @content;
+    }
+  }
+  
+  /* Small */
+  /* -------------------------------- */
+  @mixin small-up {
+    @media #{$small-up} {
+      @content;
+    }
+  }
+  
+  @mixin small-only {
+    @media #{small-only} {
+      @content;
+    }
+  }
+  
+  @mixin small-down {
+    @media #{$small-down} {
+      @content;
+    }
+  }
+  
+  /* Medium */
+  /* -------------------------------- */
+  @mixin medium-up {
+    @media #{$medium-up} {
+      @content;
+    }
+  }
+  
+  @mixin medium-only {
+    @media #{medium-only} {
+      @content;
+    }
+  }
+  
+  @mixin medium-down {
+    @media #{$medium-down} {
+      @content;
+    }
+  }
+  
+  /* Large */
+  /* -------------------------------- */
+  @mixin large-up {
+    @media #{$large-up} {
+      @content;
+    }
+  }
+  
+  @mixin large-only {
+    @media #{large-only} {
+      @content;
+    }
+  }
+  
+  @mixin large-down {
+    @media #{$large-down} {
+      @content;
+    }
+  }
+  
+  /* XLarge */
+  /* -------------------------------- */
+  @mixin xlarge-only {
+    @media #{xlarge-only} {
+      @content;
+    }
+  }
+  
+  @mixin xlarge-down {
+    @media #{$xlarge-down} {
+      @content;
+    }
+  }
+  
+  /* Portrait */
+  @mixin tablet-portrait {
+    @media #{$medium-only} and #{$portrait} {
+      @content;
+    }
+  }
+  

@@ -1,0 +1,120 @@
+ /*------------------------------------*\
+     #COLORS
+ \*------------------------------------*/
+
+/**
+ * Brand Colors
+ * 1) Brand=specific colors
+ */
+ $color-brand-blue: #114689;
+ $color-brand-blue-dark: #041544;
+ $color-brand-orange: #ba6333;
+ 
+ /**
+  * Neutral Colors
+  * 1) Neutral colors are grayscale values used throughout the UI
+  */
+ $color-neutral-white: #fff;
+ $color-neutral-gray-02: #f9f9f9;
+ $color-neutral-gray-07: #eee;
+ $color-neutral-gray-13: #ddd;
+ $color-neutral-gray-27: #bbb;
+ $color-neutral-gray-50: #808080;
+ $color-neutral-gray-60: #666;
+ $color-neutral-gray-73: #444;
+ $color-neutral-gray-93: #131313;
+ $color-neutral-black: #000;
+ 
+ /**
+  * Utility Colors
+  * 1) Utility colors are colors used to provide feedback, such as alert messages,
+  *    form validation, etc.
+  */
+ $color-utility-info: #0192d0;
+ $color-utility-info-light: #d3f2ff;
+ $color-utility-error: #b12a0b;
+ $color-utility-error-light: #fdded8;
+ $color-utility-success: #03804d;
+ $color-utility-success-light: #d4f3e6;
+ $color-utility-warning: #a59b15;
+ $color-utility-warning-light: #fffecf;
+ 
+ 
+ 
+/**
+ * In this file, we take the literal colors from our palette (defined in variables.scss)
+ * and define them against variables that we can utilise anywhere throughout the project.
+ */
+
+
+
+
+
+/*------------------------------------*\
+    #GLOBAL TEXT COLOR
+\*------------------------------------*/
+
+/**
+ * Body text and background colors
+ */
+$color-body-text: $color-neutral-gray-93 !default;
+$color-body-bg: $color-neutral-white !default;
+
+/**
+ * Highlight colors
+ */
+$color-text-highlight: $color-neutral-gray-93;
+$color-text-highlight-bg: $color-neutral-gray-13;
+
+
+
+
+
+/*------------------------------------*\
+    #LINKS
+\*------------------------------------*/
+
+$color-links: $color-neutral-gray-73 !default;
+$color-links-hover: $color-brand-orange !default;
+$color-links-active: $color-neutral-gray-93 !default;
+$color-links-visited: $color-neutral-gray-93 !default;
+
+
+
+
+
+/*------------------------------------*\
+    #BUTTONS
+\*------------------------------------*/
+
+$color-btn-primary: $color-neutral-white !default;
+$color-btn-primary-bg: $color-neutral-gray-93 !default;
+$color-btn-primary-bg-hover: $color-neutral-gray-50 !default;
+$color-btn-primary-border: $color-neutral-gray-93 !default;
+
+$color-btn-secondary: $color-neutral-gray-93 !default;
+$color-btn-secondary-bg: $color-neutral-white !default;
+$color-btn-secondary-bg-hover: $color-neutral-gray-07 !default;
+$color-btn-secondary-border: $color-neutral-gray-93 !default;
+
+$color-btn-disabled: $color-neutral-gray-50 !default;
+$color-btn-disabled-bg: $color-neutral-gray-07 !default;
+
+
+
+
+
+/*------------------------------------*\
+    #FORMS
+\*------------------------------------*/
+
+$color-form: $color-neutral-gray-93 !default;
+$color-form-bg: $color-neutral-white !default;
+$color-form-border: $color-neutral-gray-73 !default;
+$color-form-border-focus: $color-neutral-gray-93 !default;
+$color-form-border-error: $color-utility-error !default;
+$color-form-label: $color-neutral-gray-93 !default;
+$color-form-info: $color-neutral-gray-73;
+$color-form-placeholder: $color-neutral-gray-50;
+
+ 

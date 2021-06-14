@@ -64,7 +64,7 @@ function scss(done) {
     ];
 
     pump([
-        src('assets/scss/*.scss', {sourcemaps: true}),
+        src('assets/scss/main.scss', {sourcemaps: true}),
         sass().on('error', sass.logError),
         postcss(processors),
         dest('assets/built/', {sourcemaps: '.'}),
