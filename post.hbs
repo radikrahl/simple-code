@@ -2,19 +2,19 @@
 
 {{#post}}
 
-<article class="gh-article {{post_class}}">
+<article class="{{post_class}}">
 
-    <header class="gh-header gh-canvas">
-        <span class="gh-post-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
-        <h1 class="gh-title">{{title}}</h1>
+    <header class="">
+        <span class=""><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
+        <h1 class="">{{title}}</h1>
 
         {{#if custom_excerpt}}
-        <p class="gh-excerpt">{{custom_excerpt}}</p>
+        <p class="">{{custom_excerpt}}</p>
         {{/if}}
 
         {{#if feature_image}}
-        <figure class="article-image">
-            <img class="gh-feature-image"
+        <figure class="">
+            <img class=""
                 srcset="{{img_url feature_image size="s"}} 300w,
                         {{img_url feature_image size="m"}} 600w,
                         {{img_url feature_image size="l"}} 1000w,
@@ -29,13 +29,13 @@
         {{/if}}
     </header>
 
-    <section class="gh-content gh-canvas">
+    <section class="">
         {{content}}
     </section>
 
-    <footer class="gh-footer gh-canvas">
+    <footer class="">
 
-        <div class="gh-post-authors">
+        <div class="">
             Written by {{#foreach authors}}<a href="{{url}}">{{name}}</a>{{/foreach}}
         </div>
 
@@ -49,12 +49,12 @@
 
 </article>
 
-<aside class="gh-readmore">
-    <div class="gh-readmore-inner gh-container">
-        <div class="gh-readmore-next">
+<aside class="">
+    <div class="l-container">
+        <div class="">
             {{#next_post}}<a href="{{url}}">{{> "icons/arrow-left"}} <h4>{{title}}</h4></a>{{/next_post}}
         </div>
-        <div class="gh-readmore-prev">
+        <div class="">
             {{#prev_post}}<a href="{{url}}">
                 <h4>{{title}}</h4> {{> "icons/arrow-right"}}
             </a>{{/prev_post}}

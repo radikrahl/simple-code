@@ -17,27 +17,27 @@
 </head>
 
 <body class="{{body_class}}">
-    <header id="gh-head" class="gh-head">
-        <nav class="gh-head-inner gh-container">
-            <div class="gh-head-brand">
-                <a class="gh-head-logo" href="{{@site.url}}">
+    <header id="" class="">
+        <nav class="l-container">
+            <div class="">
+                <a class="" href="{{@site.url}}">
                     {{#if @site.logo}}
                     <img src="{{@site.logo}}" alt="{{@site.title}}" />
                     {{else}}
                     {{@site.title}}
                     {{/if}}
                 </a>
-                <a class="gh-burger" role="button">
-                    <div class="gh-burger-box">
-                        <div class="gh-burger-inner"></div>
+                <a class="" id="burger" role="button">
+                    <div class="">
+                        <div class=""></div>
                     </div>
                 </a>
             </div>
-            <div class="gh-head-menu">
+            <div class="">
                 {{navigation}}
             </div>
-            <div class="gh-head-actions">
-                <div class="gh-head-actions-list">
+            <div class="">
+                <div class="">
                     {{#if @site.facebook}}
                     <a href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{>
                         "icons/facebook"}}</a>
@@ -46,24 +46,24 @@
                     <a href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{>
                         "icons/twitter"}}</a>
                     {{/if}}
-                    <a href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS" target="_blank"
-                        rel="noopener">{{> "icons/rss"}}</a>
+                    {{!-- <a href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS" target="_blank"
+                        rel="noopener">{{> "icons/rss"}}</a> --}}
                 </div>
             </div>
         </nav>
     </header>
 
-    <main class="gh-main">
+    <main role="main" class="">
         {{{body}}}
         {{!-- All content gets inserted here, index.hbs, post.hbs, etc --}}
     </main>
 
-    <footer class="gh-foot">
-        <div class="gh-container">
-            <div class="gh-foot-menu">
+    <footer class="">
+        <div class="l-container">
+            <div class="">
                 {{navigation}}
             </div>
-            <div class="gh-foot-meta">
+            <div class="">
                 Published with <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
             </div>
         </div>
@@ -81,14 +81,14 @@
     <script>
         $(document).ready(function () {
             // Mobile Menu Trigger
-            $('.gh-burger').click(function () {
+            $('#burger').click(function () {
                 $('body').toggleClass('gh-head-open');
             });
         });
     </script>
 
     {{#is "post, page"}}
-    <script src="{{asset 'built/jquery.fitvids.js'}}"></script>
+    {{!-- <script src="{{asset 'built/jquery.fitvids.js'}}"></script>
     <script>
         var images = document.querySelectorAll('.kg-gallery-image img');
         images.forEach(function (image) {
@@ -102,7 +102,7 @@
             var $postContent = $(".gh-content");
             $postContent.fitVids();
         });
-    </script>
+    </script> --}}
     {{/is}}
 
     {{ghost_foot}}

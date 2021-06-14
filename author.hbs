@@ -1,12 +1,12 @@
 {{!< default}}
 
-<div class="gh-page">
-    <div class="gh-container">
+<div class="">
+    <div class="l-container">
 
         {{#author}}
-        <header class="gh-page-head">
+        <header class="">
             {{#if profile_image}}
-                <img class="gh-author-image" src="{{profile_image}}" alt="{{name}}" />
+                <img class="" src="{{profile_image}}" alt="{{name}}" />
             {{/if}}
 
             <h1>{{name}}</h1>
@@ -14,8 +14,8 @@
                 <p>{{bio}}</p>
             {{/if}}
 
-            <div class="gh-author-meta">
-                <div class="gh-author-links">
+            <div class="">
+                <div class="">
                     {{#if website}}
                         <a href="{{website}}" target="_blank" rel="noopener">Website</a>
                     {{/if}}
@@ -29,12 +29,12 @@
             </div>
 
             {{#if cover_image}}
-                <img class="gh-page-image" src="{{cover_image}}" alt="{{name}}" />
+                <img class="" src="{{cover_image}}" alt="{{name}}" />
             {{/if}}
         </header>
         {{/author}}
 
-        <div class="gh-postfeed">
+        <div class="">
         {{#foreach posts}}
 
             {{> "card"}} {{!-- partials/card.hbs --}}
