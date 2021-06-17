@@ -58,7 +58,6 @@ Adjusting css classes and mapping old structure to new one
 
 ## What to fix besides from base styles
 .kg-bookmark
-regular, wide, full image
 galleries
-header
-rss feed icon bug
+rss feed icon bug # or just remove
+navigation

@@ -4,7 +4,7 @@
 
 <article class="{{post_class}}">
 
-    <header class="">
+    <header class="l-grid">
         <span class=""><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
         <h1 class="">{{title}}</h1>
 
@@ -13,7 +13,7 @@
         {{/if}}
 
         {{#if feature_image}}
-        <figure class="">
+        <figure class="l-grid--wide">
             <img class=""
                 srcset="{{img_url feature_image size="s"}} 300w,
                         {{img_url feature_image size="m"}} 600w,
