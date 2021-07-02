@@ -23,3 +23,23 @@
         text-align: center;
     }
 }
+
+.kg-bookmark {
+    &-card {
+
+    }
+
+    &-container {
+        display: flex;
+    }
+
+    &-content {
+        flex-grow: 1;
+        flex-basis: 100%;
+    }
+
+    &-thumbnail {
+        flex-shrink: 1;
+        min-width: 33%;
+    }
+}

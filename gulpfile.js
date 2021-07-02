@@ -56,9 +56,12 @@ function css(done) {
 }
 
 function scss(done) {
+    const tailwindcss = require('tailwindcss');
+    const tailwindjs = require('./tailwind.config.js');
     var processors = [
         easyimport,
         colorFunction(),
+        tailwindcss(tailwindjs),
         autoprefixer(),
         cssnano(),
     ];
