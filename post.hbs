@@ -50,16 +50,32 @@
 </article>
 
 <aside class="">
-    <div class="l-container">
-        <div class="">
-            {{#next_post}}<a href="{{url}}">{{> "icons/arrow-left"}} <h4>{{title}}</h4></a>{{/next_post}}
+    {{!-- <div class="l-container">
+        <div class="post-navigation">
+            {{#next_post}}
+            <a href="{{url}}">
+                {{> "icons/arrow-left"}} 
+                <h4>{{title}}</h4>
+            </a>
+            {{/next_post}}
         </div>
         <div class="">
-            {{#prev_post}}<a href="{{url}}">
-                <h4>{{title}}</h4> {{> "icons/arrow-right"}}
-            </a>{{/prev_post}}
+            {{#prev_post}}
+            <a href="{{url}}">
+                <h4>{{title}}</h4> 
+                {{> "icons/arrow-right"}}
+            </a>
+            {{> "card"}}
+            {{/prev_post}}
         </div>
-    </div>
+    </div> --}}
+            {{#get "posts" filter="id:-{{id}}" include="authors" limit="3" as |more_posts|}}
+            {{#if more_posts}}
+                {{#foreach more_posts}}
+                    {{> "card"}}
+                {{/foreach}}
+            {{/if}}
+        {{/get}}
 </aside>
 
 {{/post}}

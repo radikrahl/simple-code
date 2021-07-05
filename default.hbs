@@ -17,9 +17,9 @@
 </head>
 
 <body class="{{body_class}}">
-    <header id="" class="">
-        <nav class="l-grid">
-            <div class="">
+    <header id="" class="l-grid">
+        <nav class="l-grid--wide navigation">
+            <div class="navigation__logo">
                 <a class="" href="{{@site.url}}">
                     {{#if @site.logo}}
                     <img src="{{@site.logo}}" alt="{{@site.title}}" />
@@ -33,18 +33,16 @@
                     </div>
                 </a>
             </div>
-            <div class="">
+            {{!-- <div class=""> --}}
                 {{navigation}}
-            </div>
-            <div class="">
+            {{!-- </div> --}}
+            <div class="navigation__social">
                 <div class="">
                     {{#if @site.facebook}}
-                    <a href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{>
-                        "icons/facebook"}}</a>
+                    <a href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
                     {{/if}}
                     {{#if @site.twitter}}
-                    <a href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{>
-                        "icons/twitter"}}</a>
+                    <a href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
                     {{/if}}
                     {{!-- <a href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS" target="_blank"
                         rel="noopener">{{> "icons/rss"}}</a> --}}

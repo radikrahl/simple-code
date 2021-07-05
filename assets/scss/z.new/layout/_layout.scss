@@ -8,7 +8,7 @@
         [main-start]
         // why capital 'M'?
         // https://css-tricks.com/when-sass-and-new-css-features-collide/#the-solution
-        Min(1240px, calc(100% - 8vw))
+        Min(786px, calc(100% - 8vw))
         [main-end]
         minmax(auto, 240px)
         [wide-end]
