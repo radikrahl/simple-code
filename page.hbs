@@ -2,7 +2,6 @@
 
 {{#post}}
 <article class="gh-article {{post_class}}">
-
     <header class="l-grid">
         <h1 class="">{{title}}</h1>
 
@@ -11,6 +10,12 @@
         {{/if}}
 
         {{#if feature_image}}
+            <figure class="l-grid--wide">
+                <img src="{{feature_image}}" alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}" />
+                {{#if feature_image_caption}}
+                    <figcaption>{{feature_image_caption}}</figcaption>
+                {{/if}}
+            </figure>
             <img class="l-grid--wide" src="{{feature_image}}" alt="{{title}}" />
         {{/if}}
     </header>
@@ -18,6 +23,5 @@
     <div class="">
         {{content}}
     </div>
-
 </article>
 {{/post}}

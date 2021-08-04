@@ -2,10 +2,10 @@
 Re-usable card for linking to posts
 --}}
 
-<article class=" {{post_class}}">
-    <a class="" href="{{url}}">
+<article class="post-card {{post_class}}">
+    <a class="post-card__linkWrapper" href="{{url}}">
         {{#if feature_image}}
-            <img class=""
+            <img class="post-card__image"
                 srcset="{{img_url feature_image size="s"}} 300w,
                         {{img_url feature_image size="m"}} 600w,
                         {{img_url feature_image size="l"}} 1000w,
@@ -14,11 +14,23 @@ Re-usable card for linking to posts
                 src="{{img_url feature_image size="m"}}"
                 alt="{{title}}"
             />
+        {{else}}
+            <div class="post-card__image">
+                hi
+            </div>
         {{/if}}
-        <div class="">
-            <span class=""><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
-            <h2 class="">{{title}}</h2>
-            <p>{{excerpt}}</p>
+
+        <div class="post-card__content">
+            <span class="post-card__date">
+                <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}
+                </time>
+                {{#if reading_time}} 
+                <span class="bull">&bull;</span> 
+                {{reading_time}}
+                {{/if}}
+            </span>
+            <h2 class="post-card__title">{{title}}</h2>
+            <p class="post-card__excerpt">{{excerpt}}</p>
             <strong>Read more</strong>
         </div>
     </a>

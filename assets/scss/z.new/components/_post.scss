@@ -1,0 +1,24 @@
+.post-card {
+    display: flex;
+
+    &__linkWrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    &__excerpt {
+        flex: 1 1 auto;
+    }
+
+    &.no-image {
+        .post-card__content {
+            justify-content: end;
+        }
+    }
+}
