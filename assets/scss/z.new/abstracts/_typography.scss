@@ -5,34 +5,67 @@
 /**
  * Font Family
  */
- $font-family-primary: 'Raleway', "HelveticaNeue", "Helvetica", "Arial", sans-serif;
- $font-family-secondary: 'Abel', serif;
- 
- 
- /**
+$font-family-primary: "Raleway", "HelveticaNeue", "Helvetica", "Arial",
+    sans-serif;
+$font-family-secondary: "Abel", serif;
+
+/**
   * Font Sizing
   */
- $font-size-sm: 0.75rem;
- $font-size-sm-2: 0.85rem;
- $font-size-med: 1rem;
- $font-size-med-2: 1.2rem;
- $font-size-large: 2rem;
- $font-size-xl: 3rem;
- $font-size-xxl: 4rem;
- 
- /**
+$font-size-sm: 0.75rem;
+$font-size-sm-2: 0.85rem;
+$font-size-med: 1rem;
+$font-size-med-2: 1.2rem;
+$font-size-large: 2rem;
+$font-size-xl: 3rem;
+$font-size-xxl: 4rem;
+
+/**
   * Line Height
   */
- $line-height-sm: 0.8;
- $line-height-sm-2: 0.9;
- $line-height-med: 1;
- $line-height-med-2: 1.2;
- $line-height-large: 1.6;
- $line-height-xl: 1.8;
- 
- /**
+$line-height-sm: 0.8;
+$line-height-sm-2: 0.9;
+$line-height-med: 1;
+$line-height-med-2: 1.2;
+$line-height-large: 1.4;
+$line-height-large2: 1.6;
+$line-height-xl: 1.8;
+
+/**
  * In this file, we take the literal font sizes from our scale and define them
  * against variables that we can utilise anywhere throughout the project.
  */
 
- $body-font-size: $font-size-med;
+$body-font-size: $font-size-med;
+
+.fz-sm {
+    font-size: $font-size-sm;
+}
+
+.fz-sm2 {
+    font-size: $font-size-sm-2;
+}
+
+.fz-med {
+    font-size: $font-size-med;
+}
+
+.fz-med2 {
+    font-size: $font-size-med-2;
+}
+
+.fz-l {
+    font-size: $font-size-large;
+}
+
+.fz-xl {
+    font-size: $font-size-xl;
+}
+
+.fz-xxl {
+    font-size: $font-size-xxl;
+}
+
+.fw-bold {
+    font-weight: bold;
+}
