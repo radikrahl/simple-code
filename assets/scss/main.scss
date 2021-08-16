@@ -12,75 +12,46 @@
 /*------------------------------------*\
     #ABSTRACTS
 \*------------------------------------*/
-@import "z.new/abstracts/variables";
-@import "z.new/abstracts/mixins";
-@import "z.new/abstracts/colors";
-@import "z.new/abstracts/typography";
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "abstracts/colors";
+@import "abstracts/typography";
 
-@import "z.new/a.tailwind.scss";
+@import "a.tailwind.scss";
 /*------------------------------------*\
     #BASE
 \*------------------------------------*/
-@import "z.new/base/reset";
-@import "z.new/base/body";
-@import "z.new/base/headings";
-@import "z.new/base/links";
-@import "z.new/base/lists";
-@import "z.new/base/forms";
-@import "z.new/base/buttons";
-@import "z.new/base/main";
-@import "z.new/base/media";
-@import "z.new/base/text";
-@import "z.new/base/table";
-
-
-
-
+@import "base/reset";
+@import "base/body";
+@import "base/headings";
+@import "base/links";
+@import "base/lists";
+@import "base/forms";
+@import "base/buttons";
+@import "base/main";
+@import "base/media";
+@import "base/text";
+@import "base/table";
 
 // /*------------------------------------*\
 //     #LAYOUT
 // \*------------------------------------*/
-@import "z.new/layout/layout";
+@import "layout/layout";
 
 // /*------------------------------------*\
 //     #COMPONENTS
 // \*------------------------------------*/
-// @import "z.new/components/buttons";
-// @import "z.new/components/definition-list";
-// @import "z.new/components/definition-list-list";
-// @import "z.new/components/hero";
-// @import "z.new/components/tout";
-// @import "z.new/components/section";
-// @import "z.new/components/stacked-block";
-// @import "z.new/components/stripe";
-// @import "z.new/components/footer";
-// @import "z.new/components/footer-nav";
-// @import "z.new/components/header";
-// @import "z.new/components/logo";
-// @import "z.new/components/icon";
-// @import "z.new/components/input";
-// @import "z.new/components/page-header";
-// @import "z.new/components/pagination";
-// @import "z.new/components/primary-nav";
-// @import "z.new/components/promo-block";
-// @import "z.new/components/progress-tracker";
-// @import "z.new/components/text-passage";
-// @import "z.new/components/field";
-// @import "z.new/components/search-form";
-// @import "z.new/components/stacked-block-list";
-// @import "z.new/components/total";
 
-@import "z.new/components/kg-components";
-@import "z.new/components/navigation";
-@import "z.new/components/post";
+@import "components/kg-components";
+@import "components/navigation";
+@import "components/post";
 
 
 // /*------------------------------------*\
 //     #UTILITIES
 // \*------------------------------------*/
-// @import "z.new/utilities/visibility";
-// @import "z.new/utilities/spacing";
-@import "z.new/utilities/display";
+
+@import "utilities/display";
 
 
 // /*------------------------------------*\
