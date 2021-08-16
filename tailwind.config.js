@@ -16,9 +16,16 @@ module.exports = {
         }
     },
     corePlugins: [
+        /*
+         * grid plugins
+         */
         'gridColumn',
         'gridTemplateColumns',
         'gap',
+
+        /*
+         * spacing plugins
+         */
         'padding',
         'margin'
     ]
