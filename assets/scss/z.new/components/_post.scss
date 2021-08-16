@@ -25,7 +25,15 @@
     &__bylineContent {
         display: flex;
         flex-direction: column;
-        margin-left: 8px;
         line-height: $line-height-large;
+    }
+
+    &__image {
+        // aspect-ratio: 16 / 9;
+        @include aspect-ratio(16, 9, 'img') {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        };
     }
 }
