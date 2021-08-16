@@ -1,38 +1,15 @@
 {{!< default}}
 
 <div class="site-header-content">
-    {{#if @site.cover_image}}
-        {{!-- This is a responsive image, it loads different sizes depending on device
-        https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
-        <img class="site-header-cover"
-            srcset="{{img_url @site.cover_image size="s"}} 300w,
-                    {{img_url @site.cover_image size="m"}} 600w,
-                    {{img_url @site.cover_image size="l"}} 1000w,
-                    {{img_url @site.cover_image size="xl"}} 2000w"
-            sizes="100vw"
-            src="{{img_url @site.cover_image size="xl"}}"
-            alt=""
-        />
-    {{/if}}
+    {{> "atoms/images/responsiveImage" image=@site.cover_image class="site-header-cover"}}
     <h1 class="site-title">
-        {{#if @site.logo}}
-            <img class="site-logo" src="{{img_url @site.logo size="m"}}" alt="{{@site.title}}" />
-        {{else}}
-            {{@site.title}}
-        {{/if}}
+        {{> "atoms/images/image" image=@site.logo class=@site.title title=@site.title}}
     </h1>
     <p>{{@site.description}}</p>
 </div>
 
 <main id="site-main" class="">
     <div class="l-grid">
-        <div class="post-feed l-grid--wide grid md:grid-cols-3 gap-x-10 gap-y-6">
-        {{#foreach posts}}
-
-            {{> "card"}} {{!-- partials/card.hbs --}}
-
-        {{/foreach}}
-        </div>
-
+        {{> "organisms/sections/post-feed" posts=posts}}
     </div>
 </div>
