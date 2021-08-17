@@ -3,16 +3,20 @@
  * 1) Prevent Mobile Safari from scaling up text: https://blog.55minutes.com/2012/04/iphone-text-resizing/
  */
  @mixin typographyBody() {
-    font-size: $font-size-med;
-    line-height: $line-height-large2;
+    font-size: $font-size-med-2;
+    line-height: $line-height-large;
     -webkit-text-size-adjust: 100%; /* 1 */
+
+    @include medium-only {
+        font-size: $font-size-med;
+    }
 }
 
 /**
  * XL Type Styles
  */
  @mixin typographyBodyLarge() {
-    font-size: $font-size-med-2;
+    font-size: $font-size-large;
 	line-height: $line-height-large;
 }
 
@@ -23,7 +27,7 @@
     font-size: $font-size-xl;
     font-weight: normal;
     line-height: $line-height-med-2;
-    
+
     @media all and (min-width: $bp-med) {
         font-size: $font-size-xxl;
     }
@@ -45,6 +49,10 @@
     font-size: $font-size-large;
     font-weight: normal;
 	line-height: $line-height-med-2;
+
+    @include large-down {
+        font-size: $font-size-med-2;
+    }
 }
 
 /**
@@ -64,3 +72,22 @@
     font-weight: normal;
 	line-height: $line-height-med-2;
 }
+
+
+@mixin font($font-family, $font-file) {
+    @font-face {
+      font-family: $font-family;
+      src: url($font-file+'.ttf') format('truetype');
+    //   src: url($font-file+'.eot');
+    //   src: url($font-file+'.eot?#iefix') format('embedded-opentype'),
+    //        url($font-file+'.woff') format('woff'),
+    //        url($font-file+'.ttf') format('truetype'),
+    //        url($font-file+'.svg#'+$font-family) format('svg');
+    //   font-weight: normal;
+    //   font-style: normal;
+    }
+  }
+
+
+  @include font('Nunito', '/assets/fonts/Nunito/Nunito-Regular');
+  @include font('Montserrat', '/assets/fonts/Montserrat/Montserrat-Regular');

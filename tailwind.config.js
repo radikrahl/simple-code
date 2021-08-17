@@ -8,11 +8,11 @@ module.exports = {
     theme: {
         extend: {},
         screens: {
-            'xsm': '30em',
-            'sm': '45em',
-            'md': '75em',
-            'lg': '90em',
-            'xl': '120em'
+            'xsm': '28em',
+            'sm': '35em',
+            'md': '47em',
+            'lg': '60em',
+            'xl': '70em'
         }
     },
     corePlugins: [
@@ -27,6 +27,12 @@ module.exports = {
          * spacing plugins
          */
         'padding',
-        'margin'
+        'margin',
+
+        /*
+         * typography
+        */
+        'textTransform',
+        'fontWeight'
     ]
 };

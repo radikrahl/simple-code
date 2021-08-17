@@ -4,21 +4,21 @@
 
 h1, h2, h3, h4 {
 	font-family: $font-family-secondary;
-	text-transform: uppercase;
 }
 
 /**
  * Heading 1 base styles
  */
 h1 {
-	@include typographyHeadingXXL();
+	@include typographyHeadingXl();
+    font-weight: 700;
 }
 
 /**
  * Heading 2 base styles
  */
 h2 {
-	@include typographyHeadingMed2();
+	@include typographyHeadingLarge();
 }
 
 /**

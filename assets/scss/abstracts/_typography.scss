@@ -5,30 +5,31 @@
 /**
  * Font Family
  */
-$font-family-primary: "Raleway", "HelveticaNeue", "Helvetica", "Arial",
+$font-family-primary:  "Montserrat", "Raleway", "HelveticaNeue", "Helvetica", "Arial",
     sans-serif;
-$font-family-secondary: "Abel", serif;
+$font-family-secondary: "Nunito", "Abel", serif;
 
 /**
   * Font Sizing
   */
-$font-size-sm: 0.75rem;
-$font-size-sm-2: 0.85rem;
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.85rem;
 $font-size-med: 1rem;
 $font-size-med-2: 1.2rem;
-$font-size-large: 2rem;
+$font-size-large: 1.5rem;
+$font-size-large-2: 1.875rem;
 $font-size-xl: 3rem;
 $font-size-xxl: 4rem;
 
 /**
   * Line Height
   */
-$line-height-sm: 0.8;
-$line-height-sm-2: 0.9;
+$line-height-xs: 0.8;
+$line-height-sm: 0.9;
 $line-height-med: 1;
 $line-height-med-2: 1.2;
 $line-height-large: 1.4;
-$line-height-large2: 1.6;
+$line-height-large-2: 1.6;
 $line-height-xl: 1.8;
 
 /**
@@ -41,34 +42,37 @@ $body-font-size: $font-size-med;
 /**
  * Font-size html classes for single use
  */
-.fz-sm {
+.text-xs {
+    font-size: $font-size-xs;
+    $line-height-xs: 0.8;
+}
+
+.text-sm {
     font-size: $font-size-sm;
+    $line-height-sm: 0.9;
 }
 
-.fz-sm2 {
-    font-size: $font-size-sm-2;
-}
-
-.fz-med {
+.text-med {
     font-size: $font-size-med;
+    $line-height-med: 1;
 }
 
-.fz-med2 {
+.text-med2 {
     font-size: $font-size-med-2;
+    $line-height-med2: 1;
 }
 
-.fz-l {
+.text-l {
     font-size: $font-size-large;
+    line-height: $line-height-large;
 }
 
-.fz-xl {
+.text-xl {
     font-size: $font-size-xl;
+    line-height: $line-height-large-2;
 }
 
-.fz-xxl {
+.text-xxl {
     font-size: $font-size-xxl;
-}
-
-.fw-bold {
-    font-weight: bold;
+    line-height: $line-height-xl;
 }
