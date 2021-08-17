@@ -44,8 +44,6 @@
 
 @import "components/kg-components";
 @import "components/navigation";
-@import "components/post";
-
 
 // /*------------------------------------*\
 //     #UTILITIES
@@ -58,3 +56,5 @@
 //     #ATOMIC
 // \*------------------------------------*/
 // @import "../../partials/**/*.scss"
+@import "partials/pages/index";
+@import "partials/organisms/post-card";

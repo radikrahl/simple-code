@@ -72,7 +72,7 @@
             {{#get "posts" filter="id:-{{id}}" include="authors" limit="3" as |more_posts|}}
             {{#if more_posts}}
                 {{#foreach more_posts}}
-                    {{> "card"}}
+                    {{> "organisms/postCard"}}
                 {{/foreach}}
             {{/if}}
         {{/get}}

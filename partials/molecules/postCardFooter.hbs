@@ -1,0 +1,29 @@
+<footer class="post-card__footer">
+    <ul class="author__list">
+        {{#foreach authors}}
+            <li class="author__item">
+                {{#if profile_image}}
+                    <a href="{{url}}" class="static-avatar">
+                        <img
+                            class="author__profileImage"
+                            src="{{img_url profile_image size="xs"}}"
+                            alt="{{name}}"
+                        />
+                    </a>
+                    {{else}}
+                    <a href="{{url}}" class="static-avatar author-profile-image">
+                        {{> "atoms/icons/avatar"}}
+                    </a>
+                {{/if}}
+            </li>
+        {{/foreach}}
+    </ul>
+    <span class="post-card__meta-author text-sm font-bold">
+        <span class="c-gray-50">By:</span>
+        {{#has author="count:>2"}}
+            Multiple authors
+        {{else}}
+            {{authors}}
+        {{/has}}
+    </span>
+</footer>

@@ -20,22 +20,20 @@
     <header id="" class="l-grid">
         <nav class="l-grid--wide navigation">
             <div class="navigation__logo">
-                <a class="" href="{{@site.url}}">
+                {{!-- <a class="" href="{{@site.url}}">
                     {{#if @site.logo}}
                     <img src="{{@site.logo}}" alt="{{@site.title}}" />
                     {{else}}
                     {{@site.title}}
                     {{/if}}
-                </a>
+                </a> --}}
                 <a class="" id="burger" role="button">
                     <div class="">
                         <div class=""></div>
                     </div>
                 </a>
             </div>
-            {{!-- <div class=""> --}}
-                {{navigation}}
-            {{!-- </div> --}}
+            {{navigation}}
             <div class="navigation__social">
                 <div class="">
                     {{#if @site.facebook}}

@@ -9,7 +9,7 @@
  $color-brand-blue: #114689;
  $color-brand-blue-dark: #041544;
  $color-brand-orange: #ba6333;
- 
+
  /**
   * Neutral Colors
   * 1) Neutral colors are grayscale values used throughout the UI
@@ -24,7 +24,11 @@
  $color-neutral-gray-73: #444;
  $color-neutral-gray-93: #131313;
  $color-neutral-black: #000;
- 
+
+.c-gray-50 {
+    color: $color-neutral-gray-50;
+}
+
  /**
   * Utility Colors
   * 1) Utility colors are colors used to provide feedback, such as alert messages,
@@ -38,16 +42,6 @@
  $color-utility-success-light: #d4f3e6;
  $color-utility-warning: #a59b15;
  $color-utility-warning-light: #fffecf;
- 
- 
- 
-/**
- * In this file, we take the literal colors from our palette (defined in variables.scss)
- * and define them against variables that we can utilise anywhere throughout the project.
- */
-
-
-
 
 
 /*------------------------------------*\
@@ -66,10 +60,6 @@ $color-body-bg: $color-neutral-white !default;
 $color-text-highlight: $color-neutral-gray-93;
 $color-text-highlight-bg: $color-neutral-gray-13;
 
-
-
-
-
 /*------------------------------------*\
     #LINKS
 \*------------------------------------*/
@@ -78,10 +68,6 @@ $color-links: $color-neutral-gray-73 !default;
 $color-links-hover: $color-brand-orange !default;
 $color-links-active: $color-neutral-gray-93 !default;
 $color-links-visited: $color-neutral-gray-93 !default;
-
-
-
-
 
 /*------------------------------------*\
     #BUTTONS
@@ -101,9 +87,6 @@ $color-btn-disabled: $color-neutral-gray-50 !default;
 $color-btn-disabled-bg: $color-neutral-gray-07 !default;
 
 
-
-
-
 /*------------------------------------*\
     #FORMS
 \*------------------------------------*/
@@ -117,4 +100,3 @@ $color-form-label: $color-neutral-gray-93 !default;
 $color-form-info: $color-neutral-gray-73;
 $color-form-placeholder: $color-neutral-gray-50;
 
- 
