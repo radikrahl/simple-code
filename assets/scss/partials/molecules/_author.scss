@@ -1,0 +1,26 @@
+.author {
+    &__item {
+        display: inline-block;
+
+        &:first-child:not(:only-child) {
+            position: relative;
+            right: -15px;
+        }
+    }
+
+    &__list {
+        line-height: 0;
+    }
+
+    &__text {
+        align-self: center;
+
+        a:not(:last-child)::after {
+            content: ',';
+        }
+    }
+
+    &__profileImage {
+        border-radius: 50%;
+    }
+}

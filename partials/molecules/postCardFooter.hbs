@@ -1,5 +1,8 @@
 <footer class="post-card__footer">
-    <ul class="author__list">
+    <span class="post-card__read-more text-sm uppercase font-bold">
+        <a href="{{url}}">read more >></a>
+    </span>
+    <ul class="author__list ml-auto">
         {{#foreach authors}}
             <li class="author__item">
                 {{#if profile_image}}
@@ -11,19 +14,21 @@
                         />
                     </a>
                     {{else}}
-                    <a href="{{url}}" class="static-avatar author-profile-image">
+                    <a href="{{url}}" class="static-avatar author__profileImage">
                         {{> "atoms/icons/avatar"}}
                     </a>
                 {{/if}}
             </li>
         {{/foreach}}
     </ul>
-    <span class="post-card__meta-author text-sm font-bold">
+    <span class="author__text ml-2 text-sm font-bold">
         <span class="c-gray-50">By:</span>
         {{#has author="count:>2"}}
             Multiple authors
         {{else}}
-            {{authors}}
+            {{#foreach authors}}
+                <a class="author__name-link" href="{{url}}">{{name}}</a>
+            {{/foreach}}
         {{/has}}
     </span>
 </footer>

@@ -44,22 +44,22 @@ $body-font-size: $font-size-med;
  */
 .text-xs {
     font-size: $font-size-xs;
-    $line-height-xs: 0.8;
+    line-height: $line-height-med;
 }
 
 .text-sm {
     font-size: $font-size-sm;
-    $line-height-sm: 0.9;
+    line-height: $line-height-med;
 }
 
 .text-med {
     font-size: $font-size-med;
-    $line-height-med: 1;
+    line-height: $line-height-med;
 }
 
 .text-med2 {
     font-size: $font-size-med-2;
-    $line-height-med2: 1;
+    line-height: $line-height-med-2;
 }
 
 .text-l {
