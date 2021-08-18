@@ -33,12 +33,10 @@
         {{content}}
     </section>
 
-    <footer class="">
-
-        <div class="">
-            Written by {{#foreach authors}}<a href="{{url}}">{{name}}</a>{{/foreach}}
+    <footer class="l-grid">
+        <div class="author__text">
+            Written by {{#foreach authors}}<a class="" href="{{url}}">{{name}}</a>{{/foreach}}
         </div>
-
         {{!--
         <section class="gh-post-comments">
             If you want to embed comments, this is a good place to do it!
@@ -46,36 +44,37 @@
         --}}
 
     </footer>
-
 </article>
 
-<aside class="">
-    {{!-- <div class="l-container">
-        <div class="post-navigation">
-            {{#next_post}}
+<aside class="l-grid">
+    {{!-- <div class="post-navigation">
+        {{#next_post}}
             <a href="{{url}}">
-                {{> "atoms/icons/arrow-left"}}
-                <h4>{{title}}</h4>
+                <h4>
+                    {{title}}
+                    <i class="fas fa-chevron-left"></i>
+                </h4>
             </a>
-            {{/next_post}}
-        </div>
-        <div class="">
-            {{#prev_post}}
+        {{/next_post}}
+
+        {{#prev_post}}
             <a href="{{url}}">
-                <h4>{{title}}</h4>
-                {{> "atoms/icons/arrow-right"}}
+                <h4>
+                    {{title}}
+                    <i class="fas fa-chevron-right"></i>
+                </h4>
             </a>
-            {{> "card"}}
-            {{/prev_post}}
-        </div>
+        {{/prev_post}}
     </div> --}}
-            {{#get "posts" filter="id:-{{id}}" include="authors" limit="3" as |more_posts|}}
-            {{#if more_posts}}
+    {{#get "posts" filter="id:-{{id}}" include="authors" limit="3" as |more_posts|}}
+        {{#if more_posts}}
+            <div class="post-feed l-grid--wide grid md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-6">
                 {{#foreach more_posts}}
                     {{> "organisms/postCard"}}
                 {{/foreach}}
-            {{/if}}
-        {{/get}}
+            </div>
+        {{/if}}
+    {{/get}}
 </aside>
 
 {{/post}}

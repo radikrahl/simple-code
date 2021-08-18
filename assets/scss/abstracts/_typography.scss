@@ -5,9 +5,9 @@
 /**
  * Font Family
  */
-$font-family-primary:  "Montserrat", "Raleway", "HelveticaNeue", "Helvetica", "Arial",
+$font-family-primary: "Nunito", "Montserrat", "Raleway", "HelveticaNeue", "Helvetica", "Arial",
     sans-serif;
-$font-family-secondary: "Nunito", "Abel", serif;
+$font-family-secondary:  "Montserrat", "Nunito", "Abel", serif;
 $fa-font-path: "../../node_modules/@fortawesome/fontawesome-free/WebFonts" !default;
 
 /**
@@ -45,7 +45,7 @@ $body-font-size: $font-size-med;
  */
 .text-xs {
     font-size: $font-size-xs;
-    line-height: $line-height-med;
+    line-height: $line-height-large;
 }
 
 .text-sm {

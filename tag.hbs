@@ -1,9 +1,6 @@
 {{!< default}}
-
-<div class="">
-    <div class="l-container">
-
-        {{#tag}}
+<div class="l-grid">
+    {{#tag}}
         <header class="">
 
             <h1>{{name}}</h1>
@@ -21,15 +18,10 @@
             {{/if}}
 
         </header>
-        {{/tag}}
-
-        <div class="">
+    {{/tag}}
+    <div class="post-feed md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-6">
         {{#foreach posts}}
-
-            {{> "organisms/postCard"}} {{!-- partials/card.hbs --}}
-
+            {{> "organisms/postCard"}}
         {{/foreach}}
-        </div>
-
     </div>
 </div>

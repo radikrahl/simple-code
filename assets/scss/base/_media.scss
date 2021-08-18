@@ -10,3 +10,9 @@ img {
 	max-width: 100%;
 	height: auto;
 }
+
+div.a-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

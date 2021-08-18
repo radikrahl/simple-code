@@ -2,7 +2,7 @@
 Re-usable card for linking to posts
 }}
 
-<article class="post-card {{post_class}}">
+<article class="post-card {{#if horizontal}}-horizontal{{/if}} {{post_class}}">
     {{> "molecules/postCardMedia"}}
 
     <div class="post-card__content">
