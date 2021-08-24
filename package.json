@@ -90,6 +90,7 @@
         }
     },
     "dependencies": {
-        "@fortawesome/fontawesome-free": "^5.15.4"
+        "@fortawesome/fontawesome-free": "^5.15.4",
+        "@highlightjs/cdn-assets": "^11.2.0"
     }
 }
