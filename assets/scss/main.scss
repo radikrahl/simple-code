@@ -17,9 +17,9 @@
 @import "abstracts/colors";
 @import "abstracts/typography";
 
-@import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
-@import "../../node_modules/@fortawesome/fontawesome-free/scss/regular";
-@import "../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
+@import "../built/fontawesome/scss/fontawesome";
+@import "../built/fontawesome/scss/regular";
+@import "../built/fontawesome/scss/solid.scss";
 
 @import "a.tailwind.scss";
 

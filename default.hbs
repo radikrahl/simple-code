@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{!-- <link rel="stylesheet" type="text/css" href="{{asset 'built/screen.css'}}" /> --}}
     <link rel="stylesheet" type="text/css" href="{{asset 'built/main.css'}}" />
-    <link rel="stylesheet" href="/node_modules/@highlightjs/cdn-assets/styles/stackoverflow-dark.min.css">
+    <link rel="stylesheet" href="{{asset 'built/highlightjs/styles/stackoverflow-dark.min.css'}}">
     <title>{{meta_title}}</title>
 
     {{ghost_head}}
@@ -103,7 +103,7 @@
 
     {{ghost_foot}}
     {{!-- Outputs important scripts - should always be included before closing body tag --}}
-    <script src="/node_modules/@highlightjs/cdn-assets/highlight.min.js"></script>
+    <script src="{{asset 'built/highlightjs/highlight.min.js'}}"></script>
     <script>hljs.highlightAll();</script>
 </body>
 

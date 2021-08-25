@@ -7,6 +7,8 @@ var postcss = require('gulp-postcss');
 var zip = require('gulp-zip');
 var uglify = require('gulp-uglify');
 var beeper = require('beeper');
+var merge = require('merge-stream');
+const fs = require('fs');
 
 // postcss plugins
 var autoprefixer = require('autoprefixer');
@@ -67,7 +69,7 @@ function scss(done) {
     ];
 
     pump([
-        src('assets/scss/main.scss', {sourcemaps: true}),
+        src(['assets/scss/main.scss', '!node_modules/**/*.scss', '!assets/built/**/*.scss'], {sourcemaps: true}),
         sass().on('error', sass.logError),
         postcss(processors),
         dest('assets/built/', {sourcemaps: '.'}),
@@ -82,6 +84,37 @@ function js(done) {
         dest('assets/built/', {sourcemaps: '.'}),
         livereload()
     ], handleError(done));
+}
+
+function vendor() {
+
+    const highlightjsStyles = src('node_modules/@highlightjs/cdn-assets/styles/**')
+        .pipe(dest('assets/built/highlightjs/styles'));
+
+    const highlightjs = src('node_modules/@highlightjs/cdn-assets/highlight.min.js')
+        .pipe(dest('assets/built/highlightjs'));
+
+    const fontawesome = src('node_modules/@fortawesome/fontawesome-free/webfonts/**')
+        .pipe(dest('assets/built/fontawesome/webfonts'));
+
+    const fontawesomeStyles = src('node_modules/@fortawesome/fontawesome-free/scss/**')
+        .pipe(dest('assets/built/fontawesome/scss'));
+
+    return merge(highlightjs, highlightjsStyles, fontawesome, fontawesomeStyles);
+}
+
+function clean(done) {
+    const dir = 'assets/built';
+
+    // delete directory recursively
+    fs.rmdir(dir, { recursive: true }, (err) => {
+        if (err) {
+            handleError(done);
+        }
+        console.log(`${dir} is deleted!`);
+    });
+
+    done();
 }
 
 function zipper(done) {
@@ -105,7 +138,7 @@ const scssWatcher = () => watch('assets/scss/**', scss);
 const hbsWatcher = () => watch(['*.hbs', '**/**/*.hbs', '!node_modules/**/*.hbs'], hbs);
 const jsWatcher = () => watch(['assets/js/*.js'], js)
 const watcher = parallel(scssWatcher, cssWatcher, hbsWatcher, jsWatcher);
-const build = series(scss, css, js);
+const build = series(clean, vendor, scss, css, js);
 const dev = series(build, serve, watcher);
 
 exports.build = build;
