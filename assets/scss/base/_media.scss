@@ -11,6 +11,11 @@ img {
 	height: auto;
 }
 
+figcaption {
+    font-size: $font-size-sm;
+    text-align: center;
+}
+
 div.a-img {
     display: flex;
     justify-content: center;

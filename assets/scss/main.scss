@@ -27,6 +27,7 @@
     #BASE
 \*------------------------------------*/
 @import "base/reset";
+@import "base/text";
 @import "base/body";
 @import "base/headings";
 @import "base/links";
@@ -35,7 +36,6 @@
 @import "base/buttons";
 @import "base/main";
 @import "base/media";
-@import "base/text";
 @import "base/table";
 
 // /*------------------------------------*\
@@ -50,6 +50,7 @@
 
 @import "components/kg-components";
 @import "components/navigation";
+@import "components/footer";
 
 // /*------------------------------------*\
 //     #UTILITIES
@@ -64,3 +65,4 @@
 @import "partials/molecules/author";
 @import "partials/organisms/post-card";
 @import "partials/pages/index";
+@import "partials/pages/post";

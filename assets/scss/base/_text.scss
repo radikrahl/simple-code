@@ -6,7 +6,7 @@
  * Paragraph base styles
  */
  p {
-	margin-bottom: $spacing;
+	// margin-bottom: $spacing;
 }
 
 /**
@@ -17,7 +17,7 @@ blockquote {
     border-left: 1px solid $color-neutral-gray-50;
     color: $color-neutral-gray-50;
 	padding-left: 1rem;
-	margin-bottom: $spacing;
+	// margin-bottom: $spacing;
 }
 
 /**
@@ -26,8 +26,9 @@ blockquote {
 hr {
 	border: 0;
     height: 1px;
+    width: 100%;
     background: $color-neutral-gray-13;
-    margin: 1rem 0;
+    margin: $spacing-large 0;
 }
 
 /**
@@ -63,6 +64,7 @@ pre {
 	border: 1px solid $color-neutral-gray-13;
 	font-size: $font-size-med;
     overflow-x: auto;
+    margin-bottom: 0;
 
 	/**
 	 * Remove border from code within preformatted text block

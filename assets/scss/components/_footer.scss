@@ -1,0 +1,17 @@
+.main-footer {
+    &__inner {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+#main-footer {
+    padding: 40px 4vmin 140px;
+    background-color: $color-brand-green;
+    color: $color-neutral-white;
+
+    a {
+        color: $color-neutral-white;
+    }
+}

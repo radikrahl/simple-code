@@ -13,8 +13,6 @@
     }
 
     &__text {
-        align-self: center;
-
         a:not(:last-child)::after {
             content: ', ';
         }

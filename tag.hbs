@@ -1,11 +1,10 @@
 {{!< default}}
-<div class="l-grid">
+<div class="tag l-grid">
     {{#tag}}
         <header class="">
+            <h1 class="tag__headline">{{name}}</h1>
 
-            <h1>{{name}}</h1>
-
-            <p>
+            <p class="tag__description mt-5">
                 {{#if description}}
                     {{description}}
                 {{else}}
@@ -19,9 +18,9 @@
 
         </header>
     {{/tag}}
-    <div class="post-feed md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-6">
+    <div class="post-feed mt-6 l-grid--wide">
         {{#foreach posts}}
-            {{> "organisms/postCard"}}
+            {{> "organisms/postCard" horizontal=true}}
         {{/foreach}}
     </div>
 </div>
