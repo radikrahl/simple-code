@@ -1,10 +1,19 @@
 (function() {
-    function openMenu(index, event) {
-        console.log(index, event);
-        document.getElementById('main-navigation').classList.toggle('navigation-open')
+    const menuOverlay = document.querySelector('.menu__overlay');
+    const mainNav = document.getElementById('main-navigation');
+    const menuToggle = document.querySelector('.menu__toggle');
+
+    function openMenu() {
+        mainNav.classList.toggle('navigation-open');
+        menuOverlay.classList.toggle('u-hidden');
     }
 
-    document.querySelector('.menu-toggle')
-        .addEventListener('click', openMenu);
+    function closeMenu() {
+        mainNav.classList.remove('navigation-open');
+        menuOverlay.classList.add('u-hidden');
+    }
+
+    menuToggle.addEventListener('click', openMenu);
+    menuOverlay.addEventListener('click', closeMenu);
 
 }());

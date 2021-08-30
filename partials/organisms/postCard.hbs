@@ -3,8 +3,9 @@ Re-usable card for linking to posts
 }}
 
 <article class="post-card {{#if horizontal}}-horizontal{{/if}} {{post_class}}">
-    {{> "molecules/postCardMedia"}}
-
+    {{#unless hide_media}}
+        {{> "molecules/postCardMedia"}}
+    {{/unless}}
     <div class="post-card__content">
         {{> "molecules/postCardHeader"}}
 

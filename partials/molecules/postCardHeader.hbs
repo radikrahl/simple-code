@@ -24,8 +24,11 @@
                 {{/foreach}}
             </span>
         {{/if}}
-    </div class="mt-2.5">
-        <p class="post-card__excerpt">
+
+    </div>
+    {{#unless hide_excerpt}}
+        <p class="post-card__excerpt mt-2.5">
             {{excerpt}}
         </p>
+    {{/unless}}
 </header>

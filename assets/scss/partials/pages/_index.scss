@@ -34,3 +34,14 @@
         margin: 0 auto;
     }
 }
+
+.post-feed {
+    &__wrapper {
+        display: flex;
+        position: relative;
+        .post-feed {
+            flex: 1 1 70%;
+            width: 66.6666666%;
+        }
+    }
+}

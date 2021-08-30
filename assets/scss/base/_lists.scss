@@ -12,3 +12,15 @@
   ol, ul {
 	list-style: none;
 }
+
+.dashed-list-style {
+    li::before {
+        content: '';
+        height: 2px;
+        width: .75em;
+        display: inline-block;
+        background-color: $color-neutral-gray-50;
+        position: relative;
+        top: -.3em;
+    }
+}

@@ -26,9 +26,6 @@
     &__footer {
         display: flex;
 
-        .-horizontal & {
-            margin-top: 1.8em;
-        }
         .static-avatar {
             display: block;
             width: 36px;
@@ -44,6 +41,11 @@
         display: flex;
         flex-direction: column;
         flex-grow: 1;
+
+        .bull {
+            position: relative;
+            bottom: 1px;
+        }
 
         .-horizontal & {
             flex-grow: 0;
@@ -76,11 +78,6 @@
     &__read-more {
         font-family: $font-family-secondary;
         align-self: center;
-    }
-
-    .bull {
-        position: relative;
-        bottom: 1px;
     }
 }
 
