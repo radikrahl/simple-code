@@ -22,39 +22,5 @@
         border-radius: 50%;
     }
 
-    &__header {
-        height: 36px;
-        display: flex;
-        align-items: center;
 
-        img {
-            height: 100%;
-        }
-    }
-
-    &__postFeed {
-        display: flex;
-        position: relative;
-        .post-feed {
-            flex: 1 1 70%;
-            width: 66.6666666%;
-        }
-    }
-}
-
-
-.widgets {
-    width: 33.33333333%;
-
-    @include medium-down {
-        display: none;
-    }
-
-    .recent {
-        &__posts {
-            h2 {
-                font-size: 1.2em;
-            }
-        }
-    }
 }
