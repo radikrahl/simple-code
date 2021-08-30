@@ -16,13 +16,17 @@
     }
 
     &__item {
-        @include medium-up {
+        @include large-up {
             display: inline-block;
         }
 
         &:not(:last-child) {
             margin-right: .5rem;
         }
+    }
+
+    &__list {
+        font-family: $font-family-secondary;
     }
 
     &__wrapper {
