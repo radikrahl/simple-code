@@ -1,5 +1,5 @@
 {
-    "name": "ghost-starter-theme",
+    "name": "simple-code",
     "description": "A custom theme for ghost",
     "demo": "https://starter.ghost.io",
     "version": "1.0.0",
@@ -21,9 +21,9 @@
         "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; fi"
     },
     "author": {
-        "name": "Ghost Foundation",
-        "email": "hello@ghost.org",
-        "url": "https://ghost.org"
+        "name": "Andreas Krahl",
+        "email": "a.krahl90@gmail.com",
+        "url": "https://blog.andreaskrahl.de"
     },
     "gpm": {
         "type": "theme",
