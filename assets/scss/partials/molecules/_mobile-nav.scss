@@ -71,7 +71,7 @@
         background-color: white;
         width: 69%;
         height: 100%;
-        box-shadow: $box-shadow;
+        box-shadow: $box-shadow-nav;
         transform: translateX(100%);
         transition: all $anim-cubic-bezier $anim-fade-long;
         z-index: 10;

@@ -3,6 +3,8 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        border-top: 1px solid $color-neutral-gray-13;
+        padding-top: 10px;
 
         @include medium-down {
             flex-direction: column-reverse;
@@ -26,10 +28,4 @@
 
 #main-footer {
     padding: 40px 4vmin 140px;
-    background-color: $color-brand-green;
-    color: $color-neutral-white;
-
-    a {
-        color: $color-neutral-white;
-    }
 }

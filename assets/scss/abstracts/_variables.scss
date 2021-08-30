@@ -18,7 +18,8 @@ $spacing-large: round(2 * $spacing);
 \*------------------------------------*/
 $border-thickness: 1px;
 $border-radius: 4px;
-$box-shadow: 0 2px 5px 1px $color-neutral-gray-50;
+$box-shadow-nav: 0 2px 5px 1px $color-neutral-gray-50;
+$box-shadow-widget: 0 1px 4px 0px $color-neutral-gray-50;
 /*------------------------------------*\
     #ANIMATION
 \*------------------------------------*/

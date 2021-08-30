@@ -77,4 +77,9 @@
             width: 100%;
         }
     }
+
+    + aside {
+        background-color: $color-neutral-gray-07;
+        padding: 1.25em;
+    }
 }
