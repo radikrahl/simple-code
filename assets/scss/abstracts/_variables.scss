@@ -1,78 +1,43 @@
 /*------------------------------------*\
     #LAYOUT
 \*------------------------------------*/
-
-/**
- * Max Width
- */
- $l-max-width: 80rem !default;
- $l-max-width-narrow: 45rem !default;
- $l-linelength-width: 36rem !default;
-
+$l-max-width: 80rem !default;
+$l-max-width-narrow: 45rem !default;
+$l-linelength-width: 36rem !default;
+$navigation-height: 3.25rem !default;
  /*------------------------------------*\
      #SPACING
  \*------------------------------------*/
 
- /**
-  * Spacing and offsets
-  * 1) Used to space grids and body padding
-  */
+$spacing: 1rem;
+$spacing-small: round(0.5 * $spacing);
+$spacing-large: round(2 * $spacing);
 
- $spacing: 1rem;
- $spacing-small: round(0.5 * $spacing);
- $spacing-large: round(2 * $spacing);
+/*------------------------------------*\
+    #BORDERS
+\*------------------------------------*/
+$border-thickness: 1px;
+$border-radius: 4px;
+$box-shadow: 0 2px 5px 1px $color-neutral-gray-50;
+/*------------------------------------*\
+    #ANIMATION
+\*------------------------------------*/
+$anim-fade-quick: 0.15s;
+$anim-fade-long: 0.5s;
 
- /*------------------------------------*\
-     #BORDERS
- \*------------------------------------*/
+$anim-ease: ease-out;
 
- /**
-  * Border
-  */
-  $border-thickness: 1px;
+$anim-cubic-bezier: cubic-bezier(0.165, 0.84, 0.44, 1);
 
- /**
-  * Border radius
-  */
- $border-radius: 4px;
+/*------------------------------------*\
+    #BREAKPOINTS
+\*------------------------------------*/
+$bp-small: 28em;
+$bp-small-2: 35em;
+$bp-med: 47em;
+$bp-large: 60em;
+$bp-xl: 70em;
 
- /*------------------------------------*\
-     #ANIMATION
- \*------------------------------------*/
-
- /**
-  * Transition Speed
-  */
- $anim-fade-quick: 0.15s;
- $anim-fade-long: 0.5s;
-
- /**
-  * Transition Ease
-  */
- $anim-ease: ease-out;
-
- /*------------------------------------*\
-     #BREAKPOINTS
- \*------------------------------------*/
-
- /**
-  * Breakpoints used in media queries
-  * 1) These are not the only breakpoints used, but they provide a few defaults
-  */
- $bp-small: 28em;
- $bp-small-2: 35em;
- $bp-med: 47em;
- $bp-large: 60em;
- $bp-xl: 70em;
-
- // Media widths
-// $xsmall: 30em; // 480px
-// $small: 45em; // 720px
-// $medium: 75em; // 1200px
-// $large: 90em; // 1440px
-// $xlarge: 120em; // 1920px
-
-// Media Queries
 $screen: "only screen" !default;
 
 $landscape: "#{$screen} and (orientation: landscape)" !default;
@@ -96,5 +61,3 @@ $large-down: "#{$screen} and (max-width: #{$bp-large})" !default;
 
 $xlarge-only: "#{$screen} and (min-width: min-width: #{$bp-large}) and (max-width: #{$bp-xl})" !default;
 $xlarge-down: "#{$screen} and (max-width: #{$bp-xl})" !default;
-
-$navigation-height: 50px;

@@ -1,31 +1,15 @@
 <header id="main-navigation" class="l-grid mb-7">
     <nav class="l-grid--wide navigation">
         <div class="navigation__logo font-extrabold">
-            <a class="" href="{{@site.url}}">
-                {{#if @site.logo}}
-                <img src="{{@site.logo}}" alt="{{@site.title}}" />
-                {{else}}
-                {{@site.title}}
-                {{/if}}
-            </a>
-            <a class="" id="burger" role="button">
-                <div class="">
-                    <div class=""></div>
-                </div>
-            </a>
+            {{> "atoms/logo"}}
         </div>
-        {{navigation}}
+        <div class="navigation__wrapper">
+            {{navigation}}
+        </div>
         <div class="navigation__social">
-            <div class="">
-                {{#if @site.facebook}}
-                <a href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{> "atoms/icons/facebook"}}</a>
-                {{/if}}
-                {{#if @site.twitter}}
-                <a href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "atoms/icons/twitter"}}</a>
-                {{/if}}
-                {{!-- <a href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS" target="_blank"
-                    rel="noopener">{{> "atoms/icons/rss"}}</a> --}}
-            </div>
+            {{> "atoms/social"}}
         </div>
+
+        {{> "molecules/mobileNav"}}
     </nav>
 </header>

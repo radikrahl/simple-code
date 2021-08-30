@@ -3,6 +3,24 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+
+        @include medium-down {
+            flex-direction: column-reverse;
+        }
+    }
+
+    &__copyright {
+        @include medium-down {
+            margin-top: 1.5rem;
+        }
+    }
+
+    .navigation {
+        @include medium-down {
+            &__item {
+                display: block;
+            }
+        }
     }
 }
 
