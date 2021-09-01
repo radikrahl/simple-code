@@ -16,7 +16,7 @@ jobs:
         with:
             node-version: 14.x
       - run: yarn
-      - run: yarn build --if-present
+      - run: yarn pretest --if-present
       - run: yarn lint
         env:
           CI: true
