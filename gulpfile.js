@@ -88,7 +88,7 @@ function js(done) {
 
 function vendor() {
     const highlightjsStyles = src('node_modules/@highlightjs/cdn-assets/styles/**')
-        .pipe(dest(ensureCreated('./assets/built/highlightjs/styles')));
+        .pipe(dest(ensureCreated('./assets/built/highlightjs/styles/')));
 
     const highlightjs = src('./node_modules/@highlightjs/cdn-assets/highlight.min.js')
         .pipe(dest(ensureCreated('assets/built/highlightjs')));
