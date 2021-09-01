@@ -88,16 +88,16 @@ function js(done) {
 
 function vendor() {
 
-    const highlightjsStyles = src('node_modules/@highlightjs/cdn-assets/styles/**')
+    const highlightjsStyles = src('./node_modules/@highlightjs/cdn-assets/styles/**')
         .pipe(dest(ensureCreated('./assets/built/highlightjs/styles')));
 
-    const highlightjs = src('node_modules/@highlightjs/cdn-assets/highlight.min.js')
+    const highlightjs = src('./node_modules/@highlightjs/cdn-assets/highlight.min.js')
         .pipe(dest(ensureCreated('./assets/built/highlightjs')));
 
-    const fontawesome = src('node_modules/@fortawesome/fontawesome-free/webfonts/**')
+    const fontawesome = src('./node_modules/@fortawesome/fontawesome-free/webfonts/**')
         .pipe(dest(ensureCreated('./assets/built/fontawesome/webfonts')));
 
-    const fontawesomeStyles = src('node_modules/@fortawesome/fontawesome-free/scss/**')
+    const fontawesomeStyles = src('./node_modules/@fortawesome/fontawesome-free/scss/**')
         .pipe(dest(ensureCreated('./assets/built/fontawesome/scss')));
 
     return merge(highlightjs, highlightjsStyles, fontawesome, fontawesomeStyles);
