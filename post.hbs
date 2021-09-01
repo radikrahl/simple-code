@@ -2,19 +2,35 @@
 
 {{#post}}
 
-<article class="gh-article {{post_class}}">
+<article class="{{post_class}}">
 
-    <header class="gh-header gh-canvas">
-        <span class="gh-post-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
-        <h1 class="gh-title">{{title}}</h1>
-
+    <header class="post__header l-grid">
+        <h1 class="post__headline">
+            {{title}}
+        </h1>
+        <span class="post__meta text-med mt-4">
+            <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+            <span class="bull c-gray-50">&bull;</span>
+            <span>{{reading_time}}</span>
+                    {{#if tags}}
+            <span class="post-card__meta-tags uppercase font-bold">
+                {{#foreach tags}}
+                    <span class="bull c-gray-50">&bull;</span>
+                    <a class="post-tag post-tag-{{slug}}" href="{{url}}"
+                        title="{{name}}">{{name}}</a>
+                {{/foreach}}
+            </span>
+        {{/if}}
+        </span>
         {{#if custom_excerpt}}
-        <p class="gh-excerpt">{{custom_excerpt}}</p>
+            <p class="post__excerpt mt-6">
+                {{custom_excerpt}}
+            </p>
         {{/if}}
 
         {{#if feature_image}}
-        <figure class="gh-feature-image">
-            <img
+        <figure class="post__featureImage mt-6 l-grid--wide">
+            <img class=""
                 srcset="{{img_url feature_image size="s"}} 300w,
                         {{img_url feature_image size="m"}} 600w,
                         {{img_url feature_image size="l"}} 1000w,
@@ -22,25 +38,42 @@
                 sizes="(max-width: 1000px) 1000px, 2000px"
                 loading="lazy"
                 src="{{img_url feature_image size="xl"}}"
-                alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                alt="{{title}}"
             />
             {{#if feature_image_caption}}
                 <figcaption>{{feature_image_caption}}</figcaption>
             {{/if}}
         </figure>
+
         {{/if}}
     </header>
 
-    <div class="gh-content gh-canvas">
+    <section class="post__section mt-6 l-grid">
         {{content}}
-    </div>
+    </section>
 
-    <footer class="gh-footer gh-canvas">
-
-        <div class="gh-post-authors">
-            Written by {{#foreach authors}}<a href="{{url}}">{{name}}</a>{{/foreach}}
+    <footer class="post__footer mt-6 l-grid">
+        <div class="author__text text-sm">
+            Written by
+            {{#foreach authors}}
+                {{#if profile_image}}
+                <a href="{{url}}" class="static-avatar">
+                    <span>
+                        {{name}}
+                    </span>
+                    <img
+                        class="author__profileImage"
+                        src="{{img_url profile_image size="xs"}}"
+                        alt="{{name}}"
+                    />
+                </a>
+                {{else}}
+                    <a href="{{url}}" class="static-avatar author__profileImage">
+                        {{> "atoms/icons/avatar"}}
+                    </a>
+                {{/if}}
+            {{/foreach}}
         </div>
-
         {{!--
         <section class="gh-post-comments">
             If you want to embed comments, this is a good place to do it!
@@ -48,20 +81,19 @@
         --}}
 
     </footer>
-
 </article>
 
-<aside class="gh-readmore">
-    <div class="gh-readmore-inner gh-container">
-        <div class="gh-readmore-next">
-            {{#next_post}}<a href="{{url}}">{{> "icons/arrow-left"}} <h4>{{title}}</h4></a>{{/next_post}}
-        </div>
-        <div class="gh-readmore-prev">
-            {{#prev_post}}<a href="{{url}}">
-                <h4>{{title}}</h4> {{> "icons/arrow-right"}}
-            </a>{{/prev_post}}
-        </div>
-    </div>
+<aside class="l-grid mt-8">
+    <h3 class="">You might also be interested in...</h2>
+    {{#get "posts" filter="primary_tag:{{primary_tag.slug}}+id:-{{id}}" include="authors,tags" limit="3" as |more_posts|}}
+        {{#if more_posts}}
+            <div class="post-feed">
+                {{#foreach more_posts}}
+                    {{> "organisms/postCard" horizontal=true hide_media=true hide_excerpt=true}}
+                {{/foreach}}
+            </div>
+        {{/if}}
+    {{/get}}
 </aside>
 
 {{/post}}

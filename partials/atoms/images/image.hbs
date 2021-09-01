@@ -1,0 +1,11 @@
+{{!-- needs to be feature_image instead of just image, otherwise test will fail --}}
+{{#if feature_image}}
+    <img class="a-img {{class}}" src="{{img_url feature_image}}" alt="{{title}}" />
+{{else}}
+    <div class="a-img">
+        {{title}}
+    </div>
+{{/if}}
+
+
+{{!-- size="m"  is this needed? --}}

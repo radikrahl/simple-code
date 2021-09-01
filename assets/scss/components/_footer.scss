@@ -1,0 +1,31 @@
+.main-footer {
+    &__inner {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border-top: $border-divider-brand;
+        padding-top: 10px;
+
+        @include medium-down {
+            flex-direction: column-reverse;
+        }
+    }
+
+    &__copyright {
+        @include medium-down {
+            margin-top: $m-6;
+        }
+    }
+
+    .navigation {
+        @include medium-down {
+            &__item {
+                display: block;
+            }
+        }
+    }
+}
+
+#main-footer {
+    padding: 40px 4vmin 140px;
+}

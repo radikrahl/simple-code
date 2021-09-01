@@ -1,0 +1,34 @@
+<footer class="post-card__footer mt-2.5">
+    <span class="post-card__read-more text-sm uppercase font-bold">
+        <a href="{{url}}">read more <i class="fa fas far fa-angle-double-right"></i></a>
+    </span>
+    <ul class="author__list ml-auto">
+        {{#foreach authors}}
+            <li class="author__item">
+                {{#if profile_image}}
+                    <a href="{{url}}" class="static-avatar">
+                        <img
+                            class="author__profileImage"
+                            src="{{img_url profile_image size="xs"}}"
+                            alt="{{name}}"
+                        />
+                    </a>
+                {{else}}
+                    <a href="{{url}}" class="static-avatar author__profileImage">
+                        {{> "atoms/icons/avatar"}}
+                    </a>
+                {{/if}}
+            </li>
+        {{/foreach}}
+    </ul>
+    <span class="author__text ml-2 text-sm font-bold">
+        <span class="c-gray-50">By:</span>
+        {{#has author="count:>2"}}
+            Multiple authors
+        {{else}}
+            {{#foreach authors}}
+                <a class="author__name-link" href="{{url}}">{{name}}</a>
+            {{/foreach}}
+        {{/has}}
+    </span>
+</footer>

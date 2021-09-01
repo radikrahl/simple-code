@@ -1,5 +1,5 @@
 {
-    "name": "ghost-starter-theme",
+    "name": "simple-code",
     "description": "A custom theme for ghost",
     "demo": "https://starter.ghost.io",
     "version": "1.0.0",
@@ -21,9 +21,9 @@
         "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; fi"
     },
     "author": {
-        "name": "Ghost Foundation",
-        "email": "hello@ghost.org",
-        "url": "https://ghost.org"
+        "name": "Andreas Krahl",
+        "email": "a.krahl90@gmail.com",
+        "url": "https://blog.andreaskrahl.de"
     },
     "gpm": {
         "type": "theme",
@@ -51,14 +51,18 @@
         "gulp": "4.0.2",
         "gulp-livereload": "4.0.2",
         "gulp-postcss": "9.0.0",
+        "gulp-sass": "^4.1.0",
         "gulp-sourcemaps": "3.0.0",
         "gulp-uglify": "3.0.2",
         "gulp-util": "3.0.8",
         "gulp-watch": "5.0.1",
         "gulp-zip": "5.1.0",
+        "merge-stream": "^2.0.0",
+        "node-sass": "^5.0.0",
         "postcss": "8.3.6",
         "postcss-color-mod-function": "3.0.3",
-        "postcss-easy-import": "3.0.0"
+        "postcss-easy-import": "3.0.0",
+        "tailwindcss": "^2.2.0"
     },
     "browserslist": [
         "defaults"
@@ -85,5 +89,9 @@
                 "width": 2000
             }
         }
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.15.4",
+        "@highlightjs/cdn-assets": "^11.2.0"
     }
 }

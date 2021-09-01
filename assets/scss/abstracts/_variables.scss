@@ -1,0 +1,76 @@
+/*------------------------------------*\
+    #LAYOUT
+\*------------------------------------*/
+$l-max-width: 80rem !default;
+$l-max-width-narrow: 45rem !default;
+$l-linelength-width: 36rem !default;
+$navigation-height: 3.25rem !default;
+ /*------------------------------------*\
+     #SPACING
+     1)
+ \*------------------------------------*/
+
+$spacing: 1rem;
+$spacing-small: round(0.5 * $spacing);
+$spacing-large: round(2 * $spacing);
+
+// m-6 from tailwind
+$m-6: 1.5rem;
+
+/*------------------------------------*\
+    #BORDERS
+\*------------------------------------*/
+$border-thickness: 1px;
+$border-thickness-medium: 4px;
+$border-radius: 4px;
+
+$border-divider-thickness: 1px;
+$border-divider: $border-divider-thickness solid $color-neutral-gray-13;
+
+$border-divider-brand: 4px solid $color-brand-red;
+$border-brand-secondary: 4px solid $color-brand-red;
+
+$box-shadow-nav: 0 2px 5px 1px $color-neutral-gray-50;
+$box-shadow-widget: 0 1px 4px 0px $color-neutral-gray-50;
+/*------------------------------------*\
+    #ANIMATION
+\*------------------------------------*/
+$anim-fade-quick: 0.15s;
+$anim-fade-long: 0.5s;
+
+$anim-ease: ease-out;
+
+$anim-cubic-bezier: cubic-bezier(0.165, 0.84, 0.44, 1);
+
+/*------------------------------------*\
+    #BREAKPOINTS
+\*------------------------------------*/
+$bp-small: 28em;
+$bp-small-2: 35em;
+$bp-med: 47em;
+$bp-large: 60em;
+$bp-xl: 70em;
+
+$screen: "only screen" !default;
+
+$landscape: "#{$screen} and (orientation: landscape)" !default;
+$portrait: "(orientation: portrait)" !default;
+
+$xsmall-up: $screen !default;
+$xsmall-only: "#{$screen} and (max-width: #{$bp-small}" !default;
+
+$small-up: "#{$screen} and (min-width: #{$bp-small})" !default;
+$small-only: "#{$screen} and (min-width:#{$bp-small}) and (max-width: #{$bp-small-2})" !default;
+$small-down: "#{$screen} and (max-width: #{$bp-small-2})" !default;
+
+
+$medium-up: "#{$screen} and (min-width: #{$bp-med})" !default;
+$medium-only: "#{$screen} and (min-width: #{$bp-small-2}) and (max-width: #{$bp-med})" !default;
+$medium-down: "#{$screen} and (max-width: #{$bp-large})" !default;
+
+$large-up: "#{$screen} and (min-width: #{$bp-large})" !default;
+$large-only: "#{$screen} and (min-width: #{$bp-med}) and (max-width: #{$bp-large})" !default;
+$large-down: "#{$screen} and (max-width: #{$bp-xl})" !default;
+
+$xlarge-only: "#{$screen} and (min-width: min-width: #{$bp-large}) and (max-width: #{$bp-xl})" !default;
+$xlarge-down: "#{$screen} and (max-width: #{$bp-xl})" !default;

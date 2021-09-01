@@ -1,0 +1,34 @@
+<header class="post-card__header">
+    {{#link href=(url) class="post-card__linkWrapper"}}
+        <h2 class="post-card__title mb-3">
+            {{title}}
+        </h2>
+    {{/link}}
+
+    <div class="post-card__meta text-xs">
+        <span class="post-card__meta-date uppercase c-gray-50">
+            <time datetime="{{date format="YYYY-MM-DD"}}">
+                {{date}}
+            </time>
+        </span>
+        <span class="bull c-gray-50">&bull;</span>
+        <span class="post-card__meta-length uppercase c-gray-50">
+            {{reading_time}}
+        </span>
+        {{#if tags}}
+            <span class="post-card__meta-tags uppercase font-bold">
+                {{#foreach tags}}
+                    <span class="bull c-gray-50">&bull;</span>
+                    <a class="post-tag post-tag-{{slug}}" href="{{url}}"
+                        title="{{name}}">{{name}}</a>
+                {{/foreach}}
+            </span>
+        {{/if}}
+
+    </div>
+    {{#unless hide_excerpt}}
+        <p class="post-card__excerpt mt-2.5">
+            {{excerpt}}
+        </p>
+    {{/unless}}
+</header>

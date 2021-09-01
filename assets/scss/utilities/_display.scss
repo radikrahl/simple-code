@@ -1,0 +1,13 @@
+.u-grid {
+    display: grid;
+}
+
+.u-hidden {
+    display: none;
+
+    &-sm {
+        @include small-down {
+            display: none;
+        }
+    }
+}

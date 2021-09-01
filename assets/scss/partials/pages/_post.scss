@@ -1,0 +1,85 @@
+.post {
+    &__section {
+        > {
+            pre,
+            p,
+            figure,
+            blockquote,
+            ol,
+            ul,
+            table,
+            div {
+                margin-top: $m-6;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                margin-top: 1em;
+            }
+        }
+
+        blockquote {
+            margin-left: 1rem;
+        }
+
+        ol,
+        ul {
+            margin-left: $m-6;
+
+            li {
+                margin-top: 0.5em;
+            }
+        }
+
+        ol {
+            list-style-type: decimal;
+        }
+
+        ul {
+            list-style-type: disc;
+        }
+
+        hr + * {
+            margin-top: 0;
+        }
+
+        a {
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 1.5px;
+        }
+    }
+
+    &__footer {
+        .author {
+            &__profileImage {
+                height: 36px;
+                width: 36px;
+            }
+
+            &__text {
+                text-align: right;
+            }
+        }
+    }
+
+    &__excerpt {
+        color: $color-neutral-gray-50;
+    }
+
+    &__featureImage {
+        text-align: center;
+        img {
+            width: 100%;
+        }
+    }
+
+    + aside {
+        background-color: $color-neutral-gray-07;
+        padding: 1.25em;
+    }
+}
