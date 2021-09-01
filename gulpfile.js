@@ -88,7 +88,7 @@ function js(done) {
 
 function vendor() {
     const highlightjsStyles = src('node_modules/@highlightjs/cdn-assets/styles/**')
-        .pipe(dest(ensureCreated('./assets/built/highlightjs/styles/')));
+        .pipe(dest(ensureCreated('./assets/built/highlightjs/styles')));
 
     const highlightjs = src('./node_modules/@highlightjs/cdn-assets/highlight.min.js')
         .pipe(dest(ensureCreated('assets/built/highlightjs/highlight.min.js')));
@@ -103,15 +103,7 @@ function vendor() {
 }
 
 function ensureCreated(directory) {
-    let folders = directory.split('/');
-
-    folders.forEach(dir => {
-        if(!fs.existsSync(dir)) {
-            fs.mkdirSync(dir);
-            console.log('📁  folder created:', dir);
-        }
-    });
-
+    fs.mkdirSync(directory, { recursive: true });
     return directory;
 }
 
