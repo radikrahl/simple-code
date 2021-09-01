@@ -7,17 +7,29 @@ $l-linelength-width: 36rem !default;
 $navigation-height: 3.25rem !default;
  /*------------------------------------*\
      #SPACING
+     1)
  \*------------------------------------*/
 
 $spacing: 1rem;
 $spacing-small: round(0.5 * $spacing);
 $spacing-large: round(2 * $spacing);
 
+// m-6 from tailwind
+$m-6: 1.5rem;
+
 /*------------------------------------*\
     #BORDERS
 \*------------------------------------*/
 $border-thickness: 1px;
+$border-thickness-medium: 4px;
 $border-radius: 4px;
+
+$border-divider-thickness: 1px;
+$border-divider: $border-divider-thickness solid $color-neutral-gray-13;
+
+$border-divider-brand: 4px solid $color-brand-red;
+$border-brand-secondary: 4px solid $color-brand-red;
+
 $box-shadow-nav: 0 2px 5px 1px $color-neutral-gray-50;
 $box-shadow-widget: 0 1px 4px 0px $color-neutral-gray-50;
 /*------------------------------------*\

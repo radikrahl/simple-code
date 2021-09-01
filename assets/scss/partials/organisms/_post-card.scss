@@ -3,10 +3,10 @@
     flex-direction: column;
 
     &.-horizontal {
-        margin-top: 1.5rem;
+        margin-top: $m-6;
 
         &:not(:last-child) {
-            border-bottom: 1px solid $color-neutral-gray-13;
+            border-bottom: $border-divider;
             padding-bottom: 0.5em;
         }
     }

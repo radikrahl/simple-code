@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border-bottom: $border-divider-brand;
 
     &__logo {
         margin-right: auto;
@@ -35,11 +36,6 @@
             ul {display: none;}
         }
     }
-}
-
-#main-navigation {
-    height: $navigation-height;
-    box-shadow: $box-shadow-nav;
 }
 
 .post-navigation {

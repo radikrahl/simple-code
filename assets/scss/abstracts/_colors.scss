@@ -9,7 +9,7 @@
  $color-brand-blue: #114689;
  $color-brand-blue-dark: #041544;
  $color-brand-orange: #ba6333;
- $color-brand-green: #244942;
+ $color-brand-green: #239C71;
  $color-brand-red: #9c234e;
 
 $color-brand-green-3f: #{$color-brand-green}3f;
@@ -61,7 +61,7 @@ $color-brand-red-3f: #{$color-brand-red}3f;
  * Body text and background colors
  */
 $color-body-text: $color-neutral-gray-93 !default;
-$color-body-bg: $color-neutral-white !default;
+$color-body-bg: $color-neutral-gray-02 !default;
 
 /**
  * Highlight colors
@@ -74,7 +74,7 @@ $color-text-highlight-bg: $color-neutral-gray-13;
 \*------------------------------------*/
 
 $color-links: $color-neutral-gray-73 !default;
-$color-links-hover: $color-brand-orange !default;
+$color-links-hover: $color-brand-red !default;
 $color-links-active: $color-neutral-gray-93 !default;
 $color-links-visited: $color-neutral-gray-93 !default;
 

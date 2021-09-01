@@ -3,7 +3,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        border-top: 1px solid $color-neutral-gray-13;
+        border-top: $border-divider-brand;
         padding-top: 10px;
 
         @include medium-down {
@@ -13,7 +13,7 @@
 
     &__copyright {
         @include medium-down {
-            margin-top: 1.5rem;
+            margin-top: $m-6;
         }
     }
 
