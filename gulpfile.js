@@ -87,7 +87,7 @@ function js(done) {
 }
 
 function vendor() {
-
+    fs.realpath('./node_modules', (x) => console.log(x));
     const highlightjsStyles = src('./node_modules/@highlightjs/cdn-assets/styles/**')
         .pipe(dest(ensureCreated('./assets/built/highlightjs/styles')));
 
