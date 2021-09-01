@@ -15,9 +15,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
             node-version: 14.x
-      - run: yarn install
-      - run: yarn pretest --if-present
-      - run: yarn lint
+      - run: npm install
+      - run: npm run pretest --if-present
+      - run: npm run lint
         env:
           CI: true
       - name: Deploy Ghost Theme
