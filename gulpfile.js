@@ -91,13 +91,13 @@ function vendor() {
         .pipe(dest(ensureCreated('./assets/built/highlightjs/styles/')));
 
     const highlightjs = src('./node_modules/@highlightjs/cdn-assets/highlight.min.js')
-        .pipe(dest(ensureCreated('assets/built/highlightjs')));
+        .pipe(dest(ensureCreated('assets/built/highlightjs/highlight.min.js')));
 
     const fontawesome = src('./node_modules/@fortawesome/fontawesome-free/webfonts/**')
-        .pipe(dest('./assets/built/fontawesome/webfonts'));
+        .pipe(dest('./assets/built/fontawesome/webfonts/'));
 
     const fontawesomeStyles = src('./node_modules/@fortawesome/fontawesome-free/scss/**')
-        .pipe(dest('assets/built/fontawesome/scss'));
+        .pipe(dest('assets/built/fontawesome/scss/'));
 
     return merge(highlightjs, highlightjsStyles, fontawesome, fontawesomeStyles);
 }
