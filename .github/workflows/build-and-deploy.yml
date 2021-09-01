@@ -1,8 +1,10 @@
 name: Deploy Theme
 on:
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows: ["Run Tests"]
+    branches: [main]
+    types:
+      - completed
 jobs:
   deploy:
     runs-on: ubuntu-18.04
@@ -15,7 +17,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
             node-version: 14.x
-      - run: yarn
+      - run: yarn install
       - run: yarn pretest --if-present
       - run: yarn lint
         env:
