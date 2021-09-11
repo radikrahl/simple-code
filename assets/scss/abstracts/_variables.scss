@@ -1,3 +1,10 @@
+:root {
+    --spacing-base: 1em;
+    --spacing-small: calc(var(--spacing-base) * 0.625);
+
+    --border-radius-small: 6px;
+}
+
 /*------------------------------------*\
     #LAYOUT
 \*------------------------------------*/
@@ -22,13 +29,14 @@ $m-6: 1.5rem;
 \*------------------------------------*/
 $border-thickness: 1px;
 $border-thickness-medium: 4px;
-$border-radius: 4px;
+$border-radius: var(--border-radius-small);
 
 $border-divider-thickness: 1px;
 $border-divider: $border-divider-thickness solid $color-neutral-gray-13;
 
-$border-divider-brand: 4px solid $color-brand-red;
-$border-brand-secondary: 4px solid $color-brand-red;
+$border-divider-brand-small: $border-thickness solid $color-brand-red;
+$border-divider-brand: $border-thickness-medium solid $color-brand-red;
+$border-brand-secondary: $border-thickness-medium solid $color-brand-red;
 
 $box-shadow-nav: 0 2px 5px 1px $color-neutral-gray-50;
 $box-shadow-widget: 0 1px 4px 0px $color-neutral-gray-50;
@@ -45,11 +53,11 @@ $anim-cubic-bezier: cubic-bezier(0.165, 0.84, 0.44, 1);
 /*------------------------------------*\
     #BREAKPOINTS
 \*------------------------------------*/
-$bp-small: 28em;
-$bp-small-2: 35em;
-$bp-med: 47em;
-$bp-large: 60em;
-$bp-xl: 70em;
+$bp-xsm: 32rem;
+$bp-sm: 48rem;
+$bp-md: 64rem;
+$bp-lg: 80rem;
+$bp-xl: 90rem;
 
 $screen: "only screen" !default;
 
@@ -57,20 +65,20 @@ $landscape: "#{$screen} and (orientation: landscape)" !default;
 $portrait: "(orientation: portrait)" !default;
 
 $xsmall-up: $screen !default;
-$xsmall-only: "#{$screen} and (max-width: #{$bp-small}" !default;
+$xsmall-only: "#{$screen} and (max-width: #{$bp-xsm})" !default;
 
-$small-up: "#{$screen} and (min-width: #{$bp-small})" !default;
-$small-only: "#{$screen} and (min-width:#{$bp-small}) and (max-width: #{$bp-small-2})" !default;
-$small-down: "#{$screen} and (max-width: #{$bp-small-2})" !default;
+$small-up: "#{$screen} and (min-width: #{$bp-xsm})" !default;
+$small-only: "#{$screen} and (min-width:#{$bp-xsm}) and (max-width: #{$bp-sm})" !default;
+$small-down: "#{$screen} and (max-width: calc(#{$bp-sm} - 0.01rem))" !default;
 
 
-$medium-up: "#{$screen} and (min-width: #{$bp-med})" !default;
-$medium-only: "#{$screen} and (min-width: #{$bp-small-2}) and (max-width: #{$bp-med})" !default;
-$medium-down: "#{$screen} and (max-width: #{$bp-large})" !default;
+$medium-up: "#{$screen} and (min-width: #{$bp-sm})" !default;
+$medium-only: "#{$screen} and (min-width: #{$bp-sm}) and (max-width: #{$bp-md})" !default;
+$medium-down: "#{$screen} and (max-width: calc(#{$bp-md} - 0.01rem))" !default;
 
-$large-up: "#{$screen} and (min-width: #{$bp-large})" !default;
-$large-only: "#{$screen} and (min-width: #{$bp-med}) and (max-width: #{$bp-large})" !default;
-$large-down: "#{$screen} and (max-width: #{$bp-xl})" !default;
+$large-up: "#{$screen} and (min-width: calc(#{$bp-md}))" !default;
+$large-only: "#{$screen} and (min-width: #{$bp-md}) and (max-width: #{$bp-lg})" !default;
+$large-down: "#{$screen} and (max-width: calc(#{$bp-lg} - 0.01rem))" !default;
 
-$xlarge-only: "#{$screen} and (min-width: min-width: #{$bp-large}) and (max-width: #{$bp-xl})" !default;
+$xlarge-only: "#{$screen} and (min-width: #{$bp-lg}) and (max-width: #{$bp-xl})" !default;
 $xlarge-down: "#{$screen} and (max-width: #{$bp-xl})" !default;

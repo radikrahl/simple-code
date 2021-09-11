@@ -8,11 +8,11 @@ module.exports = {
     theme: {
         extend: {},
         screens: {
-            'xsm': '28em',
-            'sm': '35em',
-            'md': '47em',
-            'lg': '60em',
-            'xl': '70em'
+            'xsm': '32rem',
+            'sm': '48rem',
+            'md': '64rem',
+            'lg': '80rem',
+            'xl': '90rem'
         }
     },
     corePlugins: [

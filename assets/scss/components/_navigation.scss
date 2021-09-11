@@ -11,17 +11,13 @@
         }
     }
 
-    &__social {
-        margin-left: auto;
-    }
-
     &__item {
         @include large-up {
             display: inline-block;
         }
 
         &:not(:last-child) {
-            margin-right: .5rem;
+            margin-right: 0.5rem;
         }
     }
 
@@ -30,9 +26,14 @@
     }
 
     &__wrapper {
+        ul {
+            display: none;
+        }
 
-        @include medium-down {
-            ul {display: none;}
+        @include large-up {
+            ul {
+                display: block;
+            }
         }
     }
 }
@@ -41,4 +42,3 @@
     display: flex;
     justify-content: space-between;
 }
-

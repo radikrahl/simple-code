@@ -1,29 +1,27 @@
 {{!< default}}
 
 <div class="">
-    <div class="l-grid">
+    <div class="l-grid author">
 
         {{#author}}
         <header class="l-grid--wide author__header">
-            {{#if profile_image}}
-                <img class="author__profileImage" src="{{profile_image}}" alt="{{name}}" />
-            {{/if}}
 
-            <h1 class="text-sm ml-4 font-bold">{{name}}</h1>
+            <div class="author__profile">
+                {{#if profile_image}}
+                    <img class="author__profileImage" src="{{profile_image}}" alt="{{name}}" />
+                {{/if}}
+
+                <h2 class="font-bold">{{name}}</h2>
+            </div>
+
             {{#if bio}}
-                <p>{{bio}}</p>
+                <p class="author__bio">
+                    {{bio}}
+                </p>
             {{/if}}
 
-            <div class="">
-                {{#if website}}
-                    <a href="{{website}}" target="_blank" rel="noopener">Website</a>
-                {{/if}}
-                {{#if twitter}}
-                    <a href="{{twitter_url}}" target="_blank" rel="noopener">Twitter</a>
-                {{/if}}
-                {{#if facebook}}
-                    <a href="{{facebook_url}}" target="_blank" rel="noopener">Facebook</a>
-                {{/if}}
+            <div class="author__social">
+                {{> "atoms/social"}}
             </div>
 
             {{#if cover_image}}
@@ -32,7 +30,7 @@
         </header>
         {{/author}}
         <div class="author__postFeed l-grid--wide">
-            <div class="post-feed l-grid--wide mt-8 u-grid lg:grid-cols-2 gap-x-10 gap-y-6">
+            <div class="post-feed l-grid--wide mt-8 u-grid sm:grid-cols-2 gap-x-10 gap-y-6">
                 {{#foreach posts}}
                     {{> "organisms/postCard"}} {{!-- partials/card.hbs --}}
                 {{/foreach}}

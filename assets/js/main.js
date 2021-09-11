@@ -16,4 +16,5 @@
     menuToggle.addEventListener('click', openMenu);
     menuOverlay.addEventListener('click', closeMenu);
 
+    hljs.highlightAll();
 }());

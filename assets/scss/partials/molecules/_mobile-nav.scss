@@ -76,6 +76,7 @@
         transition: all $anim-cubic-bezier $anim-fade-long;
         z-index: 10;
         padding: 2em 1em;
+        overflow: scroll;
 
         .navigation__item {
             margin-top: 0.25rem;
@@ -84,6 +85,12 @@
         .navigation-open & {
             visibility: visible;
             transform: translateX(0);
+        }
+    }
+
+    &__recent {
+        .post-card__meta {
+            margin-top: 0;
         }
     }
 }

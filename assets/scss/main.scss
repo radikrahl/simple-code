@@ -16,10 +16,12 @@
 @import "abstracts/variables";
 @import "abstracts/mixins";
 @import "abstracts/typography";
+@import "abstracts/shame";
 
 @import "../built/fontawesome/scss/fontawesome";
 @import "../built/fontawesome/scss/regular";
 @import "../built/fontawesome/scss/solid.scss";
+@import "../built/fontawesome/scss/brands.scss";
 
 @import "a.tailwind.scss";
 
