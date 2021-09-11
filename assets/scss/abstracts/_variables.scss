@@ -69,16 +69,16 @@ $xsmall-only: "#{$screen} and (max-width: #{$bp-small}" !default;
 
 $small-up: "#{$screen} and (min-width: #{$bp-small})" !default;
 $small-only: "#{$screen} and (min-width:#{$bp-small}) and (max-width: #{$bp-small-2})" !default;
-$small-down: "#{$screen} and (max-width: calc(#{$bp-small-2} - 1px))" !default;
+$small-down: "#{$screen} and (max-width: calc(#{$bp-small-2} - 0.001rem))" !default;
 
 
 $medium-up: "#{$screen} and (min-width: #{$bp-med})" !default;
 $medium-only: "#{$screen} and (min-width: #{$bp-small-2}) and (max-width: #{$bp-med})" !default;
-$medium-down: "#{$screen} and (max-width: calc(#{$bp-large} - 1px))" !default;
+$medium-down: "#{$screen} and (max-width: calc(#{$bp-large} - 0.001rem))" !default;
 
 $large-up: "#{$screen} and (min-width: #{$bp-large})" !default;
 $large-only: "#{$screen} and (min-width: #{$bp-med}) and (max-width: #{$bp-large})" !default;
-$large-down: "#{$screen} and (max-width: calc(#{$bp-xl} - 1px))" !default;
+$large-down: "#{$screen} and (max-width: calc(#{$bp-xl} - 0.001rem))" !default;
 
 $xlarge-only: "#{$screen} and (min-width: min-width: #{$bp-large}) and (max-width: #{$bp-xl})" !default;
 $xlarge-down: "#{$screen} and (max-width: #{$bp-xl})" !default;
