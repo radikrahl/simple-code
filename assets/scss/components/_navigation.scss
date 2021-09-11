@@ -17,7 +17,7 @@
         }
 
         &:not(:last-child) {
-            margin-right: .5rem;
+            margin-right: 0.5rem;
         }
     }
 
@@ -26,9 +26,14 @@
     }
 
     &__wrapper {
+        ul {
+            display: none;
+        }
 
-        @include medium-down {
-            ul {display: none;}
+        @include large-up {
+            ul {
+                display: block;
+            }
         }
     }
 }
@@ -37,4 +42,3 @@
     display: flex;
     justify-content: space-between;
 }
-

@@ -38,9 +38,10 @@
 
 .widgets {
     width: 33.33333333%;
+    display: none;
 
-    @include medium-down {
-        display: none;
+    @include large-up {
+        display: block;
     }
 
     .recent {
