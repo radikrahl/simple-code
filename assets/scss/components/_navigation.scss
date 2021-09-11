@@ -11,10 +11,6 @@
         }
     }
 
-    &__social {
-        margin-left: auto;
-    }
-
     &__item {
         @include large-up {
             display: inline-block;

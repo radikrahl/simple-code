@@ -11,7 +11,7 @@
         }
     }
 
-    @include large-up {
+    @include medium-up {
         &.-horizontal {
             flex-direction: row;
         }
@@ -58,6 +58,11 @@
     }
 
     &__image {
+        border-radius: $border-radius;
+        overflow: hidden;
+        background-color: $color-neutral-gray-07;
+        height: 100%;
+
         a {
             display: block;
             overflow: hidden;

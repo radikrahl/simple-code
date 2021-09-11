@@ -6,6 +6,10 @@ var livereload = require('gulp-livereload');
 var postcss = require('gulp-postcss');
 var zip = require('gulp-zip');
 var uglify = require('gulp-uglify');
+var rename = require('gulp-rename');
+var concat = require('gulp-concat');
+
+// general utils
 var beeper = require('beeper');
 var merge = require('merge-stream');
 const fs = require('fs');
@@ -91,7 +95,13 @@ function vendor() {
     const highlightjsStyles = src('node_modules/@highlightjs/cdn-assets/styles/**')
         .pipe(dest('assets/built/highlightjs/styles'));
 
-    const highlightjs = src('node_modules/@highlightjs/cdn-assets/highlight.min.js')
+    const highlightjs = src(
+            ['node_modules/@highlightjs/cdn-assets/highlight.min.js',
+             'node_modules/@highlightjs/cdn-assets/languages/handlebars.min.js',
+             'node_modules/@highlightjs/cdn-assets/languages/dockerfile.min.js'
+            ])
+        .pipe(concat('highlight.min.js'))
+        .pipe(uglify())
         .pipe(dest('assets/built/highlightjs'));
 
     const fontawesome = src('node_modules/@fortawesome/fontawesome-free/webfonts/**')
