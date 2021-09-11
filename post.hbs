@@ -83,17 +83,6 @@
     </footer>
 </article>
 
-<aside class="l-grid mt-8">
-    <h3 class="">You might also be interested in...</h2>
-    {{#get "posts" filter="primary_tag:{{primary_tag.slug}}+id:-{{id}}" include="authors,tags" limit="3" as |more_posts|}}
-        {{#if more_posts}}
-            <div class="post-feed">
-                {{#foreach more_posts}}
-                    {{> "organisms/postCard" horizontal=true hide_media=true hide_excerpt=true}}
-                {{/foreach}}
-            </div>
-        {{/if}}
-    {{/get}}
-</aside>
+{{> "molecules/morePosts"}}
 
 {{/post}}
