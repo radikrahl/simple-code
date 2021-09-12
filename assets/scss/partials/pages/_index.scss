@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: $color-brand-blue;
+    background-color: var(--color-brand-blue);
     min-width: 200px;
     max-height: 380px;
     position: relative;

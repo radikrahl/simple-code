@@ -68,7 +68,7 @@
     }
 
     &__excerpt {
-        color: $color-neutral-gray-50;
+        color: var(--color-neutral-gray-50);
     }
 
     &__featureImage {
@@ -79,7 +79,7 @@
     }
 
     + aside {
-        background-color: $color-neutral-gray-07;
+        background-color: var(--color-neutral-gray-07);
         padding: 1.25em;
     }
 }

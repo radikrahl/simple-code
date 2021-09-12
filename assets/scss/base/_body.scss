@@ -21,6 +21,6 @@ body {
 	min-height: 100vh; /* 1 */
 	font-family: $font-family-primary;
 	@include typographyBody();
-	background-color: $color-body-bg;
-	color: $color-body-text;
+	background-color: var(--color-body-bg);
+	color: var(--color-body-text);
 }

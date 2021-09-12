@@ -6,10 +6,6 @@
     font-size: $font-size-med-2;
     line-height: $line-height-large;
     -webkit-text-size-adjust: 100%; /* 1 */
-
-    @include medium-only {
-        font-size: $font-size-med;
-    }
 }
 
 /**

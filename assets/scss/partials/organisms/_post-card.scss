@@ -60,7 +60,7 @@
     &__image {
         border-radius: $border-radius;
         overflow: hidden;
-        background-color: $color-neutral-gray-07;
+        background-color: var(--color-neutral-gray-07);
         flex: 1 0 auto;
 
         a {

@@ -19,7 +19,7 @@
         height: 2px;
         width: .75em;
         display: inline-block;
-        background-color: $color-neutral-gray-50;
+        background-color: var(--color-neutral-gray-50);
         position: relative;
         top: -.3em;
     }

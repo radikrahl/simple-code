@@ -27,19 +27,21 @@ $m-6: 1.5rem;
 /*------------------------------------*\
     #BORDERS
 \*------------------------------------*/
-$border-thickness: 1px;
+$border-thickness: 2px;
 $border-thickness-medium: 4px;
 $border-radius: var(--border-radius-small);
 
 $border-divider-thickness: 1px;
-$border-divider: $border-divider-thickness solid $color-neutral-gray-13;
+$border-divider: $border-divider-thickness solid var(--color-neutral-gray-13);
 
-$border-divider-brand-small: $border-thickness solid $color-brand-red;
-$border-divider-brand: $border-thickness-medium solid $color-brand-red;
-$border-brand-secondary: $border-thickness-medium solid $color-brand-red;
+$border-divider-brand-small: $border-thickness solid var(--color-brand-red);
+$border-divider-brand: $border-thickness-medium solid var(--color-brand-red);
+$border-brand-secondary: $border-thickness-medium solid var(--color-brand-red);
 
-$box-shadow-nav: 0 2px 5px 1px $color-neutral-gray-50;
-$box-shadow-widget: 0 1px 4px 0px $color-neutral-gray-50;
+$border-button-light: $border-thickness solid var(--color-button, var(--color-brand-red));
+
+$box-shadow-nav: 0 2px 5px 1px var(--color-neutral-gray-50);
+$box-shadow-widget: 0 1px 4px 0px var(--color-neutral-gray-50);
 /*------------------------------------*\
     #ANIMATION
 \*------------------------------------*/

@@ -1,7 +1,10 @@
 <footer class="post-card__footer mt-2.5">
     <span class="post-card__read-more text-sm uppercase font-bold">
-        <a href="{{url}}">read more <i class="fa fas far fa-angle-double-right"></i></a>
+        <a class="e-btn" href="{{url}}">read more
+            {{!-- <i class="fa fas far fa-angle-double-right"></i> --}}
+            </a>
     </span>
+    {{#if show_author}}
     <ul class="author__list ml-auto">
         {{#foreach authors}}
             <li class="author__item">
@@ -31,4 +34,5 @@
             {{/foreach}}
         {{/has}}
     </span>
+    {{/if}}
 </footer>
