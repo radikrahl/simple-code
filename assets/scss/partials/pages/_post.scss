@@ -8,7 +8,8 @@
             ol,
             ul,
             table,
-            div {
+            div,
+            p > code {
                 margin-top: $m-6;
             }
 

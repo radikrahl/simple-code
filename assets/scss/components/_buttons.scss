@@ -1,0 +1,72 @@
+:root {
+    --border-radius-sm: 4px;
+    --border-radius-md: 10px;
+    --border-radius-full: 50px;
+
+    --box-shadow-button-color: var(--color-neutral-white);
+    --box-shadow-button-spread: 22px;
+    --box-shadow-button-blur: 8px;
+
+    --color-button: var(--color-brand-red);
+}
+
+.c-btn {
+    display: inline-block;
+    border: $border-button-light;
+    color: var(--color-neutral-white);
+    background-color: var(--color-button);
+    padding: .5em 1em;
+    text-align: center;
+    transition: all $anim-cubic-bezier $anim-fade-long;
+    box-shadow: initial;
+    border-radius: var(--border-radius-sm);
+
+    &:hover, &:focus {
+        box-shadow: inset 0 0
+            var(--box-shadow-button-blur)
+            var(--box-shadow-button-spread)
+            var(--box-shadow-button-color);
+
+        color: var(--color-button);
+    }
+
+    &--small {
+        padding: .125em .5em;
+
+        &:hover, &:focus {
+            --box-shadow-button-spread: 16px;
+        }
+    }
+
+    &--full {
+        width: 100%;
+
+        &:hover, &:focus {
+            --box-shadow-button-blur: 20px;
+        }
+    }
+
+    &--large {
+        padding: .825em 1.625em;
+
+        &:hover, &:focus {
+            --box-shadow-button-spread: 28px;
+            --box-shadow-button-blur: 15px;
+        }
+    }
+
+    &--bare {
+        background-color: var(--color-neutral-white);
+        color: var(--color-button);
+
+        &:hover, &:focus {
+            color: var(--color-neutral-white);
+            --box-shadow-button-color: var(--color-button);
+        }
+    }
+
+    &--round {
+        border-radius: var(--border-radius-full);
+    }
+}
+

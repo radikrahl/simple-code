@@ -17,13 +17,10 @@
 
 <main id="site-main" class="">
     <div class="l-grid">
-        <div class="post-feed__wrapper l-grid--wide">
-            <div class="post-feed">
-                {{#foreach posts}}
-                    {{> "organisms/postCard" horizontal=true}}
-                {{/foreach}}
-            </div>
-            {{!-- {{> "organisms/widgets"}} --}}
+        <div class="post-feed post-feed--horizontal l-grid--wide">
+            {{#foreach posts}}
+                {{> "molecules/postCard"}}
+            {{/foreach}}
         </div>
     </div>
 </div>

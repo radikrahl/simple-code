@@ -54,7 +54,7 @@
 @import "components/navigation";
 @import "components/footer";
 @import "components/header";
-
+@import "components/buttons";
 // /*------------------------------------*\
 //     #UTILITIES
 // \*------------------------------------*/
@@ -67,7 +67,7 @@
 //     #ATOMIC
 // \*------------------------------------*/
 
-@import "partials/elements/buttons";
+// @import "partials/components/buttons";
 
 @import "partials/molecules/author";
 @import "partials/molecules/tags";
