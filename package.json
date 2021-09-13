@@ -50,22 +50,22 @@
         "cssnano": "5.0.7",
         "gscan": "4.2.1",
         "gulp": "4.0.2",
-        "gulp-concat": "^2.6.1",
+        "gulp-concat": "2.6.1",
         "gulp-livereload": "4.0.2",
         "gulp-postcss": "9.0.0",
-        "gulp-rename": "^2.0.0",
-        "gulp-sass": "^4.1.0",
+        "gulp-rename": "2.0.0",
+        "gulp-sass": "4.1.1",
         "gulp-sourcemaps": "3.0.0",
         "gulp-uglify": "3.0.2",
         "gulp-util": "3.0.8",
         "gulp-watch": "5.0.1",
         "gulp-zip": "5.1.0",
-        "merge-stream": "^2.0.0",
-        "node-sass": "^5.0.0",
+        "merge-stream": "2.0.0",
+        "node-sass": "5.0.0",
         "postcss": "8.3.6",
         "postcss-color-mod-function": "3.0.3",
         "postcss-easy-import": "3.0.0",
-        "tailwindcss": "^2.2.0"
+        "tailwindcss": "2.2.9"
     },
     "browserslist": [
         "defaults"
@@ -95,6 +95,6 @@
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.4",
-        "@highlightjs/cdn-assets": "^11.2.0"
+        "@highlightjs/cdn-assets": "11.2.0"
     }
 }
