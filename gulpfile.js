@@ -21,8 +21,8 @@ var cssnano = require('cssnano');
 var easyimport = require('postcss-easy-import');
 
 // sass utils
-var sass = require('gulp-sass');
-sass.compiler = require('node-sass');
+var gulpSass = require('gulp-sass');
+var sass = gulpSass(require('node-sass'));
 
 function serve(done) {
     livereload.listen();
