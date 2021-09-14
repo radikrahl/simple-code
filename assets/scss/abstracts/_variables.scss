@@ -85,5 +85,6 @@ $large-up: "#{$screen} and (min-width: calc(#{$bp-md}))" !default;
 $large-only: "#{$screen} and (min-width: #{$bp-md}) and (max-width: #{$bp-lg})" !default;
 $large-down: "#{$screen} and (max-width: calc(#{$bp-lg} - 0.01rem))" !default;
 
+$xlarge-up: "#{$screen} and (min-width: calc(#{$bp-lg}))" !default;
 $xlarge-only: "#{$screen} and (min-width: #{$bp-lg}) and (max-width: #{$bp-xl})" !default;
 $xlarge-down: "#{$screen} and (max-width: #{$bp-xl})" !default;

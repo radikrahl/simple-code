@@ -19,12 +19,12 @@
             h4,
             h5,
             h6 {
-                margin-top: 1em;
+                margin-top: 1em; // [VARIABLE]
             }
         }
 
         blockquote {
-            margin-left: 1rem;
+            margin-left: 1em; // [VARIABLE]
         }
 
         ol,
@@ -32,7 +32,7 @@
             margin-left: $m-6;
 
             li:not(:first-child) {
-                margin-top: 0.5em;
+                margin-top: 0.5em; // [VARIABLE]
             }
         }
 
@@ -76,6 +76,77 @@
         text-align: center;
         img {
             width: 100%;
+        }
+    }
+
+    &__navigation {
+        display: flex;
+        justify-content: space-between;
+        --navigation-arrow-spacing: 1.5em; // [VARIABLE]
+
+        @include large-up {
+            margin-left: 6rem;
+            margin-right: 6rem;
+        }
+
+        @include xlarge-up {
+            margin-left: 8rem;
+            margin-right: 8rem;
+        }
+
+        .paging {
+            position: relative;
+            max-width: 50%;
+
+            i {
+                position: absolute;
+                transition: all $anim-ease $anim-fade-quick;
+            }
+
+            &__title {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                line-height: 1.1; // [VARIABLE]
+            }
+
+            &--previous {
+                i {
+                    left: 0;
+                }
+
+                .paging__title {
+                    margin-left: var(--navigation-arrow-spacing);
+                    justify-content: flex-start;
+                }
+            }
+
+            &--next {
+                margin-left: auto;
+
+                i {
+                    right: 0;
+                }
+
+                .paging__title {
+                    margin-right: var(--navigation-arrow-spacing);
+                    justify-content: flex-end;
+                    text-align: right;
+                }
+            }
+            &:hover {
+                &.paging--previous {
+                    i {
+                        left: -0.325em;
+                    }
+                }
+
+                &.paging--next {
+                    i {
+                        right: -0.325em;
+                    }
+                }
+            }
         }
     }
 
