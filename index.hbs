@@ -1,22 +1,8 @@
 {{!< default}}
 
-{{!-- <div class="site-header mb-16 p-32">
-    <div class="site-header__image">
-        {{> "atoms/images/responsiveImage" feature_image=@site.cover_image class="site-header-cover"}}
-    </div>
-    <div class="site-header__content">
-        <h1 class="site-title">
-            {{@site.title}}
-        </h1>
-        <div class="site-header__logo">
-            {{> "atoms/images/image" feature_image=@site.logo class=@site.title title=@site.title}}
-        </div>
-        <p>{{@site.description}}</p>
-    </div>
-</div> --}}
-
 <main id="site-main" class="">
     <div class="l-grid">
+        {{> "molecules/postFeedToggle"}}
         <div class="post-feed post-feed--horizontal l-grid--wide">
             {{#foreach posts}}
                 {{> "molecules/postCard"}}

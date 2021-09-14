@@ -1,0 +1,43 @@
+<div class="post-feed__toggle l-grid--wide mb-6">
+    <button class="c-btn c-btn--small js-post-feed__toggle active" data-direction="horizontal"><i class="fas fa-th-list"></i></button>
+    <button class="c-btn c-btn--small js-post-feed__toggle" data-direction="grid-1"><i class="fas fa-square"></i></button>
+    <button class="c-btn c-btn--small js-post-feed__toggle" data-direction="grid-2"><i class="fas fa-th-large"></i></button>
+    <button class="c-btn c-btn--small js-post-feed__toggle" data-direction="grid-3"><i class="fas fa-th"></i></button>
+</div>
+
+<script>
+    (function() {
+        var buttons = document.querySelectorAll('.js-post-feed__toggle');
+
+        buttons.forEach((element) => {
+
+            element.addEventListener('click', (event) => {
+                var direction = event.target.dataset.direction;
+                var postFeed = document.querySelector('.post-feed');
+
+                buttons.forEach((e) => e.classList.remove('active'));
+
+                event.target.classList.add('active');
+                postFeed.className = ('post-feed');
+                if(direction === 'horizontal') {
+                    postFeed.classList.add('post-feed--horizontal', 'l-grid--wide');
+                }
+                else if (direction.startsWith('grid')) {
+                    postFeed.classList.add('l-grid--wide', 'u-grid', 'gap-x-10', 'gap-y-6');
+
+                    if (direction === 'grid-1') {
+                        postFeed.classList.remove('l-grid--wide');
+                    }
+                    else if (direction === 'grid-3') {
+                        postFeed.classList.add('sm:grid-cols-3');
+                    }
+
+                    else if (direction === 'grid-2') {
+                        postFeed.classList.add('sm:grid-cols-2');
+                    }
+                }
+            });
+        });
+    })();
+
+</script>

@@ -2,7 +2,10 @@
     --spacing-base: 1em;
     --spacing-small: calc(var(--spacing-base) * 0.625);
 
-    --border-radius-small: 6px;
+    /* #### BORDER-RADIUS #### */
+    --border-radius-sm: 4px;
+    --border-radius-md: 10px;
+    --border-radius-full: 50px;
 }
 
 /*------------------------------------*\

@@ -106,3 +106,19 @@ div[class~='grid'] {
         }
     }
 }
+
+// marked for small only to mimic horizontal styles
+.post-card {
+    @include small-down {
+        border-bottom: $border-divider;
+        padding-bottom: 0.5em;
+
+        &__footer {
+            justify-content: flex-start;
+        }
+
+        &__content {
+            margin-bottom: 1rem;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+.post-feed {
+    &__toggle {
+        text-align: right;
+        @include small-down {
+            display: none;
+        }
+        .c-btn {
+            --color-button: var(--color-neutral-gray-34);
+
+            &.active {
+                color: var(--color-button);
+                box-shadow: inset 0 0
+                    var(--box-shadow-button-blur)
+                    var(--box-shadow-button-spread)
+                    var(--box-shadow-button-color);
+            }
+
+            i {
+                pointer-events: none;
+            }
+        }
+    }
+}
