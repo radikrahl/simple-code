@@ -20,24 +20,27 @@
             {{/if}}
         {{/foreach}}
     </div>
-    <div class="post__navigation mt-8 l-grid--wide">
-        {{#prev_post}}
-            <a class="paging paging--previous pr-4" href="{{url}}"
-                aria-label="Previous post">
-                <h3 class="paging__title">
-                    <i class="fas fa-arrow-left"></i>
-                    {{title}}
-                </h3>
-            </a>
-        {{/prev_post}}
-
-        {{#next_post}}
-            <a class="paging paging--next pl-4" href="{{url}}" aria-label="Next post">
-                <h3 class="paging__title">
-                    {{title}}
-                    <i class="fas fa-arrow-right"></i>
-                </h3>
-            </a>
-        {{/next_post}}
+    <div class="pagination mt-8 l-grid--wide">
+        <div class="pagination__item">
+            {{#prev_post}}
+                <a class="pagination--previous pr-4" href="{{url}}"
+                    aria-label="Previous post">
+                    <h3 class="pagination__title">
+                        <i class="fas fa-arrow-left"></i>
+                        {{title}}
+                    </h3>
+                </a>
+            {{/prev_post}}
+        </div>
+        <div class="pagination__item">
+            {{#next_post}}
+                <a class="pagination--next pl-4" href="{{url}}" aria-label="Next post">
+                    <h3 class="pagination__title">
+                        {{title}}
+                        <i class="fas fa-arrow-right"></i>
+                    </h3>
+                </a>
+            {{/next_post}}
+        </div>
     </div>
 </footer>

@@ -1,0 +1,23 @@
+<nav class="pagination" role="navigation">
+    <div class="pagination__item">
+    {{#if prev}}
+        <a class="pagination--previous" href="{{page_url prev}}">
+            <h3 class="pagination__title">
+                <i class="fas fa-arrow-left"></i>
+                Newer Posts
+            </h3>
+        </a>
+    {{/if}}
+    </div>
+    <span class="page-number">Page {{page}} of {{pages}}</span>
+    <div class="pagination__item">
+    {{#if next}}
+        <a class="pagination--next" href="{{page_url next}}">
+            <h3 class="pagination__title">
+                Older Posts
+                <i class="fas fa-arrow-right"></i>
+            </h3>
+        </a>
+    {{/if}}
+    </div>
+</nav>
