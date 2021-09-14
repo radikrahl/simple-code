@@ -2,9 +2,9 @@
     {{#if more_posts}}
         <aside class="l-grid mt-8">
             <h3 class="">You might also be interested in...</h3>
-            <div class="post-feed">
+            <div class="post-feed post-feed--horizontal mt-4">
                 {{#foreach more_posts}}
-                    {{> "organisms/postCard" horizontal=true hide_media=true hide_excerpt=true}}
+                    {{> "molecules/postCard" horizontal=true hide_media=true hide_excerpt=true}}
                 {{/foreach}}
             </div>
         </aside>

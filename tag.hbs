@@ -18,9 +18,9 @@
 
         </header>
     {{/tag}}
-    <div class="post-feed mt-6 l-grid--wide">
+    <div class="post-feed post-feed--horizontal mt-6 l-grid--wide">
         {{#foreach posts}}
-            {{> "organisms/postCard" horizontal=true}}
+            {{> "molecules/postCard"}}
         {{/foreach}}
     </div>
 </div>

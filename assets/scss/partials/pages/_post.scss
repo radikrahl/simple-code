@@ -8,7 +8,8 @@
             ol,
             ul,
             table,
-            div {
+            div,
+            p > code {
                 margin-top: $m-6;
             }
 
@@ -30,7 +31,7 @@
         ul {
             margin-left: $m-6;
 
-            li {
+            li:not(:first-child) {
                 margin-top: 0.5em;
             }
         }
@@ -68,7 +69,7 @@
     }
 
     &__excerpt {
-        color: $color-neutral-gray-50;
+        color: var(--color-neutral-gray-50);
     }
 
     &__featureImage {
@@ -79,7 +80,7 @@
     }
 
     + aside {
-        background-color: $color-neutral-gray-07;
+        background-color: var(--color-neutral-gray-07);
         padding: 1.25em;
     }
 }

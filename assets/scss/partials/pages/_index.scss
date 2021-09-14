@@ -1,47 +1,23 @@
-.site-header {
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: $color-brand-blue;
-    min-width: 200px;
-    max-height: 380px;
-    position: relative;
-
-    &__content {
-        text-align: center;
-        z-index: 10;
-    }
-
-    &__image {
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        overflow: hidden;
-
-        img {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-        }
-    }
-
-    &__logo {
-        width: 50px;
-        height: 50px;
-        margin: 0 auto;
-    }
-}
-
 .post-feed {
-    &__wrapper {
-        display: flex;
-        position: relative;
-        .post-feed {
-            flex: 1 1 70%;
-            width: 66.6666666%;
+    &__toggle {
+        text-align: right;
+        @include small-down {
+            display: none;
+        }
+        .c-btn {
+            --color-button: var(--color-neutral-gray-34);
+
+            &.active {
+                color: var(--color-button);
+                box-shadow: inset 0 0
+                    var(--box-shadow-button-blur)
+                    var(--box-shadow-button-spread)
+                    var(--box-shadow-button-color);
+            }
+
+            i {
+                pointer-events: none;
+            }
         }
     }
 }

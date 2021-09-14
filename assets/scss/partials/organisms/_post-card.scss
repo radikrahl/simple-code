@@ -2,8 +2,10 @@
     display: flex;
     flex-direction: column;
 
-    &.-horizontal {
-        margin-top: $m-6;
+    .post-feed--horizontal & {
+        &:not(:first-child) {
+            margin-top: $m-6;
+        }
 
         &:not(:last-child) {
             border-bottom: $border-divider;
@@ -12,7 +14,7 @@
     }
 
     @include medium-up {
-        &.-horizontal {
+        .post-feed--horizontal & {
             flex-direction: row;
         }
     }
@@ -20,12 +22,21 @@
     &__content {
         display: flex;
         flex-direction: column;
-        height: 100%;
+        flex: 0 1 100%;
         width: 100%;
+
+        .post-feed--horizontal & {
+            margin-bottom: 1rem;
+        }
     }
 
     &__footer {
         display: flex;
+        justify-content: center;
+
+        .post-feed--horizontal & {
+            justify-content: flex-start;
+        }
 
         .static-avatar {
             display: block;
@@ -47,21 +58,24 @@
             position: relative;
             bottom: 1px;
         }
-
-        .-horizontal & {
-            flex-grow: 0;
-        }
     }
 
     &__excerpt {
         flex-grow: 1;
     }
 
+    &__media {
+        .post-feed--horizontal & {
+            @include medium-up {
+                flex: 0 0 43%;
+                margin-right: 1.25em;
+            }
+        }
+    }
+
     &__image {
         border-radius: $border-radius;
-        overflow: hidden;
-        background-color: $color-neutral-gray-07;
-        flex: 1 0 auto;
+        background-color: var(--color-neutral-gray-07);
 
         a {
             display: block;
@@ -72,13 +86,6 @@
                 height: 100%;
                 object-fit: cover;
             };
-        }
-
-        .-horizontal & {
-            @include medium-up {
-                flex: 0 0 43%;
-                margin-right: 1.25em;
-            }
         }
     }
 
@@ -96,6 +103,22 @@ div[class~='grid'] {
 
         &__read-more {
             align-self: center;
+        }
+    }
+}
+
+// marked for small only to mimic horizontal styles
+.post-card {
+    @include small-down {
+        border-bottom: $border-divider;
+        padding-bottom: 0.5em;
+
+        &__footer {
+            justify-content: flex-start;
+        }
+
+        &__content {
+            margin-bottom: 1rem;
         }
     }
 }
