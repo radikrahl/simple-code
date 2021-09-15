@@ -7,14 +7,15 @@
     * Brand Colors
     * 1) Brand=specific colors
     */
-    --color-brand-blue: #114689;
-    --color-brand-blue-dark: #041544;
-    --color-brand-orange: #ba6333;
-    --color-brand-green: #239c71;
+    --color-brand-blue: #234E9C;
+    --color-brand-green: #4E9C23;
     --color-brand-red: #9c234e;
+    --color-brand-orange: #ba6333;
 
-    --color-brand-green-3f: #{--color-brand-green}3f;
-    --color-brand-red-3f: #{--color-brand-red}3f;
+
+    --color-brand-primary: var(--color-brand-red);
+    --color-brand-secondary: var(--color-brand-green);
+    --color-brand-tertiary: var(--color-brand-blue);
 
     /**
     * Neutral Colors
@@ -32,8 +33,12 @@
     --color-neutral-gray-93: #131313;
     --color-neutral-black: #000;
 
-    .c-gray-50 {
+    .color-gray-50 {
         color: var(--color-neutral-gray-50);
+    }
+
+    .color-brand-primary {
+        color: var(--color-brand-primary);
     }
 
     .c-gray-73 {
@@ -75,26 +80,9 @@
     \*------------------------------------*/
 
     --color-links: var(--color-neutral-gray-73);
-    --color-links-hover: var(--color-brand-red);
+    --color-links-hover: var(--color-brand-primary);
     --color-links-active: var(--color-neutral-gray-93);
     --color-links-visited: var(--color-neutral-gray-93);
-
-    /*------------------------------------*\
-    #BUTTONS
-    \*------------------------------------*/
-
-    --color-btn-primary: var(--color-neutral-white);
-    --color-btn-primary-bg: var(--color-neutral-gray-93);
-    --color-btn-primary-bg-hover: var(--color-neutral-gray-50);
-    --color-btn-primary-border: var(--color-neutral-gray-93);
-
-    --color-btn-secondary: var(--color-neutral-gray-93);
-    --color-btn-secondary-bg: var(--color-neutral-white);
-    --color-btn-secondary-bg-hover: var(--color-neutral-gray-07);
-    --color-btn-secondary-border: var(--color-neutral-gray-93);
-
-    --color-btn-disabled: var(--color-neutral-gray-50);
-    --color-btn-disabled-bg: var(--color-neutral-gray-07);
 
     /*------------------------------------*\
     #FORMS

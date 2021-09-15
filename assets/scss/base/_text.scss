@@ -28,7 +28,7 @@ hr {
     height: 1px;
     width: 100%;
     background:var(--color-neutral-gray-13);
-    margin: $spacing-large 0;
+    margin: var(--space-6) 0;
 }
 
 /**
@@ -62,7 +62,7 @@ code {
  */
 pre {
 	background: var(--color-neutral-gray-02);
-	font-size: $font-size-med;
+	font-size: var(--text-md);
     overflow-x: auto;
     margin-bottom: 0;
 

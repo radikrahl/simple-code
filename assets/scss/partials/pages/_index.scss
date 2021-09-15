@@ -5,7 +5,7 @@
             display: none;
         }
         .c-btn {
-            --color-button: var(--color-neutral-gray-34);
+            --color-button: var(--color-neutral-gray-34) !important;
 
             &.active {
                 color: var(--color-button);

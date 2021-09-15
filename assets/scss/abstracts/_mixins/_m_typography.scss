@@ -1,79 +1,64 @@
-/**
- * Body Styles
- * 1) Prevent Mobile Safari from scaling up text: https://blog.55minutes.com/2012/04/iphone-text-resizing/
- */
-@mixin typographyBody() {
-    font-size: $font-size-med-2;
-    line-height: $line-height-large;
-    -webkit-text-size-adjust: 100%; /* 1 */
-}
+// /**
+//  * Body Styles
+//  * 1) Prevent Mobile Safari from scaling up text: https://blog.55minutes.com/2012/04/iphone-text-resizing/
+//  */
+// @mixin typographyBody() {
+//     font-size: $font-size-med-2;
+//     line-height: $line-height-large;
+//     -webkit-text-size-adjust: 100%; /* 1 */
+// }
 
-/**
- * XL Type Styles
- */
-@mixin typographyBodyLarge() {
-    font-size: $font-size-large;
-    line-height: $line-height-large;
-}
+// /**
+//  * XL Type Styles
+//  */
+// @mixin typographyBodyLarge() {
+//     font-size: $font-size-large;
+//     line-height: $line-height-large;
+// }
 
-/**
- * XL Heading Styles
- */
-@mixin typographyHeadingXXL() {
-    font-size: $font-size-xl;
-    font-weight: normal;
-    line-height: $line-height-med-2;
-}
+// /**
+//  * XL Heading Styles
+//  */
+// @mixin typographyHeadingXXL() {
+//     font-size: $font-size-xl;
+//     font-weight: normal;
+//     line-height: $line-height-med-2;
+// }
 
-/**
- * XL Heading Styles
- */
-@mixin typographyHeadingXl() {
-    font-size: $font-size-xl;
-    font-weight: normal;
-    line-height: $line-height-med-2;
-}
+// /**
+//  * XL Heading Styles
+//  */
+// @mixin typographyHeadingXl() {
+//     font-size: $font-size-xl;
+//     font-weight: normal;
+//     line-height: $line-height-med-2;
+// }
 
-/**
- * Large Heading Styles
- */
-@mixin typographyHeadingLarge() {
-    font-size: $font-size-large;
-    font-weight: normal;
-    line-height: $line-height-med-2;
-}
+// /**
+//  * Large Heading Styles
+//  */
+// @mixin typographyHeadingLarge() {
+//     font-size: $font-size-large;
+//     font-weight: normal;
+//     line-height: $line-height-med-2;
+// }
 
-/**
- * Medium 2 Heading Styles
- */
-@mixin typographyHeadingMed2() {
-    font-size: $font-size-med-2;
-    font-weight: normal;
-    line-height: $line-height-med-2;
-}
+// /**
+//  * Medium 2 Heading Styles
+//  */
+// @mixin typographyHeadingMed2() {
+//     font-size: $font-size-med-2;
+//     font-weight: normal;
+//     line-height: $line-height-med-2;
+// }
 
-/**
- * Medium Heading Styles
- */
-@mixin typographyHeadingMed() {
-    font-size: $font-size-med;
-    font-weight: normal;
-    line-height: $line-height-med-2;
-}
+// /**
+//  * Medium Heading Styles
+//  */
+// @mixin typographyHeadingMed() {
+//     font-size: $font-size-med;
+//     font-weight: normal;
+//     line-height: $line-height-med-2;
+// }
 
-@mixin font($font-family, $font-file) {
-    @font-face {
-        font-family: $font-family;
-        src: url($font-file + ".ttf") format("truetype");
-        //   src: url($font-file+'.eot');
-        //   src: url($font-file+'.eot?#iefix') format('embedded-opentype'),
-        //        url($font-file+'.woff') format('woff'),
-        //        url($font-file+'.ttf') format('truetype'),
-        //        url($font-file+'.svg#'+$font-family) format('svg');
-        //   font-weight: normal;
-        //   font-style: normal;
-    }
-}
 
-@include font("Nunito", "/assets/fonts/Nunito/Nunito-Regular");
-@include font("Montserrat", "/assets/fonts/Montserrat/Montserrat-Regular");

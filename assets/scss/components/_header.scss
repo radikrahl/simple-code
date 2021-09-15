@@ -1,9 +1,8 @@
 #main-navigation {
-    height: $navigation-height;
-    box-shadow: $box-shadow-nav;
-    // background-color: $color-brand-red;
+    height: var(--navigation-height);
+    border-bottom: var(--border-brand-primary);
 
-    a {
-        // color: $color-neutral-white;
+    .navigation {
+        height: calc(var(--navigation-height) - var(--border-thickness-bold));
     }
 }

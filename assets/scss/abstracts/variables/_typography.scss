@@ -1,0 +1,143 @@
+/*------------------------------------*\
+    #TYPOGRAPHY
+\*------------------------------------*/
+
+@mixin font($font-family, $font-file) {
+    @font-face {
+        font-family: $font-family;
+        src: url($font-file + ".ttf") format("truetype");
+        //   src: url($font-file+'.eot');
+        //   src: url($font-file+'.eot?#iefix') format('embedded-opentype'),
+        //        url($font-file+'.woff') format('woff'),
+        //        url($font-file+'.ttf') format('truetype'),
+        //        url($font-file+'.svg#'+$font-family) format('svg');
+        //   font-weight: normal;
+        //   font-style: normal;
+    }
+}
+
+$fa-font-path: "../built/fontawesome/webfonts" !default;
+@include font("Nunito", "/assets/fonts/Nunito/Nunito-Regular");
+@include font("Montserrat", "/assets/fonts/Montserrat/Montserrat-Regular");
+
+/**
+ * Font Family
+ */
+:root {
+    --font-family-primary: "Nunito", "Raleway", "HelveticaNeue", "Helvetica",
+        "Arial", sans-serif;
+    --font-family-secondary: "Montserrat", "Abel", serif;
+}
+
+:root {
+    // font size
+    --text-base: 1.2em; // body font-size
+    --text-scale-ratio: 1.2; // multiplier used to generate the scale values 👇
+}
+
+:root,
+* {
+    // inspired by https://codyhouse.co/blog/post/responsive-layouts-css-custom-properties-em-units
+    // type scale
+    --text-xs: calc((1em / var(--text-scale-ratio)) / var(--text-scale-ratio));
+    --text-sm: calc(var(--text-xs) * var(--text-scale-ratio));
+    --text-md: calc(
+        var(--text-sm) * var(--text-scale-ratio) * var(--text-scale-ratio)
+    );
+    --text-lg: calc(var(--text-md) * var(--text-scale-ratio));
+    --text-xl: calc(var(--text-lg) * var(--text-scale-ratio));
+    --text-xxl: calc(var(--text-xl) * var(--text-scale-ratio));
+    --text-xxxl: calc(var(--text-xxl) * var(--text-scale-ratio));
+    --text-xxxxl: calc(var(--text-xxxl) * var(--text-scale-ratio));
+
+//     /**
+//         * Font Sizing
+//         */
+//     $font-size-xs: var(--text-xs);
+//     $font-size-sm: var(--text-sm);
+//     $font-size-med: var(--text-md);
+//     $font-size-med-2: var(--text-lg);
+//     $font-size-large: var(--text-xl);
+//     $font-size-large-2: var(--text-xxl);
+//     $font-size-xl: var(--text-xxxl);
+//     $font-size-xxl: var(--text-xxxxl);
+
+//     $font-size-xs: 0.75rem;
+//     $font-size-sm: 0.85rem;
+//     $font-size-med: 1rem;
+//     $font-size-med-2: 1.2rem;
+//     $font-size-large: 1.5rem;
+//     $font-size-large-2: 1.875rem;
+//     $font-size-xl: 2.5rem;
+//     $font-size-xxl: 3rem;
+}
+
+/**
+  * Line Height
+  */
+$line-height-xs: 0.8;
+$line-height-sm: 0.9;
+$line-height-med: 1;
+$line-height-med-2: 1.2;
+$line-height-large: 1.4;
+$line-height-large-2: 1.6;
+$line-height-xl: 1.8;
+
+/**
+ * In this file, we take the literal font sizes from our scale and define them
+ * against variables that we can utilise anywhere throughout the project.
+ */
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-family-secondary);
+}
+
+/**
+ * Heading 1 base styles
+ */
+h1, .text-xxl {
+    font-size: var(--text-xxl);
+    line-height: $line-height-med-2;
+    font-weight: 700;
+}
+
+/**
+ * Heading 2 base styles
+ */
+h2, .text-xl {
+    font-size: var(--text-xl);
+    line-height: $line-height-med-2;
+}
+
+/**
+ * Heading 3 base styles
+ */
+h3, .text-lg {
+    font-size: var(--text-lg);
+    line-height: $line-height-med-2;
+    font-weight: bold;
+}
+
+/**
+ * Heading 4 base styles
+ */
+h4,
+h5,
+h6, .text-md {
+    font-size: var(--text-md);
+    line-height: $line-height-med-2;
+}
+
+.text-xs {
+    font-size: var(--text-xs);
+    line-height: $line-height-large;
+}
+
+.text-sm {
+    font-size: var(--text-sm);
+    line-height: $line-height-med;
+}
+

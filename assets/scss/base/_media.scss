@@ -12,7 +12,7 @@ img {
 }
 
 figcaption {
-    font-size: $font-size-sm;
+    font-size: var(--text-sm);
     text-align: center;
 }
 

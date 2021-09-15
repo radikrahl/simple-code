@@ -9,7 +9,7 @@
 	color: var(--color-links);
 	text-decoration: none;
 	outline: 0;
-	transition: color $anim-fade-quick $anim-ease;
+	transition: color var(--anim-fade-quick) var(--anim-ease);
 
 	&:hover, &:focus {
 		color: var(--color-links-hover);

@@ -8,14 +8,14 @@
         <h1 class="post__headline">
             {{title}}
         </h1>
-        <span class="post__meta text-med mt-4">
+        <span class="post__meta text-sm mt-4">
             <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
-            <span class="bull c-gray-50">&bull;</span>
+            <span class="bull color-brand-primary">&bull;</span>
             <span>{{reading_time}}</span>
                     {{#if tags}}
             <span class="post-card__meta-tags uppercase font-bold">
                 {{#foreach tags}}
-                    <span class="bull c-gray-50">&bull;</span>
+                    <span class="bull color-brand-primary">&bull;</span>
                     <a class="post-tag post-tag-{{slug}}" href="{{url}}"
                         title="{{name}}">{{name}}</a>
                 {{/foreach}}

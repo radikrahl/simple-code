@@ -51,7 +51,7 @@
   */
  button, input, select, textarea {
      font-family: inherit;
-     font-size: $font-size-med;
+     font-size: var(--text-base);
      margin: 0;
  }
 
@@ -68,7 +68,7 @@
  input, textarea {
      width: 100%;
      padding: 0.5rem;
-     border: $border-thickness solid var(--color-form-border);
+     border: var(--border-style-light) var(--color-form-border);
      background: var(--color-form-bg);
 
      &:focus {
@@ -113,9 +113,9 @@
   */
  select {
      display: block;
-     font-size: $font-size-med;
+     font-size: var(--text-base);
      width: 100%;
-     border: $border-thickness solid var(--color-form-border);
+     border: var(--border-style-light) var(--color-form-border);
      border-radius: 0;
      padding: 0.5rem;
      height: 2rem;

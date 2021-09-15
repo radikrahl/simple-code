@@ -7,7 +7,7 @@
         margin-right: auto;
 
         img {
-            height: $navigation-height;
+            height: var(--navigation-height);
         }
     }
 
@@ -22,7 +22,7 @@
     }
 
     &__list {
-        font-family: $font-family-secondary;
+        font-family: var(--font-family-secondary);
     }
 
     &__wrapper {

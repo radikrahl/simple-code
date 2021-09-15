@@ -1,59 +1,13 @@
+@import "variables/spacing";
+@import "variables/colors";
+@import "variables/borders";
+@import "variables/box-shadow";
+@import "variables/animation";
+@import "variables/typography";
+
 :root {
-    --spacing-base: 1em;
-    --spacing-small: calc(var(--spacing-base) * 0.625);
-
-    /* #### BORDER-RADIUS #### */
-    --border-radius-sm: 4px;
-    --border-radius-md: 10px;
-    --border-radius-full: 50px;
+    --navigation-height: 3.25rem;
 }
-
-/*------------------------------------*\
-    #LAYOUT
-\*------------------------------------*/
-$l-max-width: 80rem !default;
-$l-max-width-narrow: 45rem !default;
-$l-linelength-width: 36rem !default;
-$navigation-height: 3.25rem !default;
- /*------------------------------------*\
-     #SPACING
-     1)
- \*------------------------------------*/
-
-$spacing: 1rem;
-$spacing-small: round(0.5 * $spacing);
-$spacing-large: round(2 * $spacing);
-
-// m-6 from tailwind
-$m-6: 1.5rem;
-
-/*------------------------------------*\
-    #BORDERS
-\*------------------------------------*/
-$border-thickness: 2px;
-$border-thickness-medium: 4px;
-$border-radius: var(--border-radius-small);
-
-$border-divider-thickness: 1px;
-$border-divider: $border-divider-thickness solid var(--color-neutral-gray-13);
-
-$border-divider-brand-small: $border-thickness solid var(--color-brand-red);
-$border-divider-brand: $border-thickness-medium solid var(--color-brand-red);
-$border-brand-secondary: $border-thickness-medium solid var(--color-brand-red);
-
-$border-button-light: $border-thickness solid var(--color-button, var(--color-brand-red));
-
-$box-shadow-nav: 0 2px 5px 1px var(--color-neutral-gray-50);
-$box-shadow-widget: 0 1px 4px 0px var(--color-neutral-gray-50);
-/*------------------------------------*\
-    #ANIMATION
-\*------------------------------------*/
-$anim-fade-quick: 0.15s;
-$anim-fade-long: 0.5s;
-
-$anim-ease: ease-out;
-
-$anim-cubic-bezier: cubic-bezier(0.165, 0.84, 0.44, 1);
 
 /*------------------------------------*\
     #BREAKPOINTS

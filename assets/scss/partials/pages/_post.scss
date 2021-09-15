@@ -10,7 +10,7 @@
             table,
             div,
             p > code {
-                margin-top: $m-6;
+                margin-top: var(--space-6);
             }
 
             h1,
@@ -19,20 +19,20 @@
             h4,
             h5,
             h6 {
-                margin-top: 1em;
+                margin-top: var(--space-4);
             }
         }
 
         blockquote {
-            margin-left: 1rem;
+            margin-left: var(--space-4);
         }
 
         ol,
         ul {
-            margin-left: $m-6;
+            list-style-position: inside;
 
             li:not(:first-child) {
-                margin-top: 0.5em;
+                margin-top: var(--space-2);
             }
         }
 
@@ -81,6 +81,8 @@
 
     + aside {
         background-color: var(--color-neutral-gray-07);
-        padding: 1.25em;
+        padding: var(--spacing-5);
     }
 }
+
+

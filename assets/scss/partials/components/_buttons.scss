@@ -13,7 +13,7 @@
 //     background-color: var(--color-button);
 //     padding: .625rem 1.125rem;
 //     text-align: center;
-//     transition: all $anim-cubic-bezier $anim-fade-long;
+//     transition: all var(--anim-cubic-bezier) var(--anim-fade-long);
 //     box-shadow: initial;
 //     border-radius: var(--border-radius-sm);
 
