@@ -20,26 +20,26 @@
             {{/if}}
         {{/foreach}}
     </div>
-    <div class="pagination mt-8 l-grid--wide">
-        <div class="pagination__item">
+    <div class="pagination lg:mx-32 md:mx-24 mt-8 l-grid--wide">
+        <div class="pagination__item pagination--previous">
             {{#prev_post}}
-                <a class="pagination--previous pr-4" href="{{url}}"
-                    aria-label="Previous post">
-                    <h3 class="pagination__title">
-                        <i class="fas fa-arrow-left"></i>
-                        {{title}}
-                    </h3>
-                </a>
+                <h3 class="pagination__title">
+                    <a class="pr-4" href="{{url}}"
+                        aria-label="Previous post">
+                            <i class="fas fa-arrow-left"></i>
+                            {{title}}
+                    </a>
+                </h3>
             {{/prev_post}}
         </div>
-        <div class="pagination__item">
+        <div class="pagination__item pagination--next">
             {{#next_post}}
-                <a class="pagination--next pl-4" href="{{url}}" aria-label="Next post">
-                    <h3 class="pagination__title">
-                        {{title}}
-                        <i class="fas fa-arrow-right"></i>
-                    </h3>
-                </a>
+                <h3 class="pagination__title">
+                    <a class="pl-4" href="{{url}}" aria-label="Next post">
+                            {{title}}
+                            <i class="fas fa-arrow-right"></i>
+                    </a>
+                </h3>
             {{/next_post}}
         </div>
     </div>

@@ -41,81 +41,67 @@
 .pagination {
     display: flex;
     justify-content: space-between;
-    --navigation-arrow-spacing: 1.5em;
+    line-height: 1.1; // [VARIABLE]
 
     a {
-        display: block;
+        display: flex;
+        align-items: center;
     }
-
-    @include large-up {
-        margin-left: 6rem;
-        margin-right: 6rem;
-    }
-
-    @include xlarge-up {
-        margin-left: 8rem;
-        margin-right: 8rem;
-    }
-
-    &__item {
-        position: relative;
-        max-width: 50%;
-        flex: 1;
-
-        a:hover {
-            &.pagination--previous {
-                i {
-                    left: -0.325em;
-                }
-            }
-
-            &.pagination--next {
-                i {
-                    right: -0.325em;
-                }
-            }
-        }
-    }
-
 
     i {
         position: absolute;
         transition: all $anim-ease $anim-fade-quick;
     }
 
+    &__item {
+        position: relative;
+        max-width: 50%;
+        flex: 1;
+    }
+
     &__title {
         height: 100%;
         display: flex;
         align-items: center;
-        line-height: 1.1; // [VARIABLE]
     }
+
+    --pagination-arrow-padding: 1.5em;
+    --pagination-arrow-spacing-initial: 0em;
+    --pagination-arrow-spacing-on-hover: -0.3em;
 
     &--previous {
         i {
-            left: 0;
+            left: var(--pagination-arrow-spacing-initial);
+            padding-right: var(--pagination-arrow-padding);
+        }
+
+        a:hover {
+            i {
+                left: var(--pagination-arrow-spacing-on-hover);
+            }
         }
 
         .pagination__title {
-            margin-left: var(--navigation-arrow-spacing);
+            margin-left: var(--pagination-arrow-padding);
             justify-content: flex-start;
         }
     }
 
     &--next {
         i {
-            right: 0;
+            right: var(--pagination-arrow-spacing-initial);
+            padding-left: var(--pagination-arrow-padding);
+        }
+
+        a:hover {
+            i {
+                right: var(--pagination-arrow-spacing-on-hover);
+            }
         }
 
         .pagination__title {
-            margin-right: var(--navigation-arrow-spacing);
+            margin-right: var(--pagination-arrow-padding);
             justify-content: flex-end;
-            text-align: right;
         }
     }
-
-}
-
-.post-navigation {
-    display: flex;
-    justify-content: space-between;
 }
