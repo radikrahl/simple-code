@@ -75,6 +75,7 @@
 
     &__image {
         border-radius: $border-radius;
+        overflow: hidden;
         background-color: var(--color-neutral-gray-07);
 
         a {

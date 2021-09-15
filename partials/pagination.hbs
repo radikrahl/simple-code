@@ -1,0 +1,24 @@
+<nav class="pagination lg:mx-32 md:mx-24" role="navigation">
+    <div class="pagination__item pagination--previous">
+        {{#if prev}}
+            <h3 class="pagination__title">
+                <a class="" href="{{page_url prev}}">
+                    <i class="fas fa-arrow-left"></i>
+                    Newer Posts
+                </a>
+            </h3>
+
+        {{/if}}
+    </div>
+    <span class="page-number">Page {{page}} of {{pages}}</span>
+    <div class="pagination__item pagination--next">
+        {{#if next}}
+            <h3 class="pagination__title">
+                <a class="" href="{{page_url next}}">
+                    Older Posts
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </h3>
+        {{/if}}
+    </div>
+</nav>

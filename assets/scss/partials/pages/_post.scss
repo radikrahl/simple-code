@@ -19,12 +19,12 @@
             h4,
             h5,
             h6 {
-                margin-top: 1em;
+                margin-top: 1em; // [VARIABLE]
             }
         }
 
         blockquote {
-            margin-left: 1rem;
+            margin-left: 1em; // [VARIABLE]
         }
 
         ol,
@@ -32,7 +32,7 @@
             margin-left: $m-6;
 
             li:not(:first-child) {
-                margin-top: 0.5em;
+                margin-top: 0.5em; // [VARIABLE]
             }
         }
 

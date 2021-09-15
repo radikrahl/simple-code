@@ -19,6 +19,8 @@ h1 {
  */
 h2 {
 	@include typographyHeadingLarge();
+    // color: var(--color-neutral-gray-73);
+    font-weight: bold;
 }
 
 /**
