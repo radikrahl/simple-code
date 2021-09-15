@@ -4,77 +4,15 @@
 
 <article class="{{post_class}}">
 
-    <header class="post__header l-grid">
-        <h1 class="post__headline">
-            {{title}}
-        </h1>
-        <span class="post__meta text-sm mt-4">
-            <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
-            <span class="bull color-brand-primary">&bull;</span>
-            <span>{{reading_time}}</span>
-                    {{#if tags}}
-            <span class="post-card__meta-tags uppercase font-bold">
-                {{#foreach tags}}
-                    <span class="bull color-brand-primary">&bull;</span>
-                    <a class="post-tag post-tag-{{slug}}" href="{{url}}"
-                        title="{{name}}">{{name}}</a>
-                {{/foreach}}
-            </span>
-        {{/if}}
-        </span>
-        {{#if custom_excerpt}}
-            <p class="post__excerpt mt-6">
-                {{custom_excerpt}}
-            </p>
-        {{/if}}
-
-        {{#if feature_image}}
-        <figure class="post__featureImage mt-6 l-grid--wide">
-            <img class=""
-                srcset="{{img_url feature_image size="s"}} 300w,
-                        {{img_url feature_image size="m"}} 600w,
-                        {{img_url feature_image size="l"}} 1000w,
-                        {{img_url feature_image size="xl"}} 2000w"
-                sizes="(max-width: 1000px) 1000px, 2000px"
-                loading="lazy"
-                src="{{img_url feature_image size="xl"}}"
-                alt="{{title}}"
-            />
-            {{#if feature_image_caption}}
-                <figcaption>{{feature_image_caption}}</figcaption>
-            {{/if}}
-        </figure>
-
-        {{/if}}
-    </header>
+    {{> "organisms/postHeader"}}
 
     <section class="post__section mt-6 l-grid">
         {{content}}
     </section>
 
-    <footer class="post__footer mt-6 l-grid">
-        <div class="author__text text-sm">
-            Written by
-            {{#foreach authors}}
-                {{#if profile_image}}
-                <a href="{{url}}" class="static-avatar">
-                    <span>
-                        {{name}}
-                    </span>
-                    <img
-                        class="author__profileImage"
-                        src="{{img_url profile_image size="xs"}}"
-                        alt="{{name}}"
-                    />
-                </a>
-                {{else}}
-                    <a href="{{url}}" class="static-avatar author__profileImage">
-                        {{> "atoms/icons/avatar"}}
-                    </a>
-                {{/if}}
-            {{/foreach}}
-        </div>
-    </footer>
+    {{#is "post"}}
+        {{> "organisms/postFooter"}}
+    {{/is}}
 </article>
 
 {{> "organisms/morePosts"}}

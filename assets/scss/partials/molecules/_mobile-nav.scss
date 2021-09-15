@@ -44,6 +44,10 @@
     }
 
     &__overlay {
+        @include large-up {
+            display: none;
+        }
+
         height: 100vh;
         width: 100vw;
         overflow: hidden;
@@ -64,6 +68,10 @@
     }
 
     &--mobile {
+        @include large-up {
+            display: none;
+        }
+
         visibility: hidden;
         position: fixed;
         top: 0;

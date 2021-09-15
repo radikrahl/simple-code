@@ -70,6 +70,7 @@
 
     &__image {
         border-radius: var(--border-radius-small);
+        overflow: hidden;
         background-color: var(--color-neutral-gray-07);
 
         a {

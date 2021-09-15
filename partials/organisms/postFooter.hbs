@@ -1,0 +1,46 @@
+<footer class="post__footer mt-6 l-grid">
+    <div class="author__text text-sm">
+        Written by
+        {{#foreach authors}}
+            {{#if profile_image}}
+            <a href="{{url}}" class="static-avatar">
+                <span>
+                    {{name}}
+                </span>
+                <img
+                    class="author__profileImage"
+                    src="{{img_url profile_image size="xs"}}"
+                    alt="{{name}}"
+                />
+            </a>
+            {{else}}
+                <a href="{{url}}" class="static-avatar author__profileImage">
+                    {{> "atoms/icons/avatar"}}
+                </a>
+            {{/if}}
+        {{/foreach}}
+    </div>
+    <div class="pagination lg:mx-32 md:mx-24 mt-8 l-grid--wide">
+        <div class="pagination__item pagination--previous">
+            {{#prev_post}}
+                <h3 class="pagination__title">
+                    <a class="pr-4" href="{{url}}"
+                        aria-label="Previous post">
+                            <i class="fas fa-arrow-left"></i>
+                            {{title}}
+                    </a>
+                </h3>
+            {{/prev_post}}
+        </div>
+        <div class="pagination__item pagination--next">
+            {{#next_post}}
+                <h3 class="pagination__title">
+                    <a class="pl-4" href="{{url}}" aria-label="Next post">
+                            {{title}}
+                            <i class="fas fa-arrow-right"></i>
+                    </a>
+                </h3>
+            {{/next_post}}
+        </div>
+    </div>
+</footer>
