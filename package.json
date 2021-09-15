@@ -1,8 +1,8 @@
 {
     "name": "simple-code",
     "description": "A custom theme for ghost",
-    "demo": "https://starter.ghost.io",
-    "version": "1.0.0",
+    "demo": "https://blog.andreaskrahl.de",
+    "version": "1.1.0",
     "engines": {
         "ghost": ">=4.0.0",
         "ghost-api": "v4"
