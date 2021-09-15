@@ -50,7 +50,7 @@
 
     i {
         position: absolute;
-        transition: all $anim-ease $anim-fade-quick;
+        transition: all var(--anim-ease) var(--anim-fade-quick);
     }
 
     &__item {

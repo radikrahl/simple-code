@@ -1,7 +1,7 @@
 {{#get "posts" filter="primary_tag:{{primary_tag.slug}}+id:-{{id}}" include="authors,tags" limit="3" as |more_posts|}}
     {{#if more_posts}}
-        <aside class="l-grid text-sm mt-8">
-            <h4 class="">You might also be interested in...</h4>
+        <aside class="l-grid more-posts mt-8">
+            <h4 class="mt-4">You might also be interested in...</h4>
             <div class="post-feed post-feed--horizontal mt-4">
                 {{#foreach more_posts}}
                     {{> "molecules/postCard" horizontal=true hide_media=true hide_excerpt=true}}

@@ -37,6 +37,12 @@ Ghost editor. */
     width: 100%;
 }
 
+.kg-bookmark-card {
+    figcaption {
+        margin-top: var(--space-2)
+    }
+}
+
 .kg-bookmark-container,
 .kg-bookmark-container:hover {
     display: flex;
