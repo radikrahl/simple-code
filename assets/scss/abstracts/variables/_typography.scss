@@ -31,15 +31,30 @@ $fa-font-path: "../built/fontawesome/webfonts" !default;
 
 :root {
     // font size
-    --text-base: 1.2em; // body font-size
-    --text-scale-ratio: 1.2; // multiplier used to generate the scale values 👇
+    --text-base: 1.1rem;
+    @include large-up {
+        --text-base: 1.25rem;
+    }
+
+    --text-scale-ratio: 1.2;
+
+    /**
+    * Line Height
+    */
+    --line-height-xs: 0.8;
+    --line-height-sm: 0.9;
+    --line-height-md: 1;
+    --line-height-lg: 1.2;
+    --line-height-xl: 1.4;
+    --line-height-xxl: 1.8;
+    --line-height-xxxl: 2;
 }
 
 :root,
 * {
     // inspired by https://codyhouse.co/blog/post/responsive-layouts-css-custom-properties-em-units
     // type scale
-    --text-xs: calc((1em / var(--text-scale-ratio)) / var(--text-scale-ratio));
+    --text-xs: calc((var(--text-base) / var(--text-scale-ratio)) / var(--text-scale-ratio));
     --text-sm: calc(var(--text-xs) * var(--text-scale-ratio));
     --text-md: calc(
         var(--text-sm) * var(--text-scale-ratio) * var(--text-scale-ratio)
@@ -50,18 +65,7 @@ $fa-font-path: "../built/fontawesome/webfonts" !default;
     --text-xxxl: calc(var(--text-xxl) * var(--text-scale-ratio));
     --text-xxxxl: calc(var(--text-xxxl) * var(--text-scale-ratio));
 
-//     /**
-//         * Font Sizing
-//         */
-//     $font-size-xs: var(--text-xs);
-//     $font-size-sm: var(--text-sm);
-//     $font-size-med: var(--text-md);
-//     $font-size-med-2: var(--text-lg);
-//     $font-size-large: var(--text-xl);
-//     $font-size-large-2: var(--text-xxl);
-//     $font-size-xl: var(--text-xxxl);
-//     $font-size-xxl: var(--text-xxxxl);
-
+    // keep for future reference
 //     $font-size-xs: 0.75rem;
 //     $font-size-sm: 0.85rem;
 //     $font-size-med: 1rem;
@@ -72,16 +76,6 @@ $fa-font-path: "../built/fontawesome/webfonts" !default;
 //     $font-size-xxl: 3rem;
 }
 
-/**
-  * Line Height
-  */
-$line-height-xs: 0.8;
-$line-height-sm: 0.9;
-$line-height-med: 1;
-$line-height-med-2: 1.2;
-$line-height-large: 1.5;
-$line-height-large-2: 1.6;
-$line-height-xl: 1.8;
 
 /**
  * In this file, we take the literal font sizes from our scale and define them
@@ -100,24 +94,29 @@ h4 {
  */
 h1, .text-xxl {
     font-size: var(--text-xxl);
-    line-height: $line-height-med-2;
+    line-height: var(--line-height-lg);
     font-weight: 700;
+}
+
+.text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--line-height-lg);
 }
 
 /**
  * Heading 2 base styles
  */
-h2, .text-xl {
-    font-size: var(--text-xl);
-    line-height: $line-height-med-2;
+h2, .text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--line-height-lg);
 }
 
 /**
  * Heading 3 base styles
  */
-h3, .text-lg {
-    font-size: var(--text-lg);
-    line-height: $line-height-med-2;
+h3, .text-md {
+    font-size: var(--text-md);
+    line-height: var(--line-height-lg);
     font-weight: bold;
 }
 
@@ -126,18 +125,14 @@ h3, .text-lg {
  */
 h4,
 h5,
-h6, .text-md {
-    font-size: var(--text-md);
-    line-height: $line-height-med-2;
+h6, .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--line-height-md);
 }
 
 .text-xs {
     font-size: var(--text-xs);
-    line-height: $line-height-large;
+    line-height: var(--line-height-xl);
 }
 
-.text-sm {
-    font-size: var(--text-sm);
-    line-height: $line-height-med;
-}
 

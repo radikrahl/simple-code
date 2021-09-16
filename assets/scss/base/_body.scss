@@ -21,7 +21,7 @@ body {
 	min-height: 100vh; /* 1 */
 	font-family: var(--font-family-primary);
     font-size: var(--text-base);
-    line-height: $line-height-large;
+    line-height: var(--line-height-xl);
 	background-color: var(--color-body-bg);
 	color: var(--color-body-text);
 }
