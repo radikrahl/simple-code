@@ -11,11 +11,11 @@
             <span class="bull c-gray-50">&bull;</span>
             <span>{{reading_time}}</span>
             {{#if tags}}
-                <span class="post-card__meta-tags uppercase font-bold">
+                <span class="post-card__meta-tags uppercase">
                     {{#foreach tags}}
                         <span class="bull c-gray-50">&bull;</span>
                         <a
-                            class="post-tag post-tag-{{slug}}"
+                            class="post-tag post-tag-{{slug}} font-bold"
                             href="{{url}}"
                             title="{{name}}"
                         >{{name}}</a>

@@ -5,17 +5,38 @@
 
     /**
     * Brand Colors
-    * 1) Brand=specific colors
+    *
     */
-    --color-brand-blue: #234E9C;
-    --color-brand-green: #4E9C23;
-    --color-brand-red: #9c234e;
+
+    // inspired by https://blog.maximeheckel.com/posts/the-power-of-composition-with-css-variables/
     --color-brand-orange: #ba6333;
+    --color-brand-blue: #234E9C;
+    --color-brand-green: #53a626;
+    --color-brand-red: #a62653;
 
+    $baseColor:(
+        "primary": "339, 63%",
+        "secondary": "99, 63%",
+        "tertiary": "219, 63%"
+    );
 
-    --color-brand-primary: var(--color-brand-red);
-    --color-brand-secondary: var(--color-brand-green);
-    --color-brand-tertiary: var(--color-brand-blue);
+    @each $key, $value in $baseColor {
+        --color-brand-#{$key}-base: #{$value};
+        --palette-#{$key}-10: var(--color-brand-#{$key}-base), 10%;
+        --palette-#{$key}-20: var(--color-brand-#{$key}-base), 20%;
+        --palette-#{$key}-30: var(--color-brand-#{$key}-base), 30%;
+        --palette-#{$key}-40: var(--color-brand-#{$key}-base), 40%;
+        --palette-#{$key}-50: var(--color-brand-#{$key}-base), 50%;
+        --palette-#{$key}-60: var(--color-brand-#{$key}-base), 60%;
+        --palette-#{$key}-70: var(--color-brand-#{$key}-base), 70%;
+        --palette-#{$key}-80: var(--color-brand-#{$key}-base), 80%;
+        --palette-#{$key}-90: var(--color-brand-#{$key}-base), 90%;
+        --palette-#{$key}-100: var(--color-brand-#{$key}-base), 100%;
+
+        --color-brand-#{$key}: hsla(var(--palette-#{$key}-40), 100%);
+        --color-brand-#{$key}-light: hsla(var(--palette-#{$key}-60), 100%);
+        --color-brand-#{$key}-emphasis: hsla(var(--palette-#{$key}-40), 13%);
+    }
 
     /**
     * Neutral Colors

@@ -16,10 +16,10 @@
             {{reading_time}}
         </span>
         {{#if tags}}
-            <span class="post-card__meta-tags uppercase font-bold">
+            <span class="post-card__meta-tags uppercase">
                 {{#foreach tags}}
                     <span class="bull">&bull;</span>
-                    <a class="post-tag post-tag-{{slug}}" href="{{url}}"
+                    <a class="post-tag post-tag-{{slug}} font-bold" href="{{url}}"
                         title="{{name}}">{{name}}</a>
                 {{/foreach}}
             </span>
