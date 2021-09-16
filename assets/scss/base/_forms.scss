@@ -34,7 +34,7 @@
   * Legend base styles
   */
  legend {
-     margin-bottom: 0.25rem;
+     margin-bottom: var(--space-1);
  }
 
  /**
@@ -42,7 +42,7 @@
   */
  label {
      display: block;
-     padding-bottom: 0.25rem;
+     padding-bottom: var(--space-1);
      color: var(--color-form-label);
  }
 
@@ -67,7 +67,7 @@
   */
  input, textarea {
      width: 100%;
-     padding: 0.5rem;
+     padding: var(--space-2);
      border: var(--border-style-light) var(--color-form-border);
      background: var(--color-form-bg);
 
@@ -95,7 +95,7 @@
  input[type="checkbox"],
  input[type="radio"] {
      width: auto;
-     margin-right: 0.3rem;
+     margin-right: var(--space-1-5);
      border-color: var(--color-form-border);
  }
 
@@ -117,8 +117,8 @@
      width: 100%;
      border: var(--border-style-light) var(--color-form-border);
      border-radius: 0;
-     padding: 0.5rem;
-     height: 2rem;
+     padding: var(--space-2);
+     height: 2em;
      background: var(--color-form-bg);
      color: var(--color-form);
 

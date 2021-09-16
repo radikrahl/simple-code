@@ -10,7 +10,7 @@
     border: var(--border-style-light) var(--color-button);
     color: var(--color-neutral-white);
     background-color: var(--color-button);
-    padding: .5em 1em;
+    padding: var(--space-1-5) var(--space-3);
     text-align: center;
     transition: all var(--anim-cubic-bezier) var(--anim-fade-long);
     box-shadow: initial;
@@ -27,7 +27,7 @@
     }
 
     &--small {
-        padding: .125em .5em;
+        padding: var(--space-0-5) var(--space-2);
         font-size: var(--text-xs);
 
         &:hover, &:focus {
@@ -44,7 +44,7 @@
     }
 
     &--large {
-        padding: .825em 1.625em;
+        padding: var(--space-3) var(--space-7);
 
         &:hover, &:focus {
             --box-shadow-button-spread: 1.75em;

@@ -4,7 +4,7 @@
         flex-direction: row;
         justify-content: space-between;
         border-top: var(--border-brand-primary);
-        padding-top: 10px;
+        padding-top: var(--space-2-5);
 
         @include medium-down {
             flex-direction: column-reverse;
@@ -27,5 +27,5 @@
 }
 
 #main-footer {
-    padding: 40px 4vmin 140px;
+    padding: var(--space-10) 0 var(--space-36);
 }

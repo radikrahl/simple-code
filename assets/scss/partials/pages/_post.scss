@@ -56,6 +56,10 @@
         }
     }
 
+    &__meta {
+        line-height: var(--line-height-xl);
+    }
+
     &__footer {
         .author {
             &__profileImage {
@@ -89,5 +93,9 @@
 .more-posts {
     .post-card__title {
         font-size: var(--text-md);
+    }
+
+    .c-btn {
+        font-size: var(--text-xs);
     }
 }

@@ -1,7 +1,7 @@
 .tag {
     &__count {
-        padding: 0 2px;
+        padding: 0 var(--space-0-5);
         position: relative;
-        top: -2px;
+        top: -0.125em;
     }
 }

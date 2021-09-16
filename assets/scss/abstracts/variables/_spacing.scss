@@ -1,7 +1,7 @@
 :root {
 
     // inspired by https://codyhouse.co/ds/docs/framework/spacing
-    --space-unit:  1em;
+    --space-unit:  1rem;
     --space-xxxxs: calc(0.125 * var(--space-unit));
     --space-xxxs:  calc(0.25 * var(--space-unit));
     --space-xxs:   calc(0.375 * var(--space-unit));

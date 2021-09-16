@@ -9,7 +9,6 @@
 
         &:not(:last-child) {
             border-bottom: var(--border-divider-simple);
-            padding-bottom: 0.5em;
         }
     }
 
@@ -26,7 +25,7 @@
         width: 100%;
 
         .post-feed--horizontal & {
-            margin-bottom: 1rem;
+            margin-bottom: var(--space-4);
         }
     }
 
@@ -63,7 +62,7 @@
         .post-feed--horizontal & {
             @include medium-up {
                 flex: 0 0 43%;
-                margin-right: 1.25em;
+                margin-right: var(--space-5);
             }
         }
     }
@@ -88,6 +87,9 @@
     &__read-more {
         font-family: var(--font-family-secondary);
         align-self: center;
+        .c-btn {
+            font-size: var(--text-xs);
+        }
     }
 }
 
@@ -106,15 +108,17 @@ div[class~='grid'] {
 // marked for small only to mimic horizontal styles
 .post-card {
     @include small-down {
-        border-bottom: var(--border-divider-simple);
-        padding-bottom: 0.5em;
+
+        &:not(:last-child) {
+            border-bottom: var(--border-divider-simple);
+        }
 
         &__footer {
             justify-content: flex-start;
         }
 
         &__content {
-            margin-bottom: 1rem;
+            margin-bottom: var(--space-4);
         }
     }
 }

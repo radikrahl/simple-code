@@ -32,6 +32,7 @@ $fa-font-path: "../built/fontawesome/webfonts" !default;
 :root {
     // font size
     --text-base: 1.1rem;
+
     @include large-up {
         --text-base: 1.25rem;
     }
@@ -43,9 +44,9 @@ $fa-font-path: "../built/fontawesome/webfonts" !default;
     */
     --line-height-xs: 0.8;
     --line-height-sm: 0.9;
-    --line-height-md: 1;
-    --line-height-lg: 1.2;
-    --line-height-xl: 1.4;
+    --line-height-md: 1.2;
+    --line-height-lg: 1.4;
+    --line-height-xl: 1.6;
     --line-height-xxl: 1.8;
     --line-height-xxxl: 2;
 }
