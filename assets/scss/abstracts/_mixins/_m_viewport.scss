@@ -10,7 +10,7 @@ $landscape: "#{$screen} and (orientation: landscape)" !default;
 $portrait: "(orientation: portrait)" !default;
 
 $xsmall-up: $screen !default;
-$xsmall-only: #{$screen} and (max-width: #{$bp-xsm}) !default;
+$xsmall-only: "#{$screen} and (max-width: #{$bp-xsm})" !default;
 
 $small-up: "#{$screen} and (min-width: #{$bp-xsm})" !default;
 $small-only: "#{$screen} and (min-width:#{$bp-xsm}) and (max-width: #{$bp-sm})" !default;

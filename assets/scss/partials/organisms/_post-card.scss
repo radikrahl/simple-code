@@ -75,12 +75,12 @@
         a {
             display: block;
             overflow: hidden;
-            @include aspect-ratio(16, 9, 'img, .a-img') {
+            @include aspect-ratio(16, 9, "img, .a-img") {
                 position: absolute;
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
-            };
+            }
         }
     }
 
@@ -93,7 +93,7 @@
     }
 }
 
-div[class~='grid'] {
+div[class~="grid"] {
     .post-card {
         &__content {
             height: 100%;
@@ -108,7 +108,6 @@ div[class~='grid'] {
 // marked for small only to mimic horizontal styles
 .post-card {
     @include small-down {
-
         &:not(:last-child) {
             border-bottom: var(--border-divider-simple);
         }

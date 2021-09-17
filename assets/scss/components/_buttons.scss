@@ -17,11 +17,10 @@
     border-radius: var(--border-radius-sm);
     font-size: var(--text-sm);
 
-    &:hover, &:focus {
-        box-shadow: inset 0 0
-            var(--box-shadow-button-blur)
-            var(--box-shadow-button-spread)
-            var(--box-shadow-button-color);
+    &:hover,
+    &:focus {
+        box-shadow: inset 0 0 var(--box-shadow-button-blur)
+            var(--box-shadow-button-spread) var(--box-shadow-button-color);
 
         color: var(--color-button);
     }
@@ -30,7 +29,8 @@
         padding: var(--space-0-5) var(--space-2);
         font-size: var(--text-xs);
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
             --box-shadow-button-spread: 1em;
         }
     }
@@ -38,7 +38,8 @@
     &--full {
         width: 100%;
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
             --box-shadow-button-blur: 1.25em;
         }
     }
@@ -46,7 +47,8 @@
     &--large {
         padding: var(--space-3) var(--space-7);
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
             --box-shadow-button-spread: 1.75em;
             --box-shadow-button-blur: 1em;
         }
@@ -56,7 +58,8 @@
         background-color: var(--color-neutral-white);
         color: var(--color-button);
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
             color: var(--color-neutral-white);
             --box-shadow-button-color: var(--color-button);
         }
@@ -66,4 +69,3 @@
         border-radius: var(--border-radius-full);
     }
 }
-
