@@ -1,21 +1,15 @@
-/*------------------------------------*\
-    #LINKS
-\*------------------------------------*/
+a {
+    color: var(--color-links);
+    text-decoration: none;
+    outline: 0;
+    transition: color var(--anim-fade-quick) var(--anim-ease);
 
-/**
- * Link base styles
- */
- a {
-	color: var(--color-links);
-	text-decoration: none;
-	outline: 0;
-	transition: color $anim-fade-quick $anim-ease;
+    &:hover,
+    &:focus {
+        color: var(--color-links-hover);
+    }
 
-	&:hover, &:focus {
-		color: var(--color-links-hover);
-	}
-
-	&:active {
-		color: var(--color-links-active);
-	}
+    &:active {
+        color: var(--color-links-active);
+    }
 }

@@ -1,18 +1,10 @@
-/*------------------------------------*\
-    #MEDIA
-\*------------------------------------*/
-
-/**
- * Responsive image styling
- * 1) Allows for images to flex with varying screen size
- */
 img {
-	max-width: 100%;
-	height: auto;
+    max-width: 100%;
+    height: auto;
 }
 
 figcaption {
-    font-size: $font-size-sm;
+    font-size: var(--text-sm);
     text-align: center;
 }
 

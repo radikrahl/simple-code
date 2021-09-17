@@ -3,8 +3,8 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        border-top: $border-divider-brand;
-        padding-top: 10px;
+        border-top: var(--border-brand-primary);
+        padding-top: var(--space-2-5);
 
         @include medium-down {
             flex-direction: column-reverse;
@@ -13,7 +13,7 @@
 
     &__copyright {
         @include medium-down {
-            margin-top: $m-6;
+            margin-top: var(--space-6);
         }
     }
 
@@ -27,5 +27,5 @@
 }
 
 #main-footer {
-    padding: 40px 4vmin 140px;
+    padding: var(--space-10) 0 var(--space-36);
 }

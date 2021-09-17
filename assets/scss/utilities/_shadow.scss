@@ -1,7 +1,9 @@
+// evaluate if necessary
 .u-shadow--nav {
-    box-shadow: $box-shadow-nav;
+    box-shadow: var(--box-shadow-nav);
 }
 
+// evaluate if necessary
 .u-shadow--widget {
-    box-shadow: $box-shadow-widget;
+    box-shadow: var(--box-shadow-widget);
 }

@@ -20,17 +20,17 @@
     }
 
     &__bio {
-        margin-top: var(--spacing-small);
+        margin-top: var(--space-3);
     }
 
     &__social {
-        margin-top: var(--spacing-small);
+        margin-top: var(--space-3);
 
         .social {
             display: inline-block;
 
             &:not(:first-child) {
-                margin-left: var(--spacing-small);
+                margin-left: var(--space-3);
             }
         }
     }
@@ -47,7 +47,7 @@
     .recent {
         &__posts {
             h2 {
-                font-size: 1.2em;
+                font-size: var(--text-sm);
             }
         }
     }

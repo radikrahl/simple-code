@@ -7,7 +7,7 @@
         margin-right: auto;
 
         img {
-            height: $navigation-height;
+            height: var(--navigation-height);
         }
     }
 
@@ -17,12 +17,12 @@
         }
 
         &:not(:last-child) {
-            margin-right: 0.5rem;
+            margin-right: var(--space-2);
         }
     }
 
     &__list {
-        font-family: $font-family-secondary;
+        font-family: var(--font-family-secondary);
     }
 
     &__wrapper {
@@ -41,7 +41,8 @@
 .pagination {
     display: flex;
     justify-content: space-between;
-    line-height: 1.1; // [VARIABLE]
+    align-items: center;
+    line-height: var(--line-height-md);
 
     a {
         display: flex;
@@ -50,7 +51,7 @@
 
     i {
         position: absolute;
-        transition: all $anim-ease $anim-fade-quick;
+        transition: all var(--anim-ease) var(--anim-fade-quick);
     }
 
     &__item {
