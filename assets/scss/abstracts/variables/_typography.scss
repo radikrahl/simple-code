@@ -17,8 +17,7 @@ $fa-font-path: "../built/fontawesome/webfonts" !default;
 @include font("Montserrat", "/assets/fonts/Montserrat/Montserrat-Regular");
 
 :root {
-    --font-family-primary: "Nunito", "Raleway", "HelveticaNeue", "Helvetica",
-        "Arial", sans-serif;
+    --font-family-primary: "Nunito", "Raleway", "HelveticaNeue", "Helvetica", "Arial", sans-serif;
     --font-family-secondary: "Montserrat", "Abel", serif;
 }
 
@@ -34,13 +33,9 @@ $fa-font-path: "../built/fontawesome/webfonts" !default;
 :root,
 * {
     // inspired by https://codyhouse.co/blog/post/responsive-layouts-css-custom-properties-em-units
-    --text-xs: calc(
-        (var(--text-base) / var(--text-scale-ratio)) / var(--text-scale-ratio)
-    );
+    --text-xs: calc((var(--text-base) / var(--text-scale-ratio)) / var(--text-scale-ratio));
     --text-sm: calc(var(--text-xs) * var(--text-scale-ratio));
-    --text-md: calc(
-        var(--text-sm) * var(--text-scale-ratio) * var(--text-scale-ratio)
-    );
+    --text-md: calc(var(--text-sm) * var(--text-scale-ratio) * var(--text-scale-ratio));
     --text-lg: calc(var(--text-md) * var(--text-scale-ratio));
     --text-xl: calc(var(--text-lg) * var(--text-scale-ratio));
     --text-xxl: calc(var(--text-xl) * var(--text-scale-ratio));
