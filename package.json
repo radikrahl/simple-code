@@ -18,7 +18,6 @@
         "test": "gscan .",
         "test:ci": "gscan --fatal --verbose .",
         "pretest": "yarn lint && yarn test:ci",
-        "preship": "yarn test",
         "lint": "gulp lint",
         "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; fi"
     },
@@ -30,8 +29,7 @@
     "gpm": {
         "type": "theme",
         "categories": [
-            "Minimal",
-            "Magazine"
+            "Minimal"
         ]
     },
     "keywords": [
@@ -41,10 +39,10 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/TryGhost/Starter.git"
+        "url": "git@github.com:radikrahl/simple-code.git"
     },
-    "bugs": "https://github.com/TryGhost/Starter/issues",
-    "contributors": "https://github.com/TryGhost/Starter/graphs/contributors",
+    "bugs": "https://github.com/radikrahl/simple-code/issues",
+    "contributors": "https://github.com/radikrahl/simple-code/graphs/contributors",
     "devDependencies": {
         "autoprefixer": "10.3.4",
         "beeper": "2.1.0",

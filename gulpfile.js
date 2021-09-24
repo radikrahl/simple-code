@@ -79,7 +79,7 @@ function scss(done) {
     );
 }
 
-function scssLint(done) {
+function lint() {
     var stylelintConfig2 = require('./.stylelintrc.json');
 
     var processors = [
@@ -173,14 +173,12 @@ function zipper(done) {
     );
 }
 
-// const cssWatcher = () => watch('assets/css/**', css);
 const scssWatcher = () => watch('assets/scss/**', scss);
 const hbsWatcher = () => watch(['*.hbs', '**/**/*.hbs', '!node_modules/**/*.hbs'], hbs);
 const jsWatcher = () => watch(['assets/js/*.js'], js);
 const watcher = parallel(scssWatcher, hbsWatcher, jsWatcher);
 const build = series(clean, vendor, scss, js);
 const dev = series(build, serve, watcher);
-const lint = scssLint;
 
 exports.build = build;
 exports.lint = lint;
