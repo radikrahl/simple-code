@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{!-- <link rel="stylesheet" type="text/css" href="{{asset 'built/screen.css'}}" /> --}}
-    <link rel="stylesheet" type="text/css" href="{{asset 'built/main.css'}}" />
     <link rel="stylesheet" href="{{asset 'built/highlightjs/styles/stackoverflow-dark.min.css'}}">
+    <link rel="stylesheet" type="text/css" href="{{asset 'built/main.css'}}" />
     <title>{{meta_title}}</title>
 
     {{ghost_head}}
@@ -28,15 +28,8 @@
     {{> "organisms/footer"}}
 
     <script src="{{asset 'built/highlightjs/highlight.min.js'}}"></script>
-    <script src="{{asset 'built/jquery-3.4.1.min.js'}}"></script>
-    <script src="{{asset 'built/infinitescroll.js'}}"></script>
+    <script src="{{asset 'built/js/jquery.min.js'}}"></script>
     <script src="{{asset 'built/main.js'}}"></script>
-
-    {{#if pagination.pages}}
-    <script>
-        var maxPages = parseInt('{{pagination.pages}}');
-    </script>
-    {{/if}}
 
 
     {{ghost_foot}}

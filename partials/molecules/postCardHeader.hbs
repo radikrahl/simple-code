@@ -6,20 +6,20 @@
     {{/link}}
 
     <div class="post-card__meta text-xs mt-2.5">
-        <span class="post-card__meta-date uppercase c-gray-50">
+        <span class="post-card__meta-date uppercase color-gray-50">
             <time datetime="{{date format="YYYY-MM-DD"}}">
                 {{date}}
             </time>
         </span>
-        <span class="bull c-gray-50">&bull;</span>
-        <span class="post-card__meta-length uppercase c-gray-50">
+        <span class="bull">&bull;</span>
+        <span class="post-card__meta-length uppercase color-gray-50">
             {{reading_time}}
         </span>
         {{#if tags}}
-            <span class="post-card__meta-tags uppercase font-bold">
+            <span class="post-card__meta-tags uppercase">
                 {{#foreach tags}}
-                    <span class="bull c-gray-50">&bull;</span>
-                    <a class="post-tag post-tag-{{slug}}" href="{{url}}"
+                    <span class="bull">&bull;</span>
+                    <a class="post-tag post-tag-{{slug}} font-bold" href="{{url}}"
                         title="{{name}}">{{name}}</a>
                 {{/foreach}}
             </span>

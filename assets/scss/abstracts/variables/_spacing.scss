@@ -1,0 +1,51 @@
+:root {
+    // inspired by https://codyhouse.co/ds/docs/framework/spacing
+    --space-unit: 1rem;
+    --space-xxxxs: calc(0.125 * var(--space-unit));
+    --space-xxxs: calc(0.25 * var(--space-unit));
+    --space-xxs: calc(0.375 * var(--space-unit));
+    --space-xs: calc(0.5 * var(--space-unit));
+    --space-sm: calc(0.75 * var(--space-unit));
+    --space-md: calc(1.25 * var(--space-unit));
+    --space-lg: calc(2 * var(--space-unit));
+    --space-xl: calc(3.25 * var(--space-unit));
+    --space-xxl: calc(5.25 * var(--space-unit));
+    --space-xxxl: calc(8.5 * var(--space-unit));
+    --space-xxxxl: calc(13.75 * var(--space-unit));
+    --component-padding: var(--space-md);
+
+    // inspired by https://tailwindcss.com/docs/margin
+    --space-0-5: calc(0.125 * var(--space-unit));
+    --space-1: calc(0.25 * var(--space-unit));
+    --space-1-5: calc(0.375 * var(--space-unit));
+    --space-2: calc(0.5 * var(--space-unit));
+    --space-2-5: calc(0.625 * var(--space-unit));
+    --space-3: calc(0.75 * var(--space-unit));
+    --space-3-5: calc(0.875 * var(--space-unit));
+    --space-4: calc(1 * var(--space-unit));
+    --space-5: calc(1.25 * var(--space-unit));
+    --space-6: calc(1.5 * var(--space-unit));
+    --space-7: calc(1.75 * var(--space-unit));
+    --space-8: calc(2 * var(--space-unit));
+    --space-9: calc(2.25 * var(--space-unit));
+    --space-10: calc(2.5 * var(--space-unit));
+    --space-11: calc(2.75 * var(--space-unit));
+    --space-12: calc(3 * var(--space-unit));
+    --space-14: calc(3.5 * var(--space-unit));
+    --space-16: calc(4 * var(--space-unit));
+    --space-20: calc(5 * var(--space-unit));
+    --space-24: calc(6 * var(--space-unit));
+    --space-28: calc(7 * var(--space-unit));
+    --space-32: calc(8 * var(--space-unit));
+    --space-36: calc(9 * var(--space-unit));
+    --space-40: calc(10 * var(--space-unit));
+    --space-44: calc(11 * var(--space-unit));
+    --space-48: calc(12 * var(--space-unit));
+    --space-52: calc(13 * var(--space-unit));
+    --space-56: calc(14 * var(--space-unit));
+    --space-60: calc(15 * var(--space-unit));
+    --space-64: calc(16 * var(--space-unit));
+    --space-72: calc(18 * var(--space-unit));
+    --space-80: calc(20 * var(--space-unit));
+    --space-96: calc(24 * var(--space-unit));
+}

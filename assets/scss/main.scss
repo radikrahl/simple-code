@@ -12,16 +12,14 @@
 /*------------------------------------*\
     #ABSTRACTS
 \*------------------------------------*/
-@import "abstracts/colors";
-@import "abstracts/variables";
 @import "abstracts/mixins";
-@import "abstracts/typography";
+@import "abstracts/variables";
 @import "abstracts/shame";
 
-@import "../built/fontawesome/scss/fontawesome";
-@import "../built/fontawesome/scss/regular";
-@import "../built/fontawesome/scss/solid.scss";
-@import "../built/fontawesome/scss/brands.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/regular";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
 
 @import "a.tailwind.scss";
 
@@ -31,7 +29,6 @@
 @import "base/reset";
 @import "base/text";
 @import "base/body";
-@import "base/headings";
 @import "base/links";
 @import "base/lists";
 @import "base/forms";
@@ -55,6 +52,7 @@
 @import "components/footer";
 @import "components/header";
 @import "components/buttons";
+@import "components/hljs-extensions";
 // /*------------------------------------*\
 //     #UTILITIES
 // \*------------------------------------*/

@@ -4,7 +4,7 @@
 
         &:first-child:not(:only-child) {
             position: relative;
-            right: -15px;
+            right: -1em;
         }
     }
 
@@ -14,13 +14,11 @@
 
     &__text {
         a:not(:last-child)::after {
-            content: ', ';
+            content: ", ";
         }
     }
 
     &__profileImage {
         border-radius: 50%;
     }
-
-
 }

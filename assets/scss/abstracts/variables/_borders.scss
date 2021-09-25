@@ -1,0 +1,26 @@
+:root {
+    /* #### BORDERS #### */
+    --border-radius-sm: 4px;
+    --border-radius-md: 10px;
+    --border-radius-full: 50px;
+
+    --border-thickness-light: 1px;
+    --border-thickness: 2px;
+    --border-thickness-bold: 4px;
+    --border-thickness-bolder: 8px;
+
+    --border-style-light: var(--border-thickness) var(--border-line-style, solid);
+
+    --border-style: var(--border-thickness-bold) var(--border-line-style, solid);
+
+    --border-divider-simple: var(--border-style-light)
+        var(--border-divider-color, var(--color-neutral-gray-13));
+
+    --border-brand-primary-sm: var(--border-style-light) var(--color-brand-primary);
+
+    --border-brand-primary: var(--border-style) var(--color-brand-primary);
+
+    --border-brand-secondary-sm: var(--border-style-light) var(--color-brand-secondary);
+
+    --border-brand-secondary: var(--border-style) var(--color-brand-secondary);
+}

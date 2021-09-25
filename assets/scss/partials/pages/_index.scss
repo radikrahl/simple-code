@@ -5,13 +5,15 @@
             display: none;
         }
         .c-btn {
-            --color-button: var(--color-neutral-gray-34);
+            --color-button: var(--color-neutral-gray-34) !important;
+
+            &--small {
+                font-size: var(--text-sm);
+            }
 
             &.active {
                 color: var(--color-button);
-                box-shadow: inset 0 0
-                    var(--box-shadow-button-blur)
-                    var(--box-shadow-button-spread)
+                box-shadow: inset 0 0 var(--box-shadow-button-blur) var(--box-shadow-button-spread)
                     var(--box-shadow-button-color);
             }
 
