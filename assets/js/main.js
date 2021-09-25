@@ -1,4 +1,4 @@
-(function() {
+(function () {
     const menuOverlay = document.querySelector('.menu__overlay');
     const mainNav = document.getElementById('main-navigation');
     const menuToggle = document.querySelector('.menu__toggle');
@@ -17,4 +17,4 @@
     menuOverlay.addEventListener('click', closeMenu);
 
     hljs.highlightAll();
-}());
+})();

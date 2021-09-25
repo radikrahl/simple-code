@@ -1,4 +1,4 @@
-const {series, watch, src, dest, parallel} = require('gulp');
+const { series, watch, src, dest, parallel } = require('gulp');
 const pump = require('pump');
 
 // gulp plugins and utils
@@ -6,8 +6,9 @@ var livereload = require('gulp-livereload');
 var postcss = require('gulp-postcss');
 var zip = require('gulp-zip');
 var uglify = require('gulp-uglify');
-var rename = require('gulp-rename');
+var gulpUtil = require('gulp-util');
 var concat = require('gulp-concat');
+var eslint = require('gulp-eslint');
 
 // general utils
 var beeper = require('beeper');
@@ -19,10 +20,19 @@ var autoprefixer = require('autoprefixer');
 var colorFunction = require('postcss-color-mod-function');
 var cssnano = require('cssnano');
 var easyimport = require('postcss-easy-import');
+var reporter = require('postcss-reporter');
 
 // sass utils
 var gulpSass = require('gulp-sass');
 var sass = gulpSass(require('node-sass'));
+var stylelint = require('stylelint');
+var syntax_scss = require('postcss-scss');
+
+// js utils
+
+var config = {
+    isProduction: gulpUtil.env.production,
+};
 
 function serve(done) {
     livereload.listen();
@@ -39,26 +49,10 @@ const handleError = (done) => {
 };
 
 function hbs(done) {
-    pump([
-        src(['*.hbs', '**/**/*.hbs', '!node_modules/**/*.hbs']),
-        livereload()
-    ], handleError(done));
-}
-
-function css(done) {
-    var processors = [
-        easyimport,
-        colorFunction(),
-        autoprefixer(),
-        cssnano()
-    ];
-
-    pump([
-        src('assets/css/*.css', {sourcemaps: true}),
-        postcss(processors),
-        dest('assets/built/', {sourcemaps: '.'}),
-        livereload()
-    ], handleError(done));
+    pump(
+        [src(['*.hbs', '**/**/*.hbs', '!node_modules/**/*.hbs']), livereload()],
+        handleError(done)
+    );
 }
 
 function scss(done) {
@@ -72,45 +66,84 @@ function scss(done) {
         cssnano(),
     ];
 
-    pump([
-        src(['assets/scss/main.scss', '!node_modules/**/*.scss', '!assets/built/**/*.scss'], {sourcemaps: true}),
-        sass().on('error', sass.logError),
-        postcss(processors),
-        dest('assets/built/', {sourcemaps: '.'}),
-        livereload()
-    ], handleError(done))
+    pump(
+        [
+            src(['assets/scss/main.scss', '!node_modules/**/*.scss', '!assets/built/**/*.scss'], {
+                sourcemaps: !config.isProduction,
+            }),
+            sass().on('error', sass.logError),
+            postcss(processors),
+            dest('assets/built/', { sourcemaps: '.' }),
+            livereload(),
+        ],
+        handleError(done)
+    );
 }
 
 function js(done) {
-    pump([
-        src('assets/js/*.js', {sourcemaps: true}),
-        uglify(),
-        dest('assets/built/', {sourcemaps: '.'}),
-        livereload()
-    ], handleError(done));
+    pump(
+        [
+            src('assets/js/*.js', { sourcemaps: !config.isProduction }),
+            uglify({
+                mangle: config.isProduction,
+                compress: config.isProduction,
+                output: { beautify: !config.isProduction },
+            }),
+            dest('assets/built/', { sourcemaps: '.' }),
+            livereload(),
+        ],
+        handleError(done)
+    );
 }
 
 function vendor() {
+    const highlightjsStyles = src('node_modules/@highlightjs/cdn-assets/styles/**').pipe(
+        dest('assets/built/highlightjs/styles')
+    );
 
-    const highlightjsStyles = src('node_modules/@highlightjs/cdn-assets/styles/**')
-        .pipe(dest('assets/built/highlightjs/styles'));
-
-    const highlightjs = src(
-            ['node_modules/@highlightjs/cdn-assets/highlight.min.js',
-             'node_modules/@highlightjs/cdn-assets/languages/handlebars.min.js',
-             'node_modules/@highlightjs/cdn-assets/languages/dockerfile.min.js'
-            ])
+    const highlightjs = src([
+        'node_modules/@highlightjs/cdn-assets/highlight.min.js',
+        'node_modules/@highlightjs/cdn-assets/languages/handlebars.min.js',
+        'node_modules/@highlightjs/cdn-assets/languages/dockerfile.min.js',
+    ])
         .pipe(concat('highlight.min.js'))
         .pipe(uglify())
         .pipe(dest('assets/built/highlightjs'));
 
-    const fontawesome = src('node_modules/@fortawesome/fontawesome-free/webfonts/**')
-        .pipe(dest('assets/built/fontawesome/webfonts'));
+    const fontawesome = src('node_modules/@fortawesome/fontawesome-free/webfonts/**').pipe(
+        dest('assets/built/fontawesome/webfonts')
+    );
 
-    const fontawesomeStyles = src('node_modules/@fortawesome/fontawesome-free/scss/**')
-        .pipe(dest('assets/built/fontawesome/scss'));
+    const jquery = src(['node_modules/jquery/dist/jquery.min.js']).pipe(dest('assets/built/js'));
 
-    return merge(highlightjs, highlightjsStyles, fontawesome, fontawesomeStyles);
+    return merge(highlightjs, highlightjsStyles, fontawesome, jquery);
+}
+
+function lint() {
+    var stylelintConfig = require('./.stylelintrc.json');
+
+    var processors = [
+        stylelint(stylelintConfig),
+        reporter({
+            clearMessages: true,
+            throwError: true,
+        }),
+    ];
+
+    const scssLint = src([
+        'assets/scss/**/*.scss',
+        '!assets/scss/main.scss',
+        '!assets/scss/a.tailwind.scss',
+        '!node_modules/**/*.scss',
+        '!assets/built/**/*.scss',
+    ]).pipe(postcss(processors, { syntax: syntax_scss }));
+
+    const jsLint = src(['assets/js/**/*.js'])
+        .pipe(eslint())
+        .pipe(eslint.format())
+        .pipe(eslint.failOnError());
+
+    return merge(scssLint, jsLint);
 }
 
 function clean(done) {
@@ -121,7 +154,6 @@ function clean(done) {
         if (err) {
             handleError(done);
         }
-        console.log(`${dir} is deleted!`);
     });
 
     done();
@@ -132,25 +164,24 @@ function zipper(done) {
     var themeName = require('./package.json').name;
     var filename = themeName + '.zip';
 
-    pump([
-        src([
-            '**',
-            '!node_modules', '!node_modules/**',
-            '!dist', '!dist/**'
-        ]),
-        zip(filename),
-        dest(targetDir)
-    ], handleError(done));
+    pump(
+        [
+            src(['**', '!node_modules', '!node_modules/**', '!dist', '!dist/**']),
+            zip(filename),
+            dest(targetDir),
+        ],
+        handleError(done)
+    );
 }
 
-const cssWatcher = () => watch('assets/css/**', css);
 const scssWatcher = () => watch('assets/scss/**', scss);
 const hbsWatcher = () => watch(['*.hbs', '**/**/*.hbs', '!node_modules/**/*.hbs'], hbs);
-const jsWatcher = () => watch(['assets/js/*.js'], js)
-const watcher = parallel(scssWatcher, cssWatcher, hbsWatcher, jsWatcher);
-const build = series(clean, vendor, scss, css, js);
+const jsWatcher = () => watch(['assets/js/*.js'], js);
+const watcher = parallel(scssWatcher, hbsWatcher, jsWatcher);
+const build = series(clean, vendor, scss, js);
 const dev = series(build, serve, watcher);
 
 exports.build = build;
+exports.lint = lint;
 exports.zip = series(build, zipper);
 exports.default = dev;

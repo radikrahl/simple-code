@@ -13,8 +13,7 @@
 
             @content;
         }
-    }
-    @else {
+    } @else {
         > #{$element} {
             position: absolute;
             top: 0;

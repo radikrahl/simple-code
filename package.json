@@ -13,12 +13,12 @@
     },
     "scripts": {
         "dev": "gulp",
+        "build": "gulp build --production",
         "zip": "gulp zip",
         "test": "gscan .",
         "test:ci": "gscan --fatal --verbose .",
-        "pretest": "gulp build",
-        "preship": "yarn test",
-        "lint": "echo TODO setup lint",
+        "pretest": "yarn lint && yarn test:ci",
+        "lint": "gulp lint",
         "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; fi"
     },
     "author": {
@@ -29,8 +29,7 @@
     "gpm": {
         "type": "theme",
         "categories": [
-            "Minimal",
-            "Magazine"
+            "Minimal"
         ]
     },
     "keywords": [
@@ -40,31 +39,42 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/TryGhost/Starter.git"
+        "url": "git@github.com:radikrahl/simple-code.git"
     },
-    "bugs": "https://github.com/TryGhost/Starter/issues",
-    "contributors": "https://github.com/TryGhost/Starter/graphs/contributors",
+    "bugs": "https://github.com/radikrahl/simple-code/issues",
+    "contributors": "https://github.com/radikrahl/simple-code/graphs/contributors",
     "devDependencies": {
         "autoprefixer": "10.3.4",
         "beeper": "2.1.0",
         "cssnano": "5.0.8",
+        "eslint": "^7.32.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-prettier": "^4.0.0",
         "gscan": "4.2.1",
         "gulp": "4.0.2",
         "gulp-concat": "2.6.1",
+        "gulp-eslint": "^6.0.0",
         "gulp-livereload": "4.0.2",
         "gulp-postcss": "9.0.1",
         "gulp-rename": "2.0.0",
         "gulp-sass": "5.0.0",
         "gulp-sourcemaps": "3.0.0",
         "gulp-uglify": "3.0.2",
-        "gulp-util": "3.0.8",
+        "gulp-util": "^3.0.8",
         "gulp-watch": "5.0.1",
         "gulp-zip": "5.1.0",
+        "jquery": "^3.6.0",
         "merge-stream": "2.0.0",
         "node-sass": "6.0.1",
         "postcss": "8.3.6",
         "postcss-color-mod-function": "3.0.3",
         "postcss-easy-import": "3.0.0",
+        "postcss-reporter": "^7.0.2",
+        "postcss-scss": "^4.0.0",
+        "prettier": "^2.4.1",
+        "stylelint": "^13.13.1",
+        "stylelint-config-prettier": "^8.0.2",
+        "stylelint-prettier": "^1.2.0",
         "tailwindcss": "2.2.15"
     },
     "browserslist": [
