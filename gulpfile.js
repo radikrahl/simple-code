@@ -8,6 +8,7 @@ var zip = require('gulp-zip');
 var uglify = require('gulp-uglify');
 var gulpUtil = require('gulp-util');
 var concat = require('gulp-concat');
+var eslint = require('gulp-eslint');
 
 // general utils
 var beeper = require('beeper');
@@ -27,7 +28,7 @@ var sass = gulpSass(require('node-sass'));
 var stylelint = require('stylelint');
 var syntax_scss = require('postcss-scss');
 
-var eslint = require('gulp-eslint');
+// js utils
 
 var config = {
     isProduction: gulpUtil.env.production,
@@ -79,33 +80,6 @@ function scss(done) {
     );
 }
 
-function lint() {
-    var stylelintConfig2 = require('./.stylelintrc.json');
-
-    var processors = [
-        stylelint(stylelintConfig2),
-        reporter({
-            clearMessages: true,
-            throwError: true,
-        }),
-    ];
-
-    const scssLint = src([
-        'assets/scss/**/*.scss',
-        '!assets/scss/main.scss',
-        '!assets/scss/a.tailwind.scss',
-        '!node_modules/**/*.scss',
-        '!assets/built/**/*.scss',
-    ]).pipe(postcss(processors, { syntax: syntax_scss }));
-
-    const jsLint = src(['assets/js/**/*.js'])
-        .pipe(eslint())
-        .pipe(eslint.format())
-        .pipe(eslint.failOnError());
-
-    return merge(scssLint, jsLint);
-}
-
 function js(done) {
     pump(
         [
@@ -143,6 +117,33 @@ function vendor() {
     const jquery = src(['node_modules/jquery/dist/jquery.min.js']).pipe(dest('assets/built/js'));
 
     return merge(highlightjs, highlightjsStyles, fontawesome, jquery);
+}
+
+function lint() {
+    var stylelintConfig = require('./.stylelintrc.json');
+
+    var processors = [
+        stylelint(stylelintConfig),
+        reporter({
+            clearMessages: true,
+            throwError: true,
+        }),
+    ];
+
+    const scssLint = src([
+        'assets/scss/**/*.scss',
+        '!assets/scss/main.scss',
+        '!assets/scss/a.tailwind.scss',
+        '!node_modules/**/*.scss',
+        '!assets/built/**/*.scss',
+    ]).pipe(postcss(processors, { syntax: syntax_scss }));
+
+    const jsLint = src(['assets/js/**/*.js'])
+        .pipe(eslint())
+        .pipe(eslint.format())
+        .pipe(eslint.failOnError());
+
+    return merge(scssLint, jsLint);
 }
 
 function clean(done) {
