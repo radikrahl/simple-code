@@ -27,6 +27,12 @@
         --color-brand-#{$key}: hsla(var(--palette-#{$key}-40), 100%);
         --color-brand-#{$key}-light: hsla(var(--palette-#{$key}-60), 100%);
         --color-brand-#{$key}-emphasis: hsla(var(--palette-#{$key}-40), 13%);
+
+        &[data-theme="dark"] {
+            --color-brand-#{$key}: hsla(var(--palette-#{$key}-60), 100%);
+            --color-brand-#{$key}-light: hsla(var(--palette-#{$key}-40), 100%);
+            --color-brand-#{$key}-emphasis: hsla(var(--palette-#{$key}-60), 13%);
+        }
     }
 
     --color-neutral-white: #fff;
@@ -38,6 +44,7 @@
     --color-neutral-gray-50: hsla(0, 0%, 50%, 1);
     --color-neutral-gray-60: hsla(0, 0%, 40%, 1);
     --color-neutral-gray-73: hsla(0, 0%, 27%, 1);
+    --color-neutral-gray-87: hsla(0, 0%, 13%, 1);
     --color-neutral-gray-93: hsla(0, 0%, 7%, 1);
     --color-neutral-black: #000;
 
@@ -80,5 +87,27 @@
 
     .c-gray-73 {
         color: var(--color-neutral-gray-73);
+    }
+
+    @media (prefers-color-scheme: dark) {
+        --color-links: var(--color-neutral-gray-27);
+        --color-body-text: var(--color-neutral-gray-02);
+        --color-body-bg: var(--color-neutral-gray-93);
+    }
+
+    body {
+        --color-links-hover: var(--color-brand-primary);
+    }
+
+    &[data-theme="dark"] {
+        --color-links: var(--color-neutral-gray-27);
+        --color-body-text: var(--color-neutral-gray-02);
+        --color-body-bg: var(--color-neutral-gray-93);
+    }
+
+    &[data-theme="light"] {
+        --color-links: var(--color-neutral-gray-73);
+        --color-body-text: var(--color-neutral-gray-93);
+        --color-body-bg: var(--color-neutral-gray-02);
     }
 }

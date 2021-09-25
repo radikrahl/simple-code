@@ -10,7 +10,16 @@
     <link rel="stylesheet" href="{{asset 'built/highlightjs/styles/stackoverflow-dark.min.css'}}">
     <link rel="stylesheet" type="text/css" href="{{asset 'built/main.css'}}" />
     <title>{{meta_title}}</title>
+    <script>
+        const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
+        if (window.localStorage.getItem('theme')) {
+            document.documentElement.dataset.theme = window.localStorage.getItem('theme');
+        }
+        else {
+            document.documentElement.dataset.theme = prefersDarkScheme.matches ? 'dark' : 'light';
+        }
+    </script>
     {{ghost_head}}
     {{!-- Outputs important meta data and settings, should always be in head --}}
 
@@ -30,6 +39,7 @@
     <script src="{{asset 'built/highlightjs/highlight.min.js'}}"></script>
     <script src="{{asset 'built/js/jquery.min.js'}}"></script>
     <script src="{{asset 'built/main.js'}}"></script>
+
 
 
     {{ghost_foot}}

@@ -5,7 +5,11 @@
             display: none;
         }
         .c-btn {
-            --color-button: var(--color-neutral-gray-34) !important;
+            --color-button: var(--color-neutral-gray-34);
+
+            [data-theme="dark"] & {
+                --color-button: var(--color-neutral-gray-60);
+            }
 
             &--small {
                 font-size: var(--text-sm);

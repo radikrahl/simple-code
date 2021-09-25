@@ -87,6 +87,10 @@
     + aside {
         background-color: var(--color-neutral-gray-07);
         padding: var(--spacing-5);
+
+        [data-theme="dark"] & {
+            background-color: var(--color-neutral-gray-73);
+        }
     }
 }
 

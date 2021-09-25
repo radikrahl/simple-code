@@ -1,4 +1,18 @@
 #main-navigation {
     height: var(--navigation-height);
     border-bottom: var(--border-brand-primary);
+
+    .fas {
+        border: 0;
+
+        &::before {
+            [data-theme="dark"] & {
+                content: "\f186";
+            }
+
+            [data-theme="light"] & {
+                content: "\f185";
+            }
+        }
+    }
 }
