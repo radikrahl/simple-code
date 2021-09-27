@@ -75,7 +75,7 @@
         "stylelint": "13.13.1",
         "stylelint-config-prettier": "8.0.2",
         "stylelint-prettier": "1.2.0",
-        "tailwindcss": "2.2.15"
+        "tailwindcss": "2.2.16"
     },
     "browserslist": [
         "defaults"
