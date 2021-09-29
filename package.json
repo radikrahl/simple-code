@@ -70,7 +70,7 @@
         "postcss-color-mod-function": "3.0.3",
         "postcss-easy-import": "3.0.0",
         "postcss-reporter": "7.0.3",
-        "postcss-scss": "4.0.0",
+        "postcss-scss": "4.0.1",
         "prettier": "2.4.1",
         "stylelint": "13.13.1",
         "stylelint-config-prettier": "8.0.2",
