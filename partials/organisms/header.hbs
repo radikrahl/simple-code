@@ -8,26 +8,10 @@
         </div>
         <div class="navigation__social">
             {{> "atoms/social"}}
-            <span class="fas js-dark-mode__toggle">
-
-            </span>
         </div>
+        <span class="fas js-dark-mode__toggle">
 
+        </span>
         {{> "molecules/mobileNav"}}
     </nav>
 </header>
-
-
-<script>
-    document.querySelector('.js-dark-mode__toggle').addEventListener('click', () => {
-
-        if (document.documentElement.dataset.theme === 'dark') {
-            document.documentElement.dataset.theme = 'light';
-        }
-        else if (document.documentElement.dataset.theme === 'light') {
-            document.documentElement.dataset.theme = 'dark';
-        }
-
-        window.localStorage.setItem('theme', document.documentElement.dataset.theme);
-    });
-</script>

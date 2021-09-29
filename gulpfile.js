@@ -2,36 +2,50 @@ const { series, watch, src, dest, parallel } = require('gulp');
 const pump = require('pump');
 
 // gulp plugins and utils
-var livereload = require('gulp-livereload');
-var postcss = require('gulp-postcss');
-var zip = require('gulp-zip');
-var uglify = require('gulp-uglify');
-var gulpUtil = require('gulp-util');
-var concat = require('gulp-concat');
-var eslint = require('gulp-eslint');
+const livereload = require('gulp-livereload');
+const postcss = require('gulp-postcss');
+const zip = require('gulp-zip');
+const uglify = require('gulp-uglify');
+const gulpUtil = require('gulp-util');
+const eslint = require('gulp-eslint');
+const sourcemaps = require('gulp-sourcemaps');
+const browserify = require('browserify');
+const source = require('vinyl-source-stream');
+const buffer = require('vinyl-buffer');
 
 // general utils
-var beeper = require('beeper');
-var merge = require('merge-stream');
+const beeper = require('beeper');
+const merge = require('merge-stream');
 const fs = require('fs');
 
 // postcss plugins
-var autoprefixer = require('autoprefixer');
-var colorFunction = require('postcss-color-mod-function');
-var cssnano = require('cssnano');
-var easyimport = require('postcss-easy-import');
-var reporter = require('postcss-reporter');
+const autoprefixer = require('autoprefixer');
+const colorFunction = require('postcss-color-mod-function');
+const cssnano = require('cssnano');
+const easyimport = require('postcss-easy-import');
+const reporter = require('postcss-reporter');
 
 // sass utils
-var gulpSass = require('gulp-sass');
-var sass = gulpSass(require('node-sass'));
-var stylelint = require('stylelint');
-var syntax_scss = require('postcss-scss');
+const gulpSass = require('gulp-sass');
+const sass = gulpSass(require('node-sass'));
+const stylelint = require('stylelint');
+const syntax_scss = require('postcss-scss');
 
 // js utils
 
-var config = {
+const config = {
     isProduction: gulpUtil.env.production,
+    files: {
+        js: {
+            in: 'assets/js/main.js',
+            out: 'assets/built',
+            vendor: 'assets/js/vendor.js',
+        },
+        css: {
+            in: ['assets/scss/main.scss', '!node_modules/**/*.scss', '!assets/built/**/*.scss'],
+            out: 'assets/built/',
+        },
+    },
 };
 
 function serve(done) {
@@ -68,55 +82,72 @@ function scss(done) {
 
     pump(
         [
-            src(['assets/scss/main.scss', '!node_modules/**/*.scss', '!assets/built/**/*.scss'], {
+            src(config.files.css.in, {
                 sourcemaps: !config.isProduction,
             }),
             sass().on('error', sass.logError),
             postcss(processors),
-            dest('assets/built/', { sourcemaps: '.' }),
+            dest(config.files.css.out, { sourcemaps: '.' }),
             livereload(),
         ],
         handleError(done)
     );
 }
 
-function js(done) {
-    pump(
-        [
-            src('assets/js/*.js', { sourcemaps: !config.isProduction }),
+function jsTask() {
+    return browserify(config.files.js.in, { debug: !config.isProduction })
+        .transform('babelify', {
+            presets: ['@babel/preset-env'],
+            plugins: ['@babel/plugin-transform-runtime'],
+        })
+        .bundle()
+        .pipe(source('main.js'))
+        .pipe(buffer())
+        .pipe(!config.isProduction ? sourcemaps.init({ loadMaps: true }) : gulpUtil.noop())
+        .pipe(
             uglify({
                 mangle: config.isProduction,
                 compress: config.isProduction,
                 output: { beautify: !config.isProduction },
-            }),
-            dest('assets/built/', { sourcemaps: '.' }),
-            livereload(),
-        ],
-        handleError(done)
-    );
+            })
+        )
+        .pipe(sourcemaps.write('.'))
+        .pipe(dest(config.files.js.out));
+}
+
+function vendorJsTask() {
+    return browserify(config.files.js.vendor, { debug: !config.isProduction })
+        .transform('babelify', {
+            presets: ['@babel/preset-env'],
+            plugins: ['@babel/plugin-transform-runtime'],
+        })
+        .bundle()
+        .pipe(source('vendor.js'))
+        .pipe(buffer())
+        .pipe(!config.isProduction ? sourcemaps.init({ loadMaps: true }) : gulpUtil.noop())
+        .pipe(
+            uglify({
+                mangle: config.isProduction,
+                compress: {
+                    keep_fargs: 'strict',
+                },
+                output: { beautify: !config.isProduction, comments: /(?:^!|@(?:license|preserve|cc_on))/ },
+            })
+        )
+        .pipe(sourcemaps.write('.'))
+        .pipe(dest(config.files.js.out));
 }
 
 function vendor() {
-    const highlightjsStyles = src('node_modules/@highlightjs/cdn-assets/styles/**').pipe(
+    const highlightjsStyles = src('node_modules/highlight.js/styles/**').pipe(
         dest('assets/built/highlightjs/styles')
     );
-
-    const highlightjs = src([
-        'node_modules/@highlightjs/cdn-assets/highlight.min.js',
-        'node_modules/@highlightjs/cdn-assets/languages/handlebars.min.js',
-        'node_modules/@highlightjs/cdn-assets/languages/dockerfile.min.js',
-    ])
-        .pipe(concat('highlight.min.js'))
-        .pipe(uglify())
-        .pipe(dest('assets/built/highlightjs'));
 
     const fontawesome = src('node_modules/@fortawesome/fontawesome-free/webfonts/**').pipe(
         dest('assets/built/fontawesome/webfonts')
     );
 
-    const jquery = src(['node_modules/jquery/dist/jquery.min.js']).pipe(dest('assets/built/js'));
-
-    return merge(highlightjs, highlightjsStyles, fontawesome, jquery);
+    return merge(highlightjsStyles, fontawesome);
 }
 
 function lint() {
@@ -149,7 +180,6 @@ function lint() {
 function clean(done) {
     const dir = 'assets/built';
 
-    // delete directory recursively
     fs.rmdir(dir, { recursive: true }, (err) => {
         if (err) {
             handleError(done);
@@ -176,12 +206,13 @@ function zipper(done) {
 
 const scssWatcher = () => watch('assets/scss/**', scss);
 const hbsWatcher = () => watch(['*.hbs', '**/**/*.hbs', '!node_modules/**/*.hbs'], hbs);
-const jsWatcher = () => watch(['assets/js/*.js'], js);
+const jsWatcher = () => watch(['assets/js/*.js'], jsTask);
 const watcher = parallel(scssWatcher, hbsWatcher, jsWatcher);
-const build = series(clean, vendor, scss, js);
+const build = series(clean, vendor, scss, jsTask, vendorJsTask);
 const dev = series(build, serve, watcher);
 
 exports.build = build;
 exports.lint = lint;
 exports.zip = series(build, zipper);
 exports.default = dev;
+exports.js = jsTask;
