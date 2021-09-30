@@ -31,8 +31,6 @@ const sass = gulpSass(require('node-sass'));
 const stylelint = require('stylelint');
 const syntax_scss = require('postcss-scss');
 
-// js utils
-
 const config = {
     isProduction: gulpUtil.env.production,
     files: {
@@ -94,51 +92,46 @@ function scss(done) {
     );
 }
 
-function jsTask() {
-    return browserify(config.files.js.in, { debug: !config.isProduction })
+function js() {
+    let uglifyConfig = {
+        mangle: config.isProduction,
+        compress: config.isProduction,
+        output: { beautify: !config.isProduction },
+    };
+
+    return bundleJS('main.js', config.files.js.in, config.files.js.out, uglifyConfig);
+}
+
+function vendorJs() {
+    let uglifyConfig = {
+        mangle: config.isProduction,
+        compress: config.isProduction
+            ? {
+                  keep_fargs: 'strict',
+              }
+            : config.isProduction,
+        output: { beautify: !config.isProduction, comments: /(?:^!|@(?:license|preserve|cc_on))/ },
+    };
+
+    return bundleJS('vendor.js', config.files.js.vendor, config.files.js.out, uglifyConfig);
+}
+
+function bundleJS(filename, input, output, uglfiyConfig) {
+    return browserify(input, { debug: !config.isProduction })
         .transform('babelify', {
             presets: ['@babel/preset-env'],
             plugins: ['@babel/plugin-transform-runtime'],
         })
         .bundle()
-        .pipe(source('main.js'))
+        .pipe(source(filename))
         .pipe(buffer())
         .pipe(!config.isProduction ? sourcemaps.init({ loadMaps: true }) : gulpUtil.noop())
-        .pipe(
-            uglify({
-                mangle: config.isProduction,
-                compress: config.isProduction,
-                output: { beautify: !config.isProduction },
-            })
-        )
+        .pipe(uglify(uglfiyConfig))
         .pipe(sourcemaps.write('.'))
-        .pipe(dest(config.files.js.out));
+        .pipe(dest(output));
 }
 
-function vendorJsTask() {
-    return browserify(config.files.js.vendor, { debug: !config.isProduction })
-        .transform('babelify', {
-            presets: ['@babel/preset-env'],
-            plugins: ['@babel/plugin-transform-runtime'],
-        })
-        .bundle()
-        .pipe(source('vendor.js'))
-        .pipe(buffer())
-        .pipe(!config.isProduction ? sourcemaps.init({ loadMaps: true }) : gulpUtil.noop())
-        .pipe(
-            uglify({
-                mangle: config.isProduction,
-                compress: {
-                    keep_fargs: 'strict',
-                },
-                output: { beautify: !config.isProduction, comments: /(?:^!|@(?:license|preserve|cc_on))/ },
-            })
-        )
-        .pipe(sourcemaps.write('.'))
-        .pipe(dest(config.files.js.out));
-}
-
-function vendor() {
+function vendorStyles() {
     const highlightjsStyles = src('node_modules/highlight.js/styles/**').pipe(
         dest('assets/built/highlightjs/styles')
     );
@@ -206,13 +199,12 @@ function zipper(done) {
 
 const scssWatcher = () => watch('assets/scss/**', scss);
 const hbsWatcher = () => watch(['*.hbs', '**/**/*.hbs', '!node_modules/**/*.hbs'], hbs);
-const jsWatcher = () => watch(['assets/js/*.js'], jsTask);
+const jsWatcher = () => watch(['assets/js/*.js'], js);
 const watcher = parallel(scssWatcher, hbsWatcher, jsWatcher);
-const build = series(clean, vendor, scss, jsTask, vendorJsTask);
+const build = series(clean, vendorStyles, scss, js, vendorJs);
 const dev = series(build, serve, watcher);
 
 exports.build = build;
 exports.lint = lint;
 exports.zip = series(build, zipper);
 exports.default = dev;
-exports.js = jsTask;
