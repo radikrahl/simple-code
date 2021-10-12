@@ -7,10 +7,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{!-- <link rel="stylesheet" type="text/css" href="{{asset 'built/screen.css'}}" /> --}}
-    <link rel="stylesheet" href="{{asset 'built/highlightjs/styles/stackoverflow-dark.min.css'}}">
+    <link rel="stylesheet" href="{{asset 'built/highlightjs/styles/stackoverflow-dark.css'}}">
     <link rel="stylesheet" type="text/css" href="{{asset 'built/main.css'}}" />
     <title>{{meta_title}}</title>
+    <script>
+        const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
+        if (window.localStorage.getItem('theme')) {
+            document.documentElement.dataset.theme = window.localStorage.getItem('theme');
+        }
+        else {
+            document.documentElement.dataset.theme = prefersDarkScheme.matches ? 'dark' : 'light';
+        }
+    </script>
     {{ghost_head}}
     {{!-- Outputs important meta data and settings, should always be in head --}}
 
@@ -20,17 +29,15 @@
 
     {{> "organisms/header"}}
 
-    <main role="main" class="">
+    <main role="main" id="main-content" class="mt-7">
         {{{body}}}
         {{!-- All content gets inserted here, index.hbs, post.hbs, etc --}}
     </main>
 
     {{> "organisms/footer"}}
 
-    <script src="{{asset 'built/highlightjs/highlight.min.js'}}"></script>
-    <script src="{{asset 'built/js/jquery.min.js'}}"></script>
-    <script src="{{asset 'built/main.js'}}"></script>
-
+    <script src="{{asset 'built/vendor.js'}}"></script>
+    <script type="module" src="{{asset 'built/main.js'}}"></script>
 
     {{ghost_foot}}
     {{!-- Outputs important scripts - should always be included before closing body tag --}}

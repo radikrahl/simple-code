@@ -42,6 +42,7 @@
 // \*------------------------------------*/
 
 @import "layout/layout";
+@import "layout/darkTheme";
 
 // /*------------------------------------*\
 //     #COMPONENTS
@@ -66,7 +67,7 @@
 // \*------------------------------------*/
 
 // @import "partials/components/buttons";
-
+@import "partials/atoms/toggle-switch";
 @import "partials/molecules/author";
 @import "partials/molecules/tags";
 @import "partials/molecules/mobile-nav";

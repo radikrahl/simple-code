@@ -1,0 +1,85 @@
+/**
+* 1) Make the slider ball "squash" when clicked.
+*/
+
+.toggleSwitch {
+    font-size: 1.125em;
+    display: inline-block;
+    height: 1.25em;
+    position: relative;
+    width: 2.5em;
+
+    &::before,
+    &::after {
+        position: absolute;
+        font-size: 0.875em;
+        z-index: 1;
+        top: 0.22em;
+        color: var(--color-body-bg);
+    }
+
+    &::before {
+        content: "\f186";
+        left: 0.15em;
+
+        [data-theme="light"] & {
+            display: none;
+        }
+    }
+
+    &::after {
+        content: "\f185";
+        right: 0.18em;
+
+        [data-theme="dark"] & {
+            display: none;
+        }
+    }
+
+    &:active {
+        // 1)
+        .toggleSwitch__slider:before {
+            width: 0.6em;
+        }
+    }
+
+    &__checkbox {
+        display: none;
+
+        &:checked {
+            + .toggleSwitch__slider {
+                background-color: var(--color-neutral-gray-27);
+
+                // 1)
+                &:before {
+                    left: calc(100% - 0.15em);
+                    transform: translateX(-100%);
+                }
+            }
+        }
+    }
+
+    &__slider {
+        background-color: var(--color-neutral-gray-87);
+        bottom: 0;
+        cursor: pointer;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: 0.4s;
+        border-radius: 20em;
+
+        &::before {
+            background-color: #fff;
+            bottom: 0.175em;
+            content: "";
+            height: 0.9em;
+            left: 0.15em;
+            position: absolute;
+            transition: 0.4s;
+            width: 0.9em;
+            border-radius: 50%;
+        }
+    }
+}

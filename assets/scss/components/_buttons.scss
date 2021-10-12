@@ -1,11 +1,9 @@
-:root {
-    --box-shadow-button-color: var(--color-neutral-white);
+.c-btn {
+    --color-button: var(--color-brand-primary);
+    --box-shadow-button-color: var(--color-body-bg);
     --box-shadow-button-spread: 1.3em;
     --box-shadow-button-blur: 0.5em;
-    --color-button: var(--color-brand-primary);
-}
 
-.c-btn {
     display: inline-block;
     border: var(--border-style-light) var(--color-button);
     color: var(--color-neutral-white);
@@ -55,7 +53,7 @@
     }
 
     &--bare {
-        background-color: var(--color-neutral-white);
+        background-color: var(--color-body-bg);
         color: var(--color-button);
 
         &:hover,

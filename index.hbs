@@ -1,15 +1,13 @@
 {{!< default}}
-
-<main id="site-main" class="">
-    <div class="l-grid">
-        {{> "molecules/postFeedToggle"}}
-        <div class="post-feed post-feed--horizontal l-grid--wide">
-            {{#foreach posts}}
-                {{> "molecules/postCard"}}
-            {{/foreach}}
-        </div>
-        <div class="l-grid--wide mt-8">
-            {{pagination}}
-        </div>
+<div class="l-grid">
+    {{> "molecules/postFeedToggle"}}
+    <div class="post-feed post-feed--horizontal l-grid--wide">
+        {{#foreach posts}}
+            {{> "molecules/postCard"}}
+        {{/foreach}}
+    </div>
+    <div class="l-grid--wide mt-8">
+        {{pagination}}
     </div>
 </div>
+
