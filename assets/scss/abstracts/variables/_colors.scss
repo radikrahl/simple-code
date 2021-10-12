@@ -27,6 +27,12 @@
         --color-brand-#{$key}: hsla(var(--palette-#{$key}-40), 100%);
         --color-brand-#{$key}-light: hsla(var(--palette-#{$key}-60), 100%);
         --color-brand-#{$key}-emphasis: hsla(var(--palette-#{$key}-40), 13%);
+
+        &[data-theme="dark"] {
+            --color-brand-#{$key}: hsla(var(--palette-#{$key}-60), 100%);
+            --color-brand-#{$key}-light: hsla(var(--palette-#{$key}-40), 100%);
+            --color-brand-#{$key}-emphasis: hsla(var(--palette-#{$key}-60), 13%);
+        }
     }
 
     --color-neutral-white: #fff;
@@ -38,6 +44,7 @@
     --color-neutral-gray-50: hsla(0, 0%, 50%, 1);
     --color-neutral-gray-60: hsla(0, 0%, 40%, 1);
     --color-neutral-gray-73: hsla(0, 0%, 27%, 1);
+    --color-neutral-gray-87: hsla(0, 0%, 13%, 1);
     --color-neutral-gray-93: hsla(0, 0%, 7%, 1);
     --color-neutral-black: #000;
 
@@ -58,8 +65,8 @@
 
     --color-links: var(--color-neutral-gray-73);
     --color-links-hover: var(--color-brand-primary);
-    --color-links-active: var(--color-neutral-gray-93);
-    --color-links-visited: var(--color-neutral-gray-93);
+    --color-links-active: var(--color-brand-tertiary);
+    --color-links-visited: var(--color-brand-tertiary);
 
     --color-form: var(--color-neutral-gray-93);
     --color-form-bg: var(--color-neutral-white);

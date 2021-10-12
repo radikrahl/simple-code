@@ -1,4 +1,4 @@
-<header id="main-navigation" class="u-shadow--nav l-grid mb-7">
+<header id="main-navigation" class="u-shadow--nav l-grid">
     <nav class="l-grid--wide navigation">
         <div class="navigation__logo font-extrabold">
             {{> "atoms/logo"}}
@@ -10,6 +10,12 @@
             {{> "atoms/social"}}
         </div>
 
+        <div class="ml-2.5 u-flex js-initial-hidden">
+            <label class="far toggleSwitch" for="darkModeToggle">
+                <input type="checkbox" id="darkModeToggle" class="toggleSwitch__checkbox" />
+                <div class="toggleSwitch__slider"></div>
+            </label>
+        </div>
         {{> "molecules/mobileNav"}}
     </nav>
 </header>

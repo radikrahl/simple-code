@@ -47,6 +47,11 @@
     a {
         display: flex;
         align-items: center;
+        font-size: var(--text-sm);
+
+        @include medium-up {
+            font-size: var(--text-md);
+        }
     }
 
     i {
@@ -103,6 +108,7 @@
         .pagination__title {
             margin-right: var(--pagination-arrow-padding);
             justify-content: flex-end;
+            text-align: right;
         }
     }
 }

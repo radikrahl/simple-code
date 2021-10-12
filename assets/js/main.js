@@ -1,20 +1,11 @@
+import {registerToggleButton} from './toggleDarkTheme';
+import {registerFeedToogle} from './postFeedToggle';
+import mobileNav from './mobileNav';
+
 (function () {
-    const menuOverlay = document.querySelector('.menu__overlay');
-    const mainNav = document.getElementById('main-navigation');
-    const menuToggle = document.querySelector('.menu__toggle');
+    mobileNav();
+    registerToggleButton();
+    registerFeedToogle();
 
-    function openMenu() {
-        mainNav.classList.toggle('navigation-open');
-        menuOverlay.classList.toggle('u-hidden');
-    }
-
-    function closeMenu() {
-        mainNav.classList.remove('navigation-open');
-        menuOverlay.classList.add('u-hidden');
-    }
-
-    menuToggle.addEventListener('click', openMenu);
-    menuOverlay.addEventListener('click', closeMenu);
-
-    hljs.highlightAll();
+    document.querySelectorAll('.js-initial-hidden').forEach(x => x.classList.remove('js-initial-hidden'));
 })();

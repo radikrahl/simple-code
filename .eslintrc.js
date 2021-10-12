@@ -14,6 +14,13 @@ const config = {
     globals: {
         hljs: 'readonly',
     },
+    "parserOptions": {
+        "ecmaVersion": "2015",
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
 };
 
 module.exports = config;

@@ -5,7 +5,7 @@
             display: none;
         }
         .c-btn {
-            --color-button: var(--color-neutral-gray-34) !important;
+            --color-button: var(--color-neutral-gray-34);
 
             &--small {
                 font-size: var(--text-sm);

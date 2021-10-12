@@ -2,6 +2,10 @@
     display: grid;
 }
 
+.u-flex {
+    display: flex;
+}
+
 .u-hidden {
     display: none;
 
@@ -10,4 +14,8 @@
             display: none;
         }
     }
+}
+
+.js-initial-hidden {
+    display: none;
 }

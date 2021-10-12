@@ -52,6 +52,7 @@
         width: 100vw;
         overflow: hidden;
         background-color: black;
+
         opacity: 0.2;
         z-index: 1;
         position: fixed;
@@ -76,7 +77,7 @@
         position: fixed;
         top: 0;
         right: 0;
-        background-color: white;
+        background-color: var(--color-body-bg);
         width: 69%;
         height: 100%;
         box-shadow: var(--box-shadow-nav);
@@ -84,7 +85,8 @@
         transition: all var(--anim-cubic-bezier) var(--anim-fade-long);
         z-index: 10;
         padding: var(--space-8) var(--space-4);
-        overflow: scroll;
+        overflow-y: scroll;
+        overflow-x: hidden;
 
         .navigation__item {
             margin-top: var(--space-1);

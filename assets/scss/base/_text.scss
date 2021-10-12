@@ -25,10 +25,10 @@ hr {
 
 code {
     display: inline-block;
-    background-color: #272525;
+    background-color: transparent;
     border-radius: var(--border-radius-md);
     padding: var(--space-1) var(--space-2-5);
-    line-height: 1.2;
+    line-height: var(--line-height-md);
     font-size: var(--text-sm);
 
     @include large-up {
@@ -44,16 +44,12 @@ p {
 }
 
 pre {
-    background-color: #272525;
+    background-color: var(--color-neutral-gray-87);
     overflow-x: auto;
     margin-bottom: 0;
+    border-radius: var(--border-radius-sm);
 
     code {
         border: 0;
     }
 }
-
-// code[class*="language-"],
-// pre[class*="language-"] {
-//     font-family: monospace !important;
-// }
