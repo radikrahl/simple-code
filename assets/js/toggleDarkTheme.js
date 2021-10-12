@@ -1,15 +1,11 @@
 function registerToggleButton() {
-    document.querySelector('.js-dark-mode__toggle').addEventListener('click', () => {
+    document.querySelector('#darkModeToggle').checked = window.localStorage.getItem('theme') === 'dark';
+    document.querySelector('#darkModeToggle').addEventListener('change', (e) => {
         var element = document.documentElement;
-        if (element.dataset.theme === 'dark') {
-            element.dataset.theme = 'light';
-        }
-        else if (element.dataset.theme === 'light') {
-            element.dataset.theme = 'dark';
-        }
+        element.dataset.theme = e.target.checked ? 'dark' : 'light';
 
         window.localStorage.setItem('theme', element.dataset.theme);
     });
 }
 
-export {registerToggleButton};
+export { registerToggleButton };

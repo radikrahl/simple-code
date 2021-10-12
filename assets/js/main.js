@@ -6,4 +6,6 @@ import mobileNav from './mobileNav';
     mobileNav();
     registerToggleButton();
     registerFeedToogle();
+
+    document.querySelectorAll('.js-initial-hidden').forEach(x => x.classList.remove('js-initial-hidden'));
 })();

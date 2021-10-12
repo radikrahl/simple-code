@@ -51,13 +51,7 @@
         height: 100vh;
         width: 100vw;
         overflow: hidden;
-
-        // invert color function maybe?
         background-color: black;
-
-        [data-theme="dark"] & {
-            background-color: white;
-        }
 
         opacity: 0.2;
         z-index: 1;

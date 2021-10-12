@@ -24,10 +24,5 @@
         --border-brand-secondary-sm: var(--border-style-light) var(--color-brand-secondary);
 
         --border-brand-secondary: var(--border-style) var(--color-brand-secondary);
-
-        [data-theme="dark"] & {
-            --border-divider-simple: var(--border-style-light)
-                var(--border-divider-color, var(--color-neutral-gray-87));
-        }
     }
 }
