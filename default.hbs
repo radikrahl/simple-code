@@ -18,6 +18,7 @@
         }
         else {
             document.documentElement.dataset.theme = prefersDarkScheme.matches ? 'dark' : 'light';
+            window.localStorage.setItem('theme', document.documentElement.dataset.theme);
         }
     </script>
     {{ghost_head}}
