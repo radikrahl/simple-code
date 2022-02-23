@@ -34,5 +34,10 @@ module.exports = {
         */
         'textTransform',
         'fontWeight'
+    ],
+    content: [
+        './*.hbs',
+        './assets/js/*.js',
+        './partials/**/*.hbs'
     ]
 };
