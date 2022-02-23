@@ -14,7 +14,7 @@
         position: absolute;
         font-size: 0.875em;
         z-index: 1;
-        top: 0.22em;
+        top: 0.25em;
         color: var(--color-body-bg);
     }
 
@@ -61,10 +61,9 @@
 
     &__slider {
         background-color: var(--color-neutral-gray-87);
-        bottom: 0;
-        cursor: pointer;
-        left: 0;
         position: absolute;
+        bottom: 0;
+        left: 0;
         right: 0;
         top: 0;
         transition: 0.4s;

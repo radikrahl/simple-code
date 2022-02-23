@@ -47,6 +47,7 @@ textarea {
 
     &:focus {
         border-color: var(--color-form-border-focus);
+        outline: none;
     }
 
     &:disabled {
