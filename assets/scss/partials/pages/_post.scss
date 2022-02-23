@@ -39,7 +39,8 @@
                 margin-top: var(--space-2);
             }
 
-            li > ol, li > ul {
+            li > ol,
+            li > ul {
                 margin-top: var(--space-2);
             }
         }
@@ -62,7 +63,8 @@
             text-underline-offset: 1.5px;
         }
 
-        table, .responsive-table {
+        table,
+        .responsive-table {
             display: block;
             overflow-x: auto;
             max-width: fit-content;
