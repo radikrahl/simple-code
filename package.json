@@ -53,7 +53,7 @@
         "browserify": "17.0.0",
         "cssnano": "5.1.0",
         "eslint": "8.10.0",
-        "eslint-config-prettier": "8.4.0",
+        "eslint-config-prettier": "8.5.0",
         "eslint-plugin-prettier": "4.0.0",
         "gscan": "4.22.0",
         "gulp": "4.0.2",
