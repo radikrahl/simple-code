@@ -44,9 +44,9 @@
     "bugs": "https://github.com/radikrahl/simple-code/issues",
     "contributors": "https://github.com/radikrahl/simple-code/graphs/contributors",
     "devDependencies": {
-        "@babel/core": "7.17.10",
-        "@babel/plugin-transform-runtime": "7.17.10",
-        "@babel/preset-env": "7.17.10",
+        "@babel/core": "7.17.12",
+        "@babel/plugin-transform-runtime": "7.17.12",
+        "@babel/preset-env": "7.17.12",
         "babelify": "10.0.0",
         "autoprefixer": "10.4.7",
         "beeper": "2.1.0",
