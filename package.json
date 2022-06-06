@@ -51,7 +51,7 @@
         "autoprefixer": "10.4.7",
         "beeper": "2.1.0",
         "browserify": "17.0.0",
-        "cssnano": "5.1.10",
+        "cssnano": "5.1.11",
         "eslint": "8.16.0",
         "eslint-config-prettier": "8.5.0",
         "eslint-plugin-prettier": "4.0.0",
