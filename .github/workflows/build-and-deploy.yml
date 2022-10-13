@@ -20,7 +20,7 @@ jobs:
         env:
           CI: true
       - name: Deploy Ghost Theme
-        uses: TryGhost/action-deploy-theme@v1.6.1
+        uses: TryGhost/action-deploy-theme@v1.6.2
         with:
           api-url: ${{ secrets.GHOST_ADMIN_API_URL }}
           api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}
