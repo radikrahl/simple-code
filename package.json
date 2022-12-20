@@ -70,7 +70,7 @@
         "gulp-watch": "5.0.1",
         "gulp-zip": "5.1.0",
         "highlight.js": "11.7.0",
-        "jquery": "3.6.2",
+        "jquery": "3.6.3",
         "merge-stream": "2.0.0",
         "node-sass": "8.0.0",
         "postcss": "8.4.20",
