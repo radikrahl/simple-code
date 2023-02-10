@@ -80,7 +80,7 @@
         "postcss-scss": "4.0.6",
         "prettier": "2.8.4",
         "stylelint": "14.16.1",
-        "stylelint-config-prettier": "9.0.4",
+        "stylelint-config-prettier": "9.0.5",
         "stylelint-prettier": "2.0.0",
         "vinyl-buffer": "1.0.1",
         "vinyl-source-stream": "2.0.0",
