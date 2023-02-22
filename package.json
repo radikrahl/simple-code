@@ -55,7 +55,7 @@
         "eslint": "8.34.0",
         "eslint-config-prettier": "8.6.0",
         "eslint-plugin-prettier": "4.2.1",
-        "gscan": "4.36.0",
+        "gscan": "4.36.1",
         "gulp": "4.0.2",
         "gulp-browserify": "0.5.1",
         "gulp-concat": "2.6.1",
